@@ -1,0 +1,19 @@
+- type: entity
+  name: Duplet
+  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: Duplet2033
+  description: An immortal classic. Uses .50 shotgun shells.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Shotguns/duplet_shotgun.rsi
+  - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
+  - type: Gun
+    fireRate: 3
+  - type: GunSpreadModifier
+    spread: 0.6
+  - type: BallisticAmmoProvider
+    capacity: 3
+  - type: Construction
+    graph: ShotgunSawn
+    node: start
+    deconstructionTarget: null

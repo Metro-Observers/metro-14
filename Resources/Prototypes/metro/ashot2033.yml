@@ -1,0 +1,72 @@
+- type: entity
+  name: ashot2033
+  parent: BaseWeaponShotgun 
+  id: WeaponShotgunAshot
+  description: Ashotishe
+  components: # needs to be super inaccurate because you don't need to wield it
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Shotguns/ashot_pistol.rsi
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Shotguns/ashot_pistol.rsi
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,2,0
+  - type: Gun
+    fireRate: 3
+    soundGunshot: # Corvax-Guns
+      path: /Audio/Corvax/Weapons/Guns/Gunshots/shotgun_sawed.ogg
+  - type: GunSpreadModifier
+    spread: 0.1
+  - type: BallisticAmmoProvider
+    capacity: 1
+    whitelist:
+      tags:
+      - ShellShotgunAshot
+    proto: ShellShotgunAshot
+  - type: Construction
+    graph: ShotgunSawn
+    node: shotgunsawn
+    deconstructionTarget: null
+
+
+- type: entity
+  id: PelletShotgunAshot
+  name: bullet for ashot
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: buckshot
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 16
+        Structural: 15
+
+
+- type: entity
+  id: SpreadAshot
+  categories: [ HideSpawnMenu ]
+  parent: PelletShotgunAshot
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgunAshot
+    count: 2
+    spread: 6
+
+- type: entity
+  id: ShellShotgunAshot
+  name: shell (.50 pellet)
+  parent: [ BaseShellShotgun, BaseSecurityContraband ]
+  components:
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: SpreadAshot
+  - type: Tag
+    tags:
+    - ShellShotgunAshot

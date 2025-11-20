@@ -1308,6 +1308,9 @@
   id: ShellShotgun
 
 - type: Tag
+  id: ShellShotgunAshot
+
+- type: Tag
   id: ShellShotgunLight # shotgun shells that are compatible with the flare gun.
 
 - type: Tag

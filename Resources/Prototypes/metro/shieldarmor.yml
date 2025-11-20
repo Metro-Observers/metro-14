@@ -1,0 +1,111 @@
+- type: entity
+  name: armor111
+  parent: [ BaseShield, BaseSecurityContraband, ClothingOuterStorageBase ]
+  id: RiotLaserShield1213
+  description: A shield built for withstanding lasers, but not much else.
+  components:
+    - type: Clothing
+      slots:
+        - outerClothing
+    - type: Sprite
+      state: riot_laser-icon
+    - type: Item
+      heldPrefix: riot_laser
+    - type: Blocking 
+      passiveBlockFraction: 1.0
+      passiveBlockModifier:
+        coefficients:
+          Heat: 0
+      activeBlockModifier:
+        coefficients:
+          Heat: 0
+        flatReductions:
+          Heat: 0
+    - type: Damageable
+      damageContainer: Shield
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 140
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+        - trigger:
+            !type:DamageTrigger
+            damage: 20 #This is probably enough damage before it breaks
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalBreak
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                SheetSteel:
+                  min: 2
+                  max: 2
+                SheetGlass:
+                  min: 2
+                  max: 2
+    - type: StaticPrice
+      price: 100
+
+- type: entity
+  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing, BaseSyndicateContraband]
+  id: jilet
+  name: web vest111
+  description: A synthetic armor vest. This one has added webbing and ballistic plates.
+  components:
+    - type: Sprite
+      sprite: Clothing/OuterClothing/Vests/webvest.rsi
+    - type: Clothing
+      sprite: Clothing/OuterClothing/Vests/webvest.rsi
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.6 #ballistic plates = better protection
+          Slash: 0.6
+          Piercing: 0.3
+          Heat: 0.9
+    - type: ExplosionResistance
+      damageCoefficient: 0.9
+    - type: StaticPrice
+      price: 1500
+    - type: Blocking 
+      passiveBlockFraction: 1.0
+      passiveBlockModifier:
+        coefficients:
+          Heat: 0
+      activeBlockModifier:
+        coefficients:
+          Heat: 0
+        flatReductions:
+          Heat: 0
+    - type: Damageable
+      damageContainer: Shield
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 20
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+        - trigger:
+            !type:DamageTrigger
+            damage: 20 #This is probably enough damage before it breaks
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalBreak
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                SheetSteel:
+                  min: 2
+                  max: 2
+                SheetGlass:
+                  min: 2
+                  max: 2

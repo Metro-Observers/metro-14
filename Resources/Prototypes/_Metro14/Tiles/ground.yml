@@ -1,0 +1,45 @@
+- type: tile
+  id: M14BaseGround
+  parent: M14Base
+  baseTurf: M14Bedrock
+  abstract: true
+  isSubfloor: true
+  indestructible: true
+
+- type: tile
+  id: M14Bedrock
+  name: каменная порода
+  parent: M14Base
+  sprite: /Textures/Tiles/cave.png
+  variants: 7
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  footstepSounds:
+    collection: FootstepAsteroid
+  indestructible: true
+  isSubfloor: true
+  heatCapacity: 10000
+
+- type: tile
+  id: M14Ground
+  parent: M14BaseGround
+  name: грунт
+  sprite: /Textures/Tiles/cavedrought.png
+  variants: 8
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  footstepSounds:
+    collection: FootstepAsteroid

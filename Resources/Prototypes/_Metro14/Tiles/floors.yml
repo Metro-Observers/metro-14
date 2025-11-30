@@ -1,0 +1,20 @@
+# Базовый пол для других полов: деревянного, железного и т.д
+- type: tile
+  id: M14BaseFloor
+  parent: M14Base
+  abstract: true
+  baseTurf: M14Concrete
+
+- type: tile
+  id: M14BaseConcreteFloot
+  parent: M14BaseFloor
+  abstract: true
+  name: бетонный пол
+  baseTurf: M14Bedrock
+  isSubfloor: true
+
+# Аналог "покрытия"
+- type: tile
+  id: M14Concrete
+  parent: [M14BaseConcreteFloot, M14MixinFourVariants]
+  sprite: /Textures/Tiles/Planet/Concrete/oldconcrete_smooth.png

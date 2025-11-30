@@ -1,0 +1,16 @@
+- type: tile
+  id: M14Base
+  abstract: true
+  heatCapacity: 10000
+  footstepSounds:
+    collection: FootstepTile
+
+- type: tile
+  id: M14MixinFourVariants
+  abstract: true
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0

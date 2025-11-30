@@ -1,0 +1,40 @@
+#Directional Barricade
+- type: entity
+  name: Деревянная баррикада 
+  description: Почти сгнившие доски,ржавые гвозди,это вся твоя защита от жесткого мира.
+  id: M_14BarricadeDirectionalwood
+  parent: BaseBarricade
+  placement:
+    mode: SnapgridCenter
+#A bunch of this is taken straight from dirwindows and there is a chance that I may have fucked something up. Probably not though
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/woodenbarricades.rsi
+    state: barricade_directionalwood
+    noRot: false #Results in smoother rotation when turning the camera, the sprite's dirs are just it rotated anyways so there's no reason to not set this.
+  - type: Construction
+    graph: BarricadeDirectional
+    node: barricadefull
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.39,0.49,-0.36"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+  - type: Tag
+    tags:
+    - Wooden
+  - type: Flammable
+    fireSpread: true
+    damage:
+      types:
+        Heat: 3 #per second, scales with number of fire 'stacks'
+  - type: Appearance
+  - type: FireVisuals
+    sprite: Effects/fire.rsi
+    normalState: 1

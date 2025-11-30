@@ -1,0 +1,23 @@
+- type: entity
+  id: M14BaseCartridgeMagnum
+  parent: M14BaseCartridge
+  name: патрон .44 магнум
+  description: За счёт значительной массы, пуля этого калибра обладают отличным останавливающим действием, хоть и была произведена кустарно.
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - M14CartridgeMagnum
+  - type: CartridgeAmmo
+    proto: BulletMagnum
+  - type: Sprite
+    sprite: _Metro14/Objects/Weapons/Guns/Ammunition/Casings/magnum_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+
+- type: entity
+  id: M14CartridgeMagnum
+  parent: M14BaseCartridgeMagnum

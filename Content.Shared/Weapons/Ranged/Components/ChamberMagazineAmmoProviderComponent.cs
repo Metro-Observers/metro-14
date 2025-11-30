@@ -14,7 +14,7 @@ public sealed partial class ChamberMagazineAmmoProviderComponent : MagazineAmmoP
     /// If the gun has a bolt and whether that bolt is closed. Firing is impossible
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField("boltClosed"), AutoNetworkedField]
-    public bool? BoltClosed = false;
+    public bool? BoltClosed = true;
 
     /// <summary>
     /// Does the gun automatically open and close the bolt upon shooting.

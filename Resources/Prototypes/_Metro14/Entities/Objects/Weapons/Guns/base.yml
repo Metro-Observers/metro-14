@@ -1,0 +1,24 @@
+- id: M14BaseWeapon
+  parent: BaseItem
+  name: пушка
+  description: Целишься и стреляешь, всё просто!
+  type: entity
+  abstract: true
+  components:
+  - type: Sprite
+  - type: StaticPrice
+    price: 100
+  - type: Appearance
+
+- type: entity
+  id: M14BaseGunWieldable
+  abstract: true
+  components:
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: GunWieldBonus
+    minAngle: -18
+    maxAngle: -26
+  - type: Gun
+    minAngle: 21
+    maxAngle: 32

@@ -1,0 +1,127 @@
+- id: M14BaseWeaponRifle
+  type: entity
+  parent: [M14BaseWeapon, M14BaseGunWieldable]
+  suffix: Автомат
+  abstract: true
+  name: автомат
+  components:
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,3,2
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Rifles/ak.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: AmmoCounter
+  - type: Gun
+    fireRate: 5
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  # Полностью переопределяется, поэтому указал для АК
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: gun-slots-magazine
+        startingItem: M14MagazineRifleAK
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - M14MagazineRifleAK
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: gun-slots-chamber
+        priority: 1
+        whitelist:
+          tags:
+            - M14CartridgeRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: StaticPrice
+    price: 150
+
+- id: M14WeaponRifleBastard
+  type: entity
+  parent: M14BaseWeaponRifle
+  name: Ублюдок
+  description: Этот кустарный автомат отличается высоким темпом стрельбы, в результате чего быстро перегревается и заклинивает, чем и заслужил своё название.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Objects/Weapons/Guns/Rifles/bastard.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Metro14/Objects/Weapons/Guns/Rifles/bastard.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: Gun
+    fireRate: 5
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    maxAngle: 14
+    minAngle: 6
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: gun-slots-magazine
+        startingItem: M14MagazineRifleBastard
+        insertSound: /Audio/Weapons/Guns/MagIn/sfrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - M14MagazineRifleBastard
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: gun-slots-chamber
+        priority: 1
+        whitelist:
+          tags:
+            - M14CartridgeRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+
+- id: M14WeaponRifleAK
+  type: entity
+  name: Калаш
+  parent: M14BaseWeaponRifle
+  description: Легендарный Автомат Калашникова. Его годами проверенные боевые характеристики вызывают гордость у его хозяина и уважение у противников.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Objects/Weapons/Guns/Rifles/ak74.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-4
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Metro14/Objects/Weapons/Guns/Rifles/ak74_inhands_32x.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: Item
+    sprite: _Metro14/Objects/Weapons/Guns/Rifles/ak74_inhands_32x.rsi

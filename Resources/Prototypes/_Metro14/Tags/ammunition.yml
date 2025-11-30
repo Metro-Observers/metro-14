@@ -1,0 +1,11 @@
+- type: Tag
+  id: M14CartridgeRifle
+- type: Tag
+  id: M14CartridgeMagnum
+- type: Tag
+  id: M14ShellShotgun
+
+- type: Tag
+  id: M14MagazineRifleAK
+- type: Tag
+  id: M14MagazineRifleBastard

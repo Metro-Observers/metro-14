@@ -1,0 +1,55 @@
+- type: entity
+  id: M14BaseMagazineRifle
+  parent: BaseItem
+  abstract: true
+  name: магазин 5.45x39 мм
+  description: Магазин на 30 патронов калибра 5.45x39 миллиметров.
+  components:
+  - type: Item
+    size: Small
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    proto: M14CartridgeRifleMakeshift
+    whitelist:
+      tags:
+        - M14CartridgeRifle
+    capacity: 30
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Metro14/Objects/Weapons/Guns/Ammunition/Magazine/Rifle/ak_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: M14MagazineRifleAK
+  parent: M14BaseMagazineRifle
+  components:
+  - type: Tag
+    tags:
+      - M14MagazineRifleAK
+
+- type: entity
+  id: M14MagazineRifleBastard
+  parent: M14BaseMagazineRifle
+  name: магазин от «ублюдка»
+  description: Сделан на коленке, использует патроны калибра 5.45x39 мм.
+  components:
+  - type: Tag
+    tags:
+      - M14MagazineRifleBastard
+  - type: Sprite
+    sprite: _Metro14/Objects/Weapons/Guns/Ammunition/Magazine/Rifle/bastard_mag.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: false

@@ -115,7 +115,7 @@ namespace Content.Shared.Maps
         /// <summary>
         /// Can weather affect this tile.
         /// </summary>
-        [DataField("weather")] public bool Weather = false;
+        [DataField("weather")] public bool Weather = true;
 
         /// <summary>
         /// Is this tile immune to RCD deconstruct.

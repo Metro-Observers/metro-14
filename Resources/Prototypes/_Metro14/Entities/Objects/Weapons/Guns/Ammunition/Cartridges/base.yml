@@ -1,0 +1,8 @@
+- type: entity
+  id: M14BaseCartridge
+  parent: BaseCartridge
+  abstract: true
+  components:
+  - type: EmitSoundOnLand
+    sound:
+      collection: CasingEject

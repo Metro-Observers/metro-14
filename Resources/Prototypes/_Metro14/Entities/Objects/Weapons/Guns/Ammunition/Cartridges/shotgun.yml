@@ -1,0 +1,48 @@
+- type: entity
+  id: M14BaseShellShotgun
+  name: ружейный патрон (12x70мм)
+  description: Снаряженный самодельной картечью патрон с видавшей виды картонной гильзой неказист, но наносит большой урон.
+  parent: M14BaseCartridge
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - M14ShellShotgun
+  - type: CartridgeAmmo
+    soundEject:
+      collection: ShellEject
+  - type: EmitSoundOnLand
+    sound:
+      collection: ShellEject
+  - type: Sprite
+    sprite: _Metro14/Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+
+- type: entity
+  id: M14ShellShotgun
+  parent: M14BaseShellShotgun
+  name: ружейная пуля (12x70мм)
+  components:
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunSpread
+
+- type: entity
+  id: M14ShellShotgunSlug
+  parent: M14BaseShellShotgun
+  components:
+  - type: Sprite
+    layers:
+      - state: slug
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunSlug
+  - type: SpentAmmoVisuals
+    state: "slug"

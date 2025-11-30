@@ -1,0 +1,36 @@
+- type: entity
+  abstract: true
+  parent: ClothingHeadHelmetBasic
+  id: M14ClothingHeadHelmetBasic
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+- type: entity
+  id: M14ClothingHeadHelmetHeavy
+  parent: M14ClothingHeadHelmetBasic
+  name: тяжело-бронированный шлем
+  description: Шлем, укреплённый тяжёлыми бронепластинами. Обеспечивает отличную защиту он большинства видов повреждений.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Clothing/Head/Helmets/heavy.rsi
+  - type: Clothing
+    sprite: _Metro14/Clothing/Head/Helmets/heavy.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.7
+        Piercing: 0.75
+        Heat: 0.9
+  - type: IngestionBlocker
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+  - type: ClothingSpeedModifier
+    sprintModifier: 0.95

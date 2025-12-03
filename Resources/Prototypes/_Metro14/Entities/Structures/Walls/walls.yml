@@ -1,0 +1,13 @@
+- type: entity
+  abstract: true
+  parent: BaseWall
+  id: M14BaseWall
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]

@@ -1,0 +1,12 @@
+- type: biomeTemplate
+  id: M14Underground
+  layers:
+    - !type:BiomeEntityLayer
+      threshold: -1.0
+      allowedTiles:
+        - M14Bedrock
+      entities:
+        - M14WallRock
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: M14Bedrock

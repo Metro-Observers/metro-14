@@ -1,0 +1,11 @@
+- type: lobbyBackground
+  id: DeadStalker
+  background: /Textures/_Metro14/LobbyScreens/dead-stalker.jpg
+
+- type: lobbyBackground
+  id: GuysAtCampfire
+  background: /Textures/_Metro14/LobbyScreens/guys-at-campfire.jpg
+
+- type: lobbyBackground
+  id: PashaWithTorch
+  background: /Textures/_Metro14/LobbyScreens/pasha-with-torch.jpg

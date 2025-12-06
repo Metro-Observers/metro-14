@@ -1,0 +1,9 @@
+- type: listing
+  id: TraderCombatKnife
+  name: trader-combat-knife-name
+  description: trader-combat-knife-desc
+  productEntity: CombatKnife
+  cost:
+    Telecrystal: 3
+  categories:
+  - TraderHello

@@ -1,0 +1,23 @@
+- type: entity
+  name: trader
+  parent: [BaseMobHuman, StorePresetTrader]
+  id: MobTrader
+  description: Just a guy.
+  components:
+  - type: InputMover
+  - type: MobMover
+  - type: Loadout
+    prototypes: [LimitedPassengerGear]
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+  - type: Store
+    balance:
+      M14CartridgeRifleСurrency: 0

@@ -1,0 +1,12 @@
+- type: entity
+  id: StorePresetTrader
+  abstract: true
+  components:
+  - type: Store
+    name: store-preset-name-trader
+    categories:
+    - TraderHello
+    currencyWhitelist:
+    - Telecrystal
+    balance:
+      Telecrystal: 0

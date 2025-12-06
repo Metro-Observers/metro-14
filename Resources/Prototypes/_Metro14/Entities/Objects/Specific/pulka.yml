@@ -1,0 +1,51 @@
+- type: entity
+  id: M14BaseCartridge
+  parent: BaseCartridge
+  abstract: true
+  components:
+  - type: EmitSoundOnLand
+    sound:
+      collection: CasingEject
+
+- type: entity
+  id: M14CartridgeRifleBase
+  name: патрон 5.45x39 мм
+  parent: M14BaseCartridge
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - M14CartridgeRifle
+  - type: CartridgeAmmo
+    proto: BulletRifle
+  - type: Sprite
+    sprite: _Metro14/Objects/Weapons/Guns/Ammunition/Casings/rifle_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: Currency
+    price:
+      M14CartridgeRifleСurrency: 1
+  - type: Stack
+    count: 20
+
+- type: entity
+  id: M14CartridgeRifleMakeshift
+  parent: M14CartridgeRifleBase
+  description: Патроны, произведённые после Войны в кустарных условиях, значительно уступают довоенным по всем характеристикам кроме доступности.
+
+- type: entity
+  id: M14CartridgeRifleСurrency
+  parent: M14CartridgeRifleBase
+  name: патрон-валюта (5.45x39 мм)
+  description: Качество и убойная сила этих патронов, сохранившихся ещё с довоенных времён, делает их более ценными. Патроны-деньги в основном используются как валюта.
+  components:
+  - type: Tag
+    tags:
+    - M14CartridgeRifle
+    - M14Сurrency
+  - type: CartridgeAmmo
+    proto: BulletRifleIncendiary
+

@@ -1,0 +1,5 @@
+#trader
+- type: storeCategory
+  id: TraderHello
+  name: store-category-hello
+  priority: 1

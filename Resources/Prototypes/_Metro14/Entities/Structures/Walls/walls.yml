@@ -1,0 +1,72 @@
+- type: entity
+  abstract: true
+  parent: BaseStructureWall
+  id: M14BaseWall
+  name: base wall
+  description: Keeps the air in and the mutants out.
+  components:
+  - type: Occluder
+
+- type: entity
+  parent: M14BaseWall
+  id: M14WallMetal
+  name: metal wall
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Walls/metal.rsi
+  - type: Icon
+    sprite: _Metro14/Structures/Walls/metal.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: IconSmooth
+    key: walls
+    base: metal
+
+- type: entity
+  parent: M14BaseWall
+  id: M14WallMetalRust
+  name: rust metal wall
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Walls/rustmetal.rsi
+  - type: Icon
+    sprite: _Metro14/Structures/Walls/rustmetal.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: IconSmooth
+    key: walls
+    base: rustmetal
+
+- type: entity
+  parent: M14BaseWall
+  id: M14WallMetalReinforced
+  name: reinforced metal wall
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Walls/rmetal.rsi
+  - type: Icon
+    sprite: _Metro14/Structures/Walls/rmetal.rsi
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
+  - type: IconSmooth
+    key: walls
+    base: rmetal
+
+- type: entity
+  parent: M14BaseWall
+  id: M14WallMetalReinforcedRust
+  name: rust reinforced metal wall
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Walls/rrmetal.rsi
+  - type: Icon
+    sprite: _Metro14/Structures/Walls/rrmetal.rsi
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
+  - type: IconSmooth
+    key: walls
+    base: rrmetal

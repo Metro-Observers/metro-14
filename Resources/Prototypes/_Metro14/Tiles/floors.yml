@@ -8,7 +8,7 @@
   parent: M14MixinFootstepSonorousSounds
   abstract: true
   heatCapacity: 10000
-  # isSubfloor: false
+  editorHidden: false # Custom M14 property for hide vanilla tiles
   footstepSounds:
     collection: FootstepTile
   # Указано для того, чтобы сразу было видно базовые полы без bstract: false, иначе они криво отображаются в меню тайлов

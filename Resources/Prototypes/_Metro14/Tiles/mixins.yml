@@ -1,15 +1,154 @@
+# MARK: Sounds
+# Вынесены миксины со звуками, которые могут подставляться ко всем типам полов. Здесь нет миксина "Звуки деревянного пола", потому-что деревянный пол должен наследоваться от базового деревянного пола с уже указанными звуками. В то же время, условные, металические полы могут иметь разные звуки ходьбы по ним, для этого и были созданы эти миксины.
+# Также вынесены для того, чтобы можно было добавлять barestepSounds без массового изменения самих полов
+
+# Звонкий пол, чётко слышны туфли
+# Используется у: (ванильных) бетонного, линолеума, белого стального, чёрного стального (хз почему у серого стального другой звук), в общем у большей части тайлов в игре
 - type: tile
-  id: M14Base
+  id: M14MixinFootstepSonorousSounds
   abstract: true
-  heatCapacity: 10000
   footstepSounds:
     collection: FootstepTile
 
+# Приглушённый, мягкий
+# Используется у ванильного серого стального пола, у пола шаттла и у полов без категории (лимонный, пол спортзала, мимский пол и т.д)
 - type: tile
-  id: M14MixinFourVariants
+  id: M14MixinFootstepSmoothedSounds
+  abstract: true
+  footstepSounds:
+    collection: FootstepFloor
+
+# Звонкий металл
+# Большая часть ванильных металлических полов
+- type: tile
+  id: M14MixinFootstepSonorousMetalSounds
+  abstract: true
+  footstepSounds:
+    collection: FootstepHull
+  barestepSounds:
+    collection: FootstepPlating
+
+# Металл
+# Используют: покрытие, ржавый стальной пол
+- type: tile
+  id: M14MixinFootstepMetalSounds
+  abstract: true
+  footstepSounds:
+    collection: FootstepPlating
+
+# Решётчатый металлический пол
+# Использует псвевдо-пол "мостик" (похож на карго поддон)
+- type: tile
+  id: M14MixinFootstepLatticedMetalSounds
+  abstract: true
+  footstepSounds:
+    collection: FootstepCatwalk
+
+
+# MARK: Variants
+- type: tile
+  id: M14MixinVariants2
+  abstract: true
+  variants: 2
+  placementVariants:
+  - 1.0
+  - 1.0
+
+- type: tile
+  id: M14MixinVariants3
+  abstract: true
+  variants: 3
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+
+- type: tile
+  id: M14MixinVariants4
   abstract: true
   variants: 4
   placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+
+- type: tile
+  id: M14MixinVariants5
+  abstract: true
+  variants: 5
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+
+- type: tile
+  id: M14MixinVariants6
+  abstract: true
+  variants: 6
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+
+- type: tile
+  id: M14MixinVariants7
+  abstract: true
+  variants: 7
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+
+- type: tile
+  id: M14MixinVariants8
+  abstract: true
+  variants: 8
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+
+- type: tile
+  id: M14MixinVariants9
+  abstract: true
+  variants: 9
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+
+- type: tile
+  id: M14MixinVariants10
+  abstract: true
+  variants: 10
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
   - 1.0
   - 1.0
   - 1.0

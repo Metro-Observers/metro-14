@@ -1,45 +1,35 @@
 - type: tile
+  id: M14Bedrock
+  parent: [M14Base, M14MixinVariants7]
+  name: каменная порода
+  sprite: /Textures/Tiles/cave.png
+  indestructible: true
+  edgeSpritePriority: -10
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+
+- type: tile
   id: M14BaseGround
   parent: M14Base
   baseTurf: M14Bedrock
   abstract: true
   isSubfloor: true
-  indestructible: true
-
-- type: tile
-  id: M14Bedrock
-  name: каменная порода
-  parent: M14Base
-  sprite: /Textures/Tiles/cave.png
-  variants: 7
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
   footstepSounds:
     collection: FootstepAsteroid
-  indestructible: true
-  isSubfloor: true
-  heatCapacity: 10000
 
 - type: tile
   id: M14Ground
-  parent: M14BaseGround
+  parent: [M14BaseGround, M14MixinVariants8]
   name: грунт
-  sprite: /Textures/Tiles/cavedrought.png
-  variants: 8
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  footstepSounds:
-    collection: FootstepAsteroid
+  sprite: /Textures/_Metro14/Tiles/Ground/tile.png
+  edgeSpritePriority: -5
+  edgeSprites:
+    SouthEast: /Textures/_Metro14/Tiles/Ground/single_edge.png
+    NorthEast: /Textures/_Metro14/Tiles/Ground/single_edge.png
+    NorthWest: /Textures/_Metro14/Tiles/Ground/single_edge.png
+    SouthWest: /Textures/_Metro14/Tiles/Ground/single_edge.png
+    South: /Textures/_Metro14/Tiles/Ground/double_edge.png
+    East: /Textures/_Metro14/Tiles/Ground/double_edge.png
+    North: /Textures/_Metro14/Tiles/Ground/double_edge.png
+    West: /Textures/_Metro14/Tiles/Ground/double_edge.png

@@ -1,20 +1,217 @@
-# Базовый пол для других полов: деревянного, железного и т.д
+# MARK: Bases
+# Базовый пол для всех полов в игре
+# Нужен ТОЛЬКО потому, что без указания
+# footstepSounds - звуков ходьбы по тайлу НЕ БУДЕТ
+- type: tile
+  id: M14Base
+  category: M14
+  parent: M14MixinFootstepSonorousSounds
+  abstract: true
+  heatCapacity: 10000
+  # isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  # Указано для того, чтобы сразу было видно базовые полы без bstract: false, иначе они криво отображаются в меню тайлов
+  sprite: /Textures/deprecated.rsi/deprecated.png
+  name: "!НЕПРАВИЛЬНЫЙ ПОЛ!"
+
+# Базовый для всех полов: деревянного, железного и т.д
 - type: tile
   id: M14BaseFloor
   parent: M14Base
   abstract: true
   baseTurf: M14Concrete
 
+# Базовый бетонный пол
 - type: tile
-  id: M14BaseConcreteFloot
+  id: M14BaseConcreteFloor
   parent: M14BaseFloor
   abstract: true
-  name: бетонный пол
+  # В отличии от обычного пола, базовый пол для неё - каменная
+  # порода, а также провода не скрыты
   baseTurf: M14Bedrock
   isSubfloor: true
 
-# Аналог "покрытия"
+# Базовый деревянный пол
+- type: tile
+  id: M14BaseWoodFloor
+  parent: M14BaseFloor
+  abstract: true
+  name: деревянный пол
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+
+# Базовый ковёр
+- type: tile
+  id: M14BaseCarpetFloor
+  parent: M14BaseFloor
+  abstract: true
+  footstepSounds:
+    collection: FootstepCarpet
+  barestepSounds:
+    collection: BarestepCarpet
+  friction: 1.25
+
+- type: tile
+  id: M14BaseMetalFloor
+  parent: [M14MixinFootstepMetalSounds, M14BaseFloor]
+  abstract: true
+  name: стальной пол
+
+# MARK: Common
+- type: tile
+  id: M14Lino
+  parent: M14BaseFloor
+  name: линолеумный пол
+  sprite: /Textures/Tiles/lino.png
+
+# Carpets
+- type: tile
+  id: M14CarpetBrown
+  parent: M14BaseCarpetFloor
+  name: ковролин
+  sprite: /Textures/_Metro14/Tiles/Carpets/brown.png
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_Metro14/Tiles/Carpets/brown_single_edge.png
+    NorthEast: /Textures/_Metro14/Tiles/Carpets/brown_single_edge.png
+    NorthWest: /Textures/_Metro14/Tiles/Carpets/brown_single_edge.png
+    SouthWest: /Textures/_Metro14/Tiles/Carpets/brown_single_edge.png
+    South: /Textures/_Metro14/Tiles/Carpets/brown_double_edge.png
+    East: /Textures/_Metro14/Tiles/Carpets/brown_double_edge.png
+    North: /Textures/_Metro14/Tiles/Carpets/brown_double_edge.png
+    West: /Textures/_Metro14/Tiles/Carpets/brown_double_edge.png
+
+- type: tile
+  id: M14CarpetOffice
+  parent: M14BaseCarpetFloor
+  name: чистый офисный ковролин
+  sprite: /Textures/Tiles/carpetoffice.png
+
+# MARK: Concrete
+# Аналог "покрытия", также помимо него в качестве покрытия используются все остальные бетонные полы, но этот подходит и для рукотворного создания (игроки заливали; подходит по спрайту)
 - type: tile
   id: M14Concrete
-  parent: [M14BaseConcreteFloot, M14MixinFourVariants]
+  parent: [M14BaseConcreteFloor, M14MixinVariants4]
+  name: бетонный пол
   sprite: /Textures/Tiles/Planet/Concrete/oldconcrete_smooth.png
+
+- type: tile
+  id: M14ConcreteTiles
+  parent: [M14BaseConcreteFloor, M14MixinVariants4]
+  name: бетонные плиты
+  sprite: /Textures/Tiles/Planet/Concrete/oldconcrete.png
+
+- type: tile
+  id: M14ConcreteMono
+  parent: [M14BaseConcreteFloor, M14MixinVariants4]
+  name: бетонная плита
+  sprite: /Textures/Tiles/Planet/Concrete/oldconcrete_mono.png
+
+# Gray
+- type: tile
+  id: M14ConcreteGray
+  parent: [M14BaseConcreteFloor, M14MixinVariants4]
+  name: серый бетонный пол
+  sprite: /Textures/Tiles/Planet/Concrete/grayconcrete_smooth.png
+
+- type: tile
+  id: M14ConcreteGrayTiles
+  parent: [M14BaseConcreteFloor, M14MixinVariants4]
+  name: серые бетонные плиты
+  sprite: /Textures/Tiles/Planet/Concrete/grayconcrete.png
+
+- type: tile
+  id: M14ConcreteGrayMono
+  parent: [M14BaseConcreteFloor, M14MixinVariants4]
+  name: серая бетонная плита
+  sprite: /Textures/Tiles/Planet/Concrete/grayconcrete_mono.png
+
+# White
+- type: tile
+  id: M14ConcreteWhite
+  parent: [M14BaseConcreteFloor, M14MixinVariants4]
+  name: белый бетонный пол
+  sprite: /Textures/Tiles/Planet/Concrete/concrete_smooth.png
+
+- type: tile
+  id: M14ConcreteWhiteTiles
+  parent: [M14BaseConcreteFloor, M14MixinVariants4]
+  name: белые бетонные плиты
+  sprite: /Textures/Tiles/Planet/Concrete/concrete.png
+
+- type: tile
+  id: M14ConcreteWhiteMono
+  parent: [M14BaseConcreteFloor, M14MixinVariants4]
+  name: белая бетонная плита
+  sprite: /Textures/Tiles/Planet/Concrete/concrete_mono.png
+
+# MARK: Metall
+- type: tile
+  id: M14SteelDirty
+  parent:
+  - M14MixinFootstepMetalSounds
+  - M14BaseMetalFloor
+  - M14MixinVariants4
+  name: грязный стальной пол
+  sprite: /Textures/Tiles/steel_dirty.png
+
+- type: tile
+  id: M14TechMaintSteel
+  parent:
+  - M14MixinFootstepSonorousMetalSounds
+  - M14BaseMetalFloor
+  name: технический пол
+  sprite: /Textures/Tiles/steel_maint.png
+
+- type: tile
+  id: M14TechMaint
+  parent:
+  - M14MixinFootstepSonorousMetalSounds
+  - M14BaseMetalFloor
+  name: технический пол
+  sprite: /Textures/Tiles/tech_maint.png
+
+- type: tile
+  id: M14TechMaintDark
+  parent:
+  - M14MixinFootstepSonorousMetalSounds
+  - M14BaseMetalFloor
+  name: тёмный технический пол
+  sprite: /Textures/Tiles/tech_maint_dark.png
+
+- type: tile
+  id: M14TechMaintYellow
+  parent:
+  - M14MixinFootstepSonorousMetalSounds
+  - M14BaseMetalFloor
+  - M14MixinVariants4
+  name: технический пол
+  sprite: /Textures/Tiles/grating_maint.png
+
+# Other metal
+- type: tile
+  id: M14MetalDiamond
+  parent:
+  - M14MixinFootstepSonorousMetalSounds
+  - M14BaseMetalFloor
+  name: пол из алмазных плит
+  sprite: /Textures/Tiles/metaldiamond.png
+
+- type: tile
+  id: M14MetalMono
+  parent:
+  - M14MixinFootstepSonorousMetalSounds
+  - M14BaseMetalFloor
+  name: стальной моно-пол
+  sprite: /Textures/Tiles/mono.png
+
+- type: tile
+  id: M14MetalReinforced
+  parent:
+  - M14MixinFootstepSonorousMetalSounds
+  - M14BaseMetalFloor
+  name: укреплённый пол
+  sprite: /Textures/Tiles/super_reinforced.png

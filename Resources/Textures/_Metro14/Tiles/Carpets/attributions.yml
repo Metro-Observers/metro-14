@@ -1,0 +1,9 @@
+- files: ["brown.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from CMSS13"
+  source: "https://github.com/cmss13-devs/cmss13/tree/07faaef76c531d97c91626d071f912290d2c29cb"
+
+- files: ["brown_double_edge.png", "brown_single_edge.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Maked by SpyDev14 for Metro 14"
+  source: "https://github.com/Metro-Observers/metro-14"

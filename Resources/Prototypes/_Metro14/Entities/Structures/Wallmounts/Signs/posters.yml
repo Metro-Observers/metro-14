@@ -1,6 +1,6 @@
 - type: entity
   parent: BaseSign
-  id: M14PosterBase
+  id: BaseM14Poster
   abstract: true
   components:
   - type: WallMount
@@ -26,9 +26,18 @@
             min: 1
             max: 1
         offset: 0
+  - type: Flammable
+    fireSpread: true
+    alwaysCombustible: true
+    damage:
+      types:
+        Heat: 1
+  - type: FireVisuals
+    sprite: Effects/fire.rsi
+    normalState: fire
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterBazar
   name: "No swag, no bazaar"
   description: It looks like this poster wants to shake a lot of bullets out of you.
@@ -37,7 +46,7 @@
     state: bazar
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterClearSky
   name: "Clear Sky"
   description: An agitation poster calling for the removal of dust clouds and nuclear dust from the sky. It is unclear how they plan to do this...
@@ -46,7 +55,7 @@
     state: clearsky
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterDirtySky
   name: "Dirty Sky"
   description: The opposite of the "World Clean Sky" poster. This poster describes how the world has come to an end and there is no point in cleaning it.
@@ -55,7 +64,7 @@
     state: dirtysky
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterFreebies
   name: "Freebies"
   description: Freebie! Do people still like freebies?
@@ -64,7 +73,7 @@
     state: freebies
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterCoolMan
   name: "cool man"
   description: He's a tough guy. We'll all look up to him sooner or later.
@@ -73,7 +82,7 @@
     state: gay
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterNiceMan
   name: "Pumped-up man"
   description: Well, it's clear. The guy works out a lot.
@@ -82,7 +91,7 @@
     state: gigachad
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterGun
   name: "Hide to gun"
   description: The poster urges people to hide their weapons and not show them off. These posters are usually placed in train stations.
@@ -91,7 +100,7 @@
     state: gun
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterIcon
   name: "Icon"
   description: 
@@ -100,7 +109,7 @@
     state: icon
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterIcon1
   name: "Icon"
   description: 
@@ -109,7 +118,7 @@
     state: icon2
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterLenin
   name: "Lenin"
   description: The poster shows... Lenin!
@@ -118,7 +127,7 @@
     state: lenin
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterMap
   name: "Map"
   description: A map of the surface that the stalkers created based on their trips to the surface.
@@ -127,7 +136,7 @@
     state: map
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterMed
   name: "Medical poster"
   description: Medical poster. This shows a human hand.
@@ -136,7 +145,7 @@
     state: med1
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterMed1
   name: "Medical poster"
   description: A medical poster. Here it is. Some kind of organ.
@@ -145,7 +154,7 @@
     state: med2
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterMed2
   name: "Medical poster"
   description: A medical poster. Here is a human heart in all its glory!
@@ -154,7 +163,7 @@
     state: med3
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterMed3
   name: "Medical poster"
   description: Medical poster. It shows human bones and more.
@@ -163,7 +172,7 @@
     state: med4
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterMed4
   name: "Medical poster"
   description: A medical poster. Here is the brain in all its glory!
@@ -172,7 +181,7 @@
     state: med5
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterMed5
   name: "Wash hands. dont hurt"
   description: The poster calls for washing your hands more often.
@@ -181,7 +190,7 @@
     state: med6
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterNotSay
   name: "Not say"
   description: The poster told you to shut up. If you don't shut up, he'll endure it.
@@ -190,7 +199,7 @@
     state: notsay
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterRadiation
   name: "Radiation"
   description: A sign urging you to stay away from this area due to the high levels of radiation.
@@ -199,7 +208,7 @@
     state: radiation
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterRadiation1
   name: "Radiation"
   description: A sign urging you to stay away from this area due to the high levels of radiation.
@@ -208,7 +217,7 @@
     state: radiation2
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterRecruiting
   name: "Recruiting"
   description: The poster is about the recruitment of the Red Line Army. They promise big payouts and an honorable pension.
@@ -217,7 +226,7 @@
     state: recruiting
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterRedline
   name: "Redline"
   description: It's like a flag with the Red Line's symbolism on it.
@@ -226,7 +235,7 @@
     state: redline1
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterRedline1
   name: "Redline"
   description: Poster with the Red Line symbolism.
@@ -235,7 +244,7 @@
     state: redline2
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterRedline2
   name: "Redline"
   description: Poster with the Red Line symbolism.
@@ -244,7 +253,7 @@
     state: redline3
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterHydra
   name: "Hydra"
   description: It's like a flag with the symbolism of the Fourth Hydra.
@@ -253,7 +262,7 @@
     state: reich
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterRun
   name: "Run"
   description: A blood-written message... RUN!!!!!
@@ -262,7 +271,7 @@
     state: run
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterSearch
   name: "Search"
   description: Attention! A man known by the pseudonym "Bourbon" is being sought. If you know his whereabouts, please inform the station manager immediately!
@@ -271,7 +280,7 @@
     state: search
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterSearchGun
   name: "Search gun"
   description: A poster indicating the loss of a gun. There's even an address left.
@@ -280,7 +289,7 @@
     state: searchgun
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterStalin
   name: "Stalin"
   description: The poster of Stalin
@@ -289,7 +298,7 @@
     state: stalin
 
 - type: entity
-  parent: M14PosterBase
+  parent: BaseM14Poster
   id: M14PosterStalker
   name: "Take care of yourself, stalker"
   description: A poster urging you to take care of yourself. Good luck, Stalker!

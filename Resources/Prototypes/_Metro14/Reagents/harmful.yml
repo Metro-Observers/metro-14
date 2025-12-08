@@ -1,0 +1,18 @@
+- type: reagent
+  id: M14RadiationWaste
+  name: reagent-name-radiation-waste
+  group: Toxins
+  desc: reagent-desc-radiation-waste
+  flavor: bitter
+  color: "#009900"
+  physicalDesc: reagent-physical-desc-opaque
+  contrabandSeverity: Minor
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Radiation: 3
+            Poison: 2
+            Cellular: 1

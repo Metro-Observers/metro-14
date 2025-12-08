@@ -1,13 +1,72 @@
 - type: entity
   abstract: true
-  parent: BaseWall
+  parent: BaseStructureWall
   id: M14BaseWall
+  name: базовая стена
+  description: Удерживает надежду внутри, а мутантов снаружи.
   components:
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 500
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
+  - type: Occluder
+
+- type: entity
+  parent: M14BaseWall
+  id: M14WallMetal
+  name: стальная стена
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Walls/metal.rsi
+  - type: Icon
+    sprite: _Metro14/Structures/Walls/metal.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: IconSmooth
+    key: walls
+    base: metal
+
+- type: entity
+  parent: M14BaseWall
+  id: M14WallMetalRust
+  name: ржавая стальная стена
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Walls/rustmetal.rsi
+  - type: Icon
+    sprite: _Metro14/Structures/Walls/rustmetal.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: IconSmooth
+    key: walls
+    base: rustmetal
+
+- type: entity
+  parent: M14BaseWall
+  id: M14WallMetalReinforced
+  name: укреплённая стальная стена
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Walls/rmetal.rsi
+  - type: Icon
+    sprite: _Metro14/Structures/Walls/rmetal.rsi
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
+  - type: IconSmooth
+    key: walls
+    base: rmetal
+
+- type: entity
+  parent: M14BaseWall
+  id: M14WallMetalReinforcedRust
+  name: ржавая укреплённая стальная стена
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Walls/rrmetal.rsi
+  - type: Icon
+    sprite: _Metro14/Structures/Walls/rrmetal.rsi
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
+  - type: IconSmooth
+    key: walls
+    base: rrmetal

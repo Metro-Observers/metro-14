@@ -1,4 +1,6 @@
 # MARK: Bases
+# TODO: Добавить кастомные звуки с Nuclear 14
+
 # Базовый пол для всех полов в игре
 # Нужен ТОЛЬКО потому, что без указания
 # footstepSounds - звуков ходьбы по тайлу НЕ БУДЕТ
@@ -32,6 +34,13 @@
   baseTurf: M14Bedrock
   isSubfloor: true
 
+# Базовая керамика
+# Пока ничем не отличается, просто объединяет категорию
+- type: tile
+  id: M14BaseCeramic
+  base: M14BaseFloor
+  abstract: true
+
 # Базовый деревянный пол
 - type: tile
   id: M14BaseWoodFloor
@@ -60,12 +69,36 @@
   abstract: true
   name: стальной пол
 
-# MARK: Common
+# MARK: Other
 - type: tile
   id: M14Lino
   parent: M14BaseFloor
   name: линолеумный пол
   sprite: /Textures/Tiles/lino.png
+
+- type: tile
+  id: M14Brick
+  parent: M14BaseFloor
+  name: кирпичный пол
+  sprite: /Textures/_Metro14/Tiles/brick.png
+
+- type: tile
+  id: M14BrickBroken
+  parent: [M14BaseFloor, M14MixinVariants8]
+  name: кирпичный разбитый пол
+  sprite: /Textures/_Metro14/Tiles/brick_broken.png
+
+- type: tile
+  id: M14SupermarketBlue
+  parent: M14BaseFloor
+  name: пол супермаркета
+  sprite: /Textures/_Metro14/Tiles/supermarket_floor_blue.png
+
+- type: tile
+  id: M14SupermarketBrown
+  parent: M14BaseFloor
+  name: пол супермаркета
+  sprite: /Textures/_Metro14/Tiles/supermarket_floor_brown.png
 
 # Carpets
 - type: tile
@@ -148,6 +181,98 @@
   name: белая бетонная плита
   sprite: /Textures/Tiles/Planet/Concrete/concrete_mono.png
 
+# Industrial
+- type: tile
+  id: M14ConcreteIndustrial
+  parent: [M14BaseConcreteFloor, M14MixinVariants3]
+  name: индустриальный бетонный пол
+  sprite: /Textures/_Metro14/Tiles/Concrete/Industrial/base.png
+
+- type: tile
+  id: M14ConcreteIndustrialBrick
+  parent: [M14BaseConcreteFloor, M14MixinVariants9]
+  name: индустриальный бетонный пол
+  sprite: /Textures/_Metro14/Tiles/Concrete/Industrial/brick.png
+
+- type: tile
+  id: M14ConcreteIndustrialMono
+  parent: M14BaseConcreteFloor
+  name: индустриальная бетонная плита
+  sprite: /Textures/_Metro14/Tiles/Concrete/Industrial/mono.png
+
+- type: tile
+  id: M14ConcreteIndustrialMonoAlt
+  parent: M14BaseConcreteFloor
+  name: индустриальная бетонная плита
+  sprite: /Textures/_Metro14/Tiles/Concrete/Industrial/mono_alt.png
+
+# MARK: Ceramic
+- type: tile
+  id: M14CeramicRed
+  parent: M14BaseCeramic
+  name: красный керамический пол
+  sprite: /Textures/_Metro14/Tiles/Ceramic/red.png
+
+- type: tile
+  id: M14CeramicRedBroken
+  parent: [M14BaseCeramic, M14MixinVariants7]
+  name: красный разбитый керамический пол
+  sprite: /Textures/_Metro14/Tiles/Ceramic/red_broken.png
+
+- type: tile
+  id: M14CeramicCafe
+  parent: [M14BaseCeramic, M14MixinVariants8]
+  name: пол кафе
+  sprite: /Textures/_Metro14/Tiles/Ceramic/cafe.png
+
+- type: tile
+  id: M14CeramicCheck
+  parent: [M14BaseCeramic, M14MixinVariants8]
+  name: черно-белый плиточный пол
+  sprite: /Textures/_Metro14/Tiles/Ceramic/check.png
+
+- type: tile
+  id: M14CeramicOld
+  parent: M14BaseCeramic
+  name: старый пол
+  sprite: /Textures/_Metro14/Tiles/Ceramic/old.png
+
+- type: tile
+  id: M14CeramicOldTiles
+  parent: M14BaseCeramic
+  name: старый плиточный пол
+  sprite: /Textures/_Metro14/Tiles/Ceramic/old_tiles.png
+
+- type: tile
+  id: M14CeramicOldTilesBlue
+  parent: M14BaseCeramic
+  name: старый голубой плиточный пол
+  sprite: /Textures/_Metro14/Tiles/Ceramic/old_tiles_with_blue.png
+
+- type: tile
+  id: M14CeramicOldTilesGreen
+  parent: M14BaseCeramic
+  name: старый зелёный плиточный пол
+  sprite: /Textures/_Metro14/Tiles/Ceramic/old_tiles_with_green.png
+
+- type: tile
+  id: M14CeramicOldTilesBrown
+  parent: M14BaseCeramic
+  name: старый коричневый плиточный пол
+  sprite: /Textures/_Metro14/Tiles/Ceramic/old_tiles_with_brown.png
+
+- type: tile
+  id: M14CeramicOldWhite
+  parent: M14BaseCeramic
+  name: старый белый пол
+  sprite: /Textures/_Metro14/Tiles/Ceramic/old_white_tiles.png
+
+- type: tile
+  id: M14CeramicOldWhiteTiles
+  parent: M14BaseCeramic
+  name: старый белый плиточный пол
+  sprite: /Textures/_Metro14/Tiles/Ceramic/old_white_tiles.png
+
 # MARK: Metall
 - type: tile
   id: M14SteelDirty
@@ -191,14 +316,45 @@
   name: технический пол
   sprite: /Textures/Tiles/grating_maint.png
 
-# Other metal
 - type: tile
   id: M14MetalDiamond
   parent:
   - M14MixinFootstepSonorousMetalSounds
   - M14BaseMetalFloor
-  name: пол из алмазных плит
+  name: рифлёный железный пол
   sprite: /Textures/Tiles/metaldiamond.png
+
+- type: tile
+  id: M14MetalDiamondAlt
+  parent:
+  - M14MixinFootstepSonorousMetalSounds
+  - M14BaseMetalFloor
+  - M14MixinVariants8
+  name: рифлёный железный пол
+  sprite: /Textures/_Metro14/Tiles/Steel/diamond.png
+
+- type: tile
+  id: M14MetalDiamondMarked
+  parent:
+  - M14MixinFootstepSonorousMetalSounds
+  - M14BaseMetalFloor
+  name: рифлёный помеченный железный пол
+  sprite: /Textures/_Metro14/Tiles/Steel/diamond_marked.png
+
+- type: tile
+  id: M14MetalCorrugated # Дословно рифлёный
+  parent:
+  - M14MixinFootstepSonorousMetalSounds
+  - M14BaseMetalFloor
+  - M14MixinVariants4
+  name: рифлёный железный пол
+  sprite: /Textures/_Metro14/Tiles/Steel/corrugated.png
+
+- type: tile
+  id: M14MetalTiles
+  parent: [M14BaseMetalFloor, M14MixinVariants8]
+  name: железный пол
+  sprite: /Textures/_Metro14/Tiles/Steel/tiles.png
 
 - type: tile
   id: M14MetalMono
@@ -215,3 +371,87 @@
   - M14BaseMetalFloor
   name: укреплённый пол
   sprite: /Textures/Tiles/super_reinforced.png
+
+- type: tile
+  id: M14MetalTunnel
+  parent: M14BaseMetalFloor
+  name: пол шахты лифта
+  sprite: /Textures/_Metro14/Tiles/tunnel.png
+
+- type: tile
+  id: M14MetalTunnelRusty
+  parent: M14BaseMetalFloor
+  name: пол шахты лифта
+  sprite: /Textures/_Metro14/Tiles/tunnel_rusty.png
+
+- type: tile
+  id: M14MetalSmooth
+  parent: M14BaseMetalFloor
+  name: гладкий пол
+  sprite: /Textures/_Metro14/Tiles/smooth.png
+
+- type: tile
+  id: M14MetalSmoothMono
+  parent: M14BaseMetalFloor
+  name: гладкий пол
+  sprite: /Textures/_Metro14/Tiles/smooth_mono.png
+
+- type: tile
+  id: M14MetalPlate
+  parent:
+  - M14MixinFootstepSonorousMetalSounds
+  - M14BaseMetalFloor
+  name: стальная пластина
+  sprite: /Textures/_Metro14/Tiles/Steel/plate.png
+
+# MARK: Wood
+# Common
+- type: tile
+  id: M14Wood
+  parent: [M14BaseWoodFloor, M14MixinVariants4]
+  sprite: /Textures/_Metro14/Tiles/Wood/common.png
+
+- type: tile
+  id: M14WoodBroken
+  parent: [M14BaseWoodFloor, M14MixinVariants4]
+  name: деревянный повреждённый пол
+  sprite: /Textures/_Metro14/Tiles/Wood/common_damaged.png
+
+# Fancy
+- type: tile
+  id: M14WoodFancy
+  parent: [M14BaseWoodFloor, M14MixinVariants4]
+  name: деревянный пол
+  sprite: /Textures/_Metro14/Tiles/Wood/fancy.png
+
+- type: tile
+  id: M14WoodFancyBroken
+  parent: [M14BaseWoodFloor, M14MixinVariants4]
+  name: деревянный повреждённый пол
+  sprite: /Textures/_Metro14/Tiles/Wood/fancy_damaged.png
+
+# Mosaic
+- type: tile
+  id: M14WoodMosaic
+  parent: [M14BaseWoodFloor, M14MixinVariants4]
+  name: деревянный пол
+  sprite: /Textures/_Metro14/Tiles/Wood/mosaic.png
+
+- type: tile
+  id: M14WoodMosaicBroken
+  parent: [M14BaseWoodFloor, M14MixinVariants4]
+  name: деревянный повреждённый пол
+  sprite: /Textures/_Metro14/Tiles/Wood/mosaic_damaged.png
+
+# Wide
+- type: tile
+  id: M14WoodWide
+  parent: [M14BaseWoodFloor, M14MixinVariants4]
+  name: деревянный пол
+  sprite: /Textures/_Metro14/Tiles/Wood/wide.png
+
+- type: tile
+  id: M14WoodWideBroken
+  parent: [M14BaseWoodFloor, M14MixinVariants4]
+  name: деревянный повреждённый пол
+  sprite: /Textures/_Metro14/Tiles/Wood/wide_damaged.png

@@ -22,14 +22,14 @@
   id: M14Ground
   parent: [M14BaseGround, M14MixinVariants8]
   name: грунт
-  sprite: /Textures/_Metro14/Tiles/Ground/tile.png
+  sprite: /Textures/_Metro14/Tiles/Planet/Ground/tile.png
   edgeSpritePriority: -5
   edgeSprites:
-    SouthEast: /Textures/_Metro14/Tiles/Ground/single_edge.png
-    NorthEast: /Textures/_Metro14/Tiles/Ground/single_edge.png
-    NorthWest: /Textures/_Metro14/Tiles/Ground/single_edge.png
-    SouthWest: /Textures/_Metro14/Tiles/Ground/single_edge.png
-    South: /Textures/_Metro14/Tiles/Ground/double_edge.png
-    East: /Textures/_Metro14/Tiles/Ground/double_edge.png
-    North: /Textures/_Metro14/Tiles/Ground/double_edge.png
-    West: /Textures/_Metro14/Tiles/Ground/double_edge.png
+    SouthEast: /Textures/_Metro14/Tiles/Planet/Ground/single_edge.png
+    NorthEast: /Textures/_Metro14/Tiles/Planet/Ground/single_edge.png
+    NorthWest: /Textures/_Metro14/Tiles/Planet/Ground/single_edge.png
+    SouthWest: /Textures/_Metro14/Tiles/Planet/Ground/single_edge.png
+    South: /Textures/_Metro14/Tiles/Planet/Ground/double_edge.png
+    East: /Textures/_Metro14/Tiles/Planet/Ground/double_edge.png
+    North: /Textures/_Metro14/Tiles/Planet/Ground/double_edge.png
+    West: /Textures/_Metro14/Tiles/Planet/Ground/double_edge.png

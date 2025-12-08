@@ -1,5 +1,5 @@
-defaultWindowTitle: Space Station 14 - Corvax Station [RU]
-windowIconSet: /Textures/Logo/icon-ru # Corvax-Theme
-splashLogo: /Textures/Logo/logo-ru.png # Corvax-Theme
+defaultWindowTitle: Metro 14
+windowIconSet: /Textures/_Metro14/Logo/icon # Metro-Theme
+splashLogo: /Textures/_Metro14/Logo/logo.png # Metro-Theme
 
 # PJB PLEASE

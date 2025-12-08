@@ -27,3 +27,11 @@
       state: rock_wall_north
     - map: [ "enum.EdgeLayer.West" ]
       state: rock_wall_west
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]

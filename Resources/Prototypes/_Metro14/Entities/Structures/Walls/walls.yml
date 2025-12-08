@@ -1,14 +1,14 @@
 - type: entity
   abstract: true
   parent: BaseStructureWall
-  id: M14BaseWall
+  id: M14WallBase
   name: базовая стена
   description: Удерживает надежду внутри, а мутантов снаружи.
   components:
   - type: Occluder
 
 - type: entity
-  parent: M14BaseWall
+  parent: M14WallBase
   id: M14WallMetal
   name: стальная стена
   components:
@@ -24,7 +24,7 @@
     base: metal
 
 - type: entity
-  parent: M14BaseWall
+  parent: M14WallBase
   id: M14WallMetalRust
   name: ржавая стальная стена
   components:
@@ -40,7 +40,7 @@
     base: rustmetal
 
 - type: entity
-  parent: M14BaseWall
+  parent: M14WallBase
   id: M14WallMetalReinforced
   name: укреплённая стальная стена
   components:
@@ -56,7 +56,7 @@
     base: rmetal
 
 - type: entity
-  parent: M14BaseWall
+  parent: M14WallBase
   id: M14WallMetalReinforcedRust
   name: ржавая укреплённая стальная стена
   components:
@@ -70,3 +70,35 @@
   - type: IconSmooth
     key: walls
     base: rrmetal
+
+- type: entity
+  parent: M14WallBase
+  id: M14WallConcrete
+  name: бетонная стена
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Walls/concrete.rsi
+  - type: Icon
+    sprite: _Metro14/Structures/Walls/concrete.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: IconSmooth
+    key: walls
+    base: concrete
+
+- type: entity
+  parent: M14WallBase
+  id: M14WallWood
+  name: деревянная стена
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Walls/wood.rsi
+  - type: Icon
+    sprite: _Metro14/Structures/Walls/wood.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: IconSmooth
+    key: walls
+    base: wood

@@ -1,6 +1,6 @@
 - type: entity
   id: M14WallRock
-  parent: M14BaseWall
+  parent: M14WallBase
   name: скала
   components:
   - type: Transform

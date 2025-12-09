@@ -10,10 +10,10 @@
   parent: M14MixinFootstepSonorousSounds
   abstract: true
   heatCapacity: 10000
-  editorHidden: false # Custom M14 property for hide vanilla tiles
+  editorHidden: false # Кастомное M14 свойство для скрытия ванильных тайлов
   footstepSounds:
     collection: FootstepTile
-  # Указано для того, чтобы сразу было видно базовые полы без bstract: false, иначе они криво отображаются в меню тайлов
+  # Указано для того, чтобы сразу было видно базовые полы без abstract: false, иначе они криво отображаются в меню тайлов
   sprite: /Textures/deprecated.rsi/deprecated.png
   name: "!НЕПРАВИЛЬНЫЙ ПОЛ!"
 
@@ -63,9 +63,12 @@
     collection: BarestepCarpet
   friction: 1.25
 
+# Металл
 - type: tile
   id: M14BaseMetalFloor
-  parent: [M14MixinFootstepMetalSounds, M14BaseFloor]
+  parent:
+  - M14MixinFootstepSonorousMetalSounds
+  - M14BaseFloor
   abstract: true
   name: стальной пол
 
@@ -285,122 +288,108 @@
 
 - type: tile
   id: M14TechMaintSteel
-  parent:
-  - M14MixinFootstepSonorousMetalSounds
-  - M14BaseMetalFloor
+  parent: M14BaseMetalFloor
   name: технический пол
   sprite: /Textures/Tiles/steel_maint.png
 
 - type: tile
   id: M14TechMaint
-  parent:
-  - M14MixinFootstepSonorousMetalSounds
-  - M14BaseMetalFloor
+  parent: M14BaseMetalFloor
   name: технический пол
   sprite: /Textures/Tiles/tech_maint.png
 
 - type: tile
   id: M14TechMaintDark
-  parent:
-  - M14MixinFootstepSonorousMetalSounds
-  - M14BaseMetalFloor
+  parent: M14BaseMetalFloor
   name: тёмный технический пол
   sprite: /Textures/Tiles/tech_maint_dark.png
 
 - type: tile
   id: M14TechMaintYellow
-  parent:
-  - M14MixinFootstepSonorousMetalSounds
-  - M14BaseMetalFloor
-  - M14MixinVariants4
+  parent: [M14BaseMetalFloor, M14MixinVariants4]
   name: технический пол
   sprite: /Textures/Tiles/grating_maint.png
 
 - type: tile
   id: M14MetalDiamond
-  parent:
-  - M14MixinFootstepSonorousMetalSounds
-  - M14BaseMetalFloor
-  name: рифлёный железный пол
+  parent: M14BaseMetalFloor
+  name: рифлёный стальной пол
   sprite: /Textures/Tiles/metaldiamond.png
 
 - type: tile
   id: M14MetalDiamondAlt
-  parent:
-  - M14MixinFootstepSonorousMetalSounds
-  - M14BaseMetalFloor
-  - M14MixinVariants8
-  name: рифлёный железный пол
+  parent: [M14BaseMetalFloor, M14MixinVariants8]
+  name: рифлёный стальной пол
   sprite: /Textures/_Metro14/Tiles/Steel/diamond.png
 
 - type: tile
   id: M14MetalDiamondMarked
-  parent:
-  - M14MixinFootstepSonorousMetalSounds
-  - M14BaseMetalFloor
-  name: рифлёный помеченный железный пол
+  parent: M14BaseMetalFloor
+  name: рифлёный помеченный стальной пол
   sprite: /Textures/_Metro14/Tiles/Steel/diamond_marked.png
 
 - type: tile
   id: M14MetalCorrugated # Дословно рифлёный
-  parent:
-  - M14MixinFootstepSonorousMetalSounds
-  - M14BaseMetalFloor
-  - M14MixinVariants4
-  name: рифлёный железный пол
+  parent: [M14BaseMetalFloor, M14MixinVariants4]
+  name: рифлёный стальной пол
   sprite: /Textures/_Metro14/Tiles/Steel/corrugated.png
 
 - type: tile
   id: M14MetalTiles
-  parent: [M14BaseMetalFloor, M14MixinVariants8]
-  name: железный пол
+  parent:
+  - M14MixinFootstepMetalSounds
+  - M14BaseMetalFloor
+  - M14MixinVariants8
+  name: стальной пол
   sprite: /Textures/_Metro14/Tiles/Steel/tiles.png
 
 - type: tile
   id: M14MetalMono
-  parent:
-  - M14MixinFootstepSonorousMetalSounds
-  - M14BaseMetalFloor
+  parent: M14BaseMetalFloor
   name: стальной моно-пол
   sprite: /Textures/Tiles/mono.png
 
 - type: tile
   id: M14MetalReinforced
-  parent:
-  - M14MixinFootstepSonorousMetalSounds
-  - M14BaseMetalFloor
+  parent: M14BaseMetalFloor
   name: укреплённый пол
   sprite: /Textures/Tiles/super_reinforced.png
 
 - type: tile
   id: M14MetalTunnel
-  parent: M14BaseMetalFloor
+  parent:
+  - M14MixinFootstepMetalSounds
+  - M14BaseMetalFloor
   name: пол шахты лифта
   sprite: /Textures/_Metro14/Tiles/tunnel.png
 
 - type: tile
   id: M14MetalTunnelRusty
-  parent: M14BaseMetalFloor
+  parent:
+  - M14MixinFootstepMetalSounds
+  - M14BaseMetalFloor
   name: пол шахты лифта
   sprite: /Textures/_Metro14/Tiles/tunnel_rusty.png
 
 - type: tile
   id: M14MetalSmooth
-  parent: M14BaseMetalFloor
+  parent:
+  - M14MixinFootstepMetalSounds
+  - M14BaseMetalFloor
   name: гладкий пол
   sprite: /Textures/_Metro14/Tiles/smooth.png
 
 - type: tile
   id: M14MetalSmoothMono
-  parent: M14BaseMetalFloor
+  parent:
+  - M14MixinFootstepMetalSounds
+  - M14BaseMetalFloor
   name: гладкий пол
   sprite: /Textures/_Metro14/Tiles/smooth_mono.png
 
 - type: tile
   id: M14MetalPlate
-  parent:
-  - M14MixinFootstepSonorousMetalSounds
-  - M14BaseMetalFloor
+  parent: M14BaseMetalFloor
   name: стальная пластина
   sprite: /Textures/_Metro14/Tiles/Steel/plate.png
 

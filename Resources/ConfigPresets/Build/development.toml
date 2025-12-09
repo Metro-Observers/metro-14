@@ -3,7 +3,7 @@
 lobbyenabled = false
 # Dev map for faster loading & convenience
 map = "Dev"
-hostname = "Metro 14" # M14 Edited
+hostname = "Metro 14 - Localhost" # M14 Edited
 role_timers = false
 role_loadout_timers = false
 

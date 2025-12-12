@@ -17,7 +17,6 @@
           path: /Audio/Effects/poster_broken.ogg
       - !type:DoActsBehavior
         acts: ["Destruction"]
-    snapCardinals: true
 
 - type: entity
   id: M14BaseSignFlammable

@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "license": "Custom",
+  "copyright": "Stalker 14 CLA; Taken from https://github.com/stalker14-project/stalker-14",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+	{
+	  "name": "hanza"
+	},
+    {
+      "name": "hanza_emblem"
+    },
+    {
+      "name": "redline"
+    },
+    {
+      "name": "sparta"
+    },
+    {
+      "name": "vdnkh"
+    },
+    {
+      "name": "vdnkh_emblem"
+    }
+  ]
+}

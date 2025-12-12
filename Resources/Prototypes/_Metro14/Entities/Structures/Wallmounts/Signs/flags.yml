@@ -1,0 +1,62 @@
+- type: entity
+  parent: M14BaseSignFlammable
+  id: M14BaseFlag
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Wallmounts/flags.rsi
+
+- type: entity
+  id: M14MixinFlagEmblem
+  abstract: true
+  suffix: Эмблема
+
+- type: entity
+  parent: M14BaseFlag
+  id: M14FlagHanza
+  name: флаг Ганзы
+  description: "Ганзой называлось содружество станций Кольцевой линии."
+  components:
+  - type: Sprite
+    state: hanza
+
+- type: entity
+  parent: [M14FlagHanza, M14MixinFlagEmblem]
+  id: M14FlagHanzaEmblem
+  components:
+  - type: Sprite
+    state: hanza
+
+- type: entity
+  parent: M14BaseFlag
+  id: M14FlagRedline
+  name: флаг Красной Линии
+  description: "Сокольническая линия всегда была особая. Взглянешь на карту — сразу на неё внимание обращаешь. Во-первых, прямая, как стрела. Во-вторых, ярко-красного цвета на всех картах. Да и названия станций там тоже — Красносельская, Красные Ворота, Комсомольская, Библиотека им. Ленина, и Ленинские, опять же, Горы. И то ли из-за таких названий, то ли по какой-то другой причине тянуло на эту линию всех ностальгирующих по славному прошлому."
+  components:
+  - type: Sprite
+    state: redline
+
+- type: entity
+  parent: M14BaseFlag
+  id: M14FlagSparta
+  name: флаг Спарты
+  description: "Представь, что весь метрополитен — это человеческий организм... Я — макрофаг. Это моя профессия. Любая опасность, достаточно серьезная, чтобы угрожать всему организму, должна быть ликвидирована. Это моя работа. Я — охотник. Макрофаг."
+  components:
+  - type: Sprite
+    state: sparta
+
+- type: entity
+  parent: M14BaseFlag
+  id: M14FlagVdnkh
+  name: флаг ВДНХ
+  description: "Ботанический Сад и ВДНХ срослись вместе в одну темную, непроходимую чащобу, среди которой высились облупленные белые купола и крыши павильнов Выставки."
+  components:
+  - type: Sprite
+    state: vdnkh
+
+- type: entity
+  parent: [M14FlagVdnkh, M14MixinFlagEmblem]
+  id: M14FlagVdnkhEmblem
+  components:
+  - type: Sprite
+    state: vdnkh_emblem

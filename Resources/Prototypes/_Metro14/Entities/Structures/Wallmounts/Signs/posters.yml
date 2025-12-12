@@ -1,33 +1,12 @@
 - type: entity
-  parent: BaseSign
-  id: M14PosterBase
+  parent: M14BaseSignFlammable
+  id: M14BasePoster
   abstract: true
   components:
   - type: Sprite
     sprite: _Metro14/Structures/Wallmounts/posters.rsi
-  - type: Flammable
-    fireSpread: true
-    alwaysCombustible: true
-    damage:
-      types:
-        Heat: 1
-  - type: FireVisuals
-    sprite: Effects/fire.rsi
-    normalState: fire
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: Card
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 50
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Effects/poster_broken.ogg
-      - !type:DoActsBehavior
-        acts: [Destruction]
     - trigger:
         !type:DamageTrigger
         damage: 15
@@ -45,7 +24,7 @@
         offset: 0
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterBazar
   name: плакат "Нет Хабара, нет базара"
   description: Похоже, этот плакат хочет вытрясти из тебя побольше пуль.
@@ -54,7 +33,7 @@
     state: bazar
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterClearSky
   name: плакат "Миру Чистое Небо"
   description: Агитационный плакат, призывающий очистить небо от ядерной пыли. Неясно, как они планируют это сделать...
@@ -63,7 +42,7 @@
     state: clearsky
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterDirtySky
   name: плакат "Миру Грязное Небо"
   description: Противоположность плакату Миру Чистое Небо. Этот плакат описывает, что миру пришел конец и очищать небо не имеет никакого смысла.
@@ -72,7 +51,7 @@
     state: dirtysky
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterFreebies
   name: плакат "Халява"
   description: Халява! Все же любят халяву?
@@ -81,7 +60,7 @@
     state: freebies
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterCoolMan
   name: плакат "крутой мужик"
   description: Крутой чувак. Мы все рано или поздно будем равняться на него.
@@ -90,7 +69,7 @@
     state: gay
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterNiceMan
   name: плакат "накаченный мужик"
   description: Ну тут всё понятно. Чувак много качаеся.
@@ -99,7 +78,7 @@
     state: gigachad
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterGun
   name: плакат "Не свети валыной"
   description: Плакат призывает людей спрятать оружие и не выставлять его напоказ. Такие плакаты обычно размещают на железнодорожных станциях.
@@ -108,25 +87,23 @@
     state: gun
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterIcon
   name: икона
-  description: 
   components:
   - type: Sprite
     state: icon
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterIcon1
   name: икона
-  description: 
   components:
   - type: Sprite
     state: icon2
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterLenin
   name: портрет Ленина
   description: На портрете изображён... Ленин!
@@ -135,7 +112,7 @@
     state: lenin
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterMap
   name: карта
   description: Карта поверхности, которую составили сталкера, исходя из своих вылазок.
@@ -144,7 +121,7 @@
     state: map
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterMed
   name: медицинский плакат
   description: Медицинский плакат. На нём изображена человеческая рука.
@@ -153,7 +130,7 @@
     state: med1
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterMed1
   name: медицинский плакат
   description: Медицинский плакат. На нём изображён какой-то орган.
@@ -162,7 +139,7 @@
     state: med2
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterMed2
   name: медицинский плакат
   description: Медицинский плакат. На нём изображено человеческое сердце во всей красе!
@@ -171,7 +148,7 @@
     state: med3
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterMed3
   name: медицинский плакат
   description: Медицинский плакат. На нём изображены человеческие кости и многое другое.
@@ -180,7 +157,7 @@
     state: med4
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterMed4
   name: медицинский плакат
   description: Медицинский плакат. На нём изображён мозг во всей его красе!
@@ -189,7 +166,7 @@
     state: med5
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterMed5
   name: плакат "Руки мой. Не болей"
   description: Плакат призывает чаще мыть руки.
@@ -198,7 +175,7 @@
     state: med6
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterNotSay
   name: плакат "Не болтай"
   description: На плакате написано, чтобы ты заткнулся. Если не заткнёшься, он стерпит.
@@ -207,7 +184,7 @@
     state: notsay
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterRadiation
   name: плакат "Радиация!"
   description: Плакат, призывающий вас держаться подальше от этого места из-за высокого уровня радиации.
@@ -216,7 +193,7 @@
     state: radiation
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterRadiation1
   name: плакат "Радиация!"
   description: Плакат, призывающий вас держаться подальше от этого места из-за высокого уровня радиации.
@@ -225,7 +202,7 @@
     state: radiation2
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterRecruiting
   name: плакат "Набор"
   description: Плакат рассказывает о наборе в армию "Красной Линии". Они обещают большие выплаты и почётную пенсию.
@@ -234,7 +211,7 @@
     state: recruiting
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterRedline
   name: плакат "Красная Линия"
   description: Плакат с символикой "Красной Линии".
@@ -243,7 +220,7 @@
     state: redline1
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterRedline2
   name: плакат "Красная Линия"
   description: Плакат с символикой "Красной Линии".
@@ -253,7 +230,7 @@
     state: redline2
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterRun
   name: надпись на стене "Беги"
   description: Надпись, нарисованная кровью... БЕГИ!!!
@@ -262,7 +239,7 @@
     state: run
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterSearch
   name: плакат "Розыск"
   description: Внимание! Разыскивается человек, известный под псевдонимом "Бурбон". Если вам известно его местонахождение, немедленно сообщите об этом начальнику станции!
@@ -271,7 +248,7 @@
     state: search
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterSearchGun
   name: плакат "Поиск"
   description: Плакат, указывающий на пропажу оружия. На нём даже указан адрес.
@@ -280,16 +257,16 @@
     state: searchgun
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterStalin
   name: портрет Сталина
-  description: На портрете изображён... Сталин!
+  description: На портрете изображён... Сталин!?
   components:
   - type: Sprite
     state: stalin
 
 - type: entity
-  parent: M14PosterBase
+  parent: M14BasePoster
   id: M14PosterStalker
   name: плакат "Береги себя, Сталкер"
   description: Плакат, призывающий вас беречь себя. Удачи, Сталкер!

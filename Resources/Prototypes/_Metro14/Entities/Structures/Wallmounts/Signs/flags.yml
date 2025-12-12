@@ -25,7 +25,7 @@
   id: M14FlagHanzaEmblem
   components:
   - type: Sprite
-    state: hanza
+    state: hanza_emblem
 
 - type: entity
   parent: M14BaseFlag

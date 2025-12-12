@@ -8,7 +8,7 @@
   },
   "states": [
     {
-      "name": "clear",
+      "name": "shoreline_clear",
       "delays": [
         [
           0.3,

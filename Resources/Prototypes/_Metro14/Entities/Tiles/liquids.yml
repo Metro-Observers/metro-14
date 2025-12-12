@@ -1,0 +1,96 @@
+# MARK: Bases
+- type: entity
+  id: M14BaseEntityTileLiquid
+  parent: M14BaseEntityTile
+  abstract: True
+  components:
+  - type: SyncSprite
+  - type: SolutionContainerManager
+    solutions:
+      pool:
+        maxVol: 9999999 #.inf seems to break the whole yaml file, but would definitely be preferable.
+        reagents:
+        - ReagentId: Water
+          Quantity: 9999999
+  - type: SolutionRegeneration
+    solution: pool
+    generated:
+      reagents:
+      - ReagentId: Water
+        Quantity: 100
+  - type: DrainableSolution
+    solution: pool
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.5
+    sprintSpeedModifier: 0.5
+  # - type: Fixtures
+  #   fixtures:
+  #     fix1:
+  #       shape:
+  #         !type:PhysShapeAabb
+  #         bounds: "-0.5,-0.5,0.5,0.5"
+  #       layer:
+  #         - SlipLayer
+  #       mask:
+  #         - ItemMask
+  #       density: 1000
+  #       hard: false
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepWater
+      params:
+        volume: 8
+  - type: StepTrigger
+    requiredTriggeredSpeed: 0
+    intersectRatio: 0.1
+    blacklist:
+      tags:
+        - Catwalk
+  - type: TileEntityEffect
+    effects:
+    - !type:Extinguish
+
+- type: entity
+  id: M14BaseEntityTileLiquidWater
+  parent: M14BaseEntityTileLiquid
+  abstract: true
+  name: вода
+  components:
+  - type: Sprite
+    sprite: _Metro14/Tiles/EtityTiles/Liquids/water.rsi
+
+# В будущем будут изменены реагенты
+- type: entity
+  id: M14BaseEntityTileLiquidWaterPolluted
+  parent: M14BaseEntityTileLiquidWater
+  abstract: true
+
+# MARK: Water
+- type: entity
+  id: M14EntityTileLiquidWaterClear
+  parent: M14BaseEntityTileLiquidWater
+  components:
+  - type: Sprite
+    state: shoreline_clear
+
+# Polluted
+- type: entity
+  id: M14EntityTileLiquidWaterPolluted1
+  parent: M14BaseEntityTileLiquidWaterPolluted
+  components:
+  - type: Sprite
+    state: polluted_1
+
+- type: entity
+  id: M14EntityTileLiquidWaterPolluted2
+  parent: M14BaseEntityTileLiquidWaterPolluted
+  components:
+  - type: Sprite
+    state: polluted_2
+
+- type: entity
+  id: M14EntityTileLiquidWaterPolluted3
+  parent: M14BaseEntityTileLiquidWaterPolluted
+  components:
+  - type: Sprite
+    state: polluted_3

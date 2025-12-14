@@ -11,7 +11,7 @@ Any unauthorized use or reproduction of this source code
 is strictly prohibited and may result in legal action.
 
 For inquiries or licensing requests,
-please contact TornadoTech ramzesk. at Discord (https://discord.gg/GMaYa3ns).
+please contact ramzesk. at Discord (https://discord.gg/GMaYa3ns).
 
 MIT License
 

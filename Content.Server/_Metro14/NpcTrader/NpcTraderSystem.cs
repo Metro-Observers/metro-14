@@ -47,7 +47,7 @@ public sealed class NpcTraderSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<NpcTraderComponent, ComponentInit>(OnComponentInit);
+        SubscribeLocalEvent<NpcTraderComponent, MapInitEvent>(OnMapInit);
         Subs.BuiEvents<NpcTraderComponent>(NpcTraderUiKey.Key, subs =>
         {
             subs.Event<NpcTraderBuyMessage>(OnNpcTraderBuy);
@@ -127,7 +127,7 @@ public sealed class NpcTraderSystem : EntitySystem
     /// <param name="uid"> торговец </param>
     /// <param name="npcTraderComponent"> компонент торговца </param>
     /// <param name="args"></param>
-    private void OnComponentInit(EntityUid uid, NpcTraderComponent npcTraderComponent, ComponentInit args)
+    private void OnMapInit(EntityUid uid, NpcTraderComponent npcTraderComponent, MapInitEvent args)
     {
         // проверяем, что к нему привязаны хоть какие-то каталоги
         if (npcTraderComponent.ItemsInCatalog.Count <= 0)

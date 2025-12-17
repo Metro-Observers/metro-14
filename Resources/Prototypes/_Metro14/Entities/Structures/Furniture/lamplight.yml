@@ -1,0 +1,31 @@
+- type: entity
+  name: Лампа освещения
+  id: M14LampGold
+  parent: BaseStructure
+  description: A light emitting device that would look great on a desk.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Objects/Misc/lampa.rsi
+    state: elitelampa
+  - type: PointLight
+    color: "#e2d40c" # Corvax-Resprite-end
+    enabled: true
+    radius: 3
+    energy: 2
+    netsync: false
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: radiating
+        maxDuration: 2.0
+        startValue: 4.0
+        endValue: 3.0
+        isLooped: true
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        startValue: 1.1
+        endValue: 3.0
+        isLooped: true

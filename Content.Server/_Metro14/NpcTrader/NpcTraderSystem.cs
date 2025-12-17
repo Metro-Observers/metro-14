@@ -19,6 +19,9 @@ using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Shared.ActionBlocker;
+using Content.Shared.Weapons.Ranged.Components;
+using Content.Shared.Weapons.Ranged.Events;
+using Content.Shared.Weapons.Ranged;
 
 namespace Content.Server._Metro14.NpcTrader;
 
@@ -36,6 +39,8 @@ public sealed class NpcTraderSystem : EntitySystem
 
     private HashSet<EntityUid> _entitiesInRange = new();
     private List<EntityUid> _delItem = new List<EntityUid>();
+    private Dictionary<EntityUid, EntityUid> _delRealAmmo = new Dictionary<EntityUid, EntityUid>();
+    private Dictionary<EntityUid, int> _delVirtAmmo = new Dictionary<EntityUid, int>();
     private static readonly Random _random = new Random();
 
     public override void Initialize()
@@ -163,6 +168,8 @@ public sealed class NpcTraderSystem : EntitySystem
     public void OnNpcTraderBuy(EntityUid uid, NpcTraderComponent component, NpcTraderBuyMessage args)
     {
         _delItem.Clear();
+        _delRealAmmo.Clear();
+        _delVirtAmmo.Clear();
 
         // проверяем, что получили корректный ID предложения
         if (!component.ItemsInCatalog.ContainsKey(args.ProductId))
@@ -202,7 +209,7 @@ public sealed class NpcTraderSystem : EntitySystem
 
         if (!tempFlag)
         {
-            TryDeleteItems();
+            TryDeleteItems(_entityManager.GetEntity(args.Buyer));
             TryGiveItems(uid, args.ProductId, _entityManager.GetEntity(args.Buyer));
             tempFlag = false;
         }
@@ -233,9 +240,50 @@ public sealed class NpcTraderSystem : EntitySystem
     /// <summary>
     /// Метод, который "изымает" предметы в счет оплаты товара.
     /// </summary>
-    private void TryDeleteItems()
+    private void TryDeleteItems(EntityUid player)
     {
-        foreach(var item in _delItem)
+        foreach (var virtBullet in _delVirtAmmo)
+        {
+            if (!_entityManager.TryGetComponent(virtBullet.Key, out BallisticAmmoProviderComponent? ballisticProviderComponent))
+                continue;
+
+            for (int i = 0; i < virtBullet.Value; i++)
+            {
+                if (ballisticProviderComponent.UnspawnedCount == 0)
+                    break;
+
+                var ammo = new List<(EntityUid? Entity, IShootable Shootable)>();
+
+                var ev = new TakeAmmoEvent(1, ammo, Transform(virtBullet.Key).Coordinates, player);
+                RaiseLocalEvent(virtBullet.Key, ev);
+
+                foreach (var (entity, _) in ammo)
+                {
+                    if (entity != null)
+                    {
+                        QueueDel(entity.Value);
+                    }
+                }
+            }
+        }
+
+        foreach (var realBullet in _delRealAmmo)
+        {
+            var ammo = new List<(EntityUid? Entity, IShootable Shootable)>();
+
+            var ev = new TakeAmmoEvent(1, ammo, Transform(realBullet.Value).Coordinates, player);
+            RaiseLocalEvent(realBullet.Value, ev);
+
+            foreach (var (entity, _) in ammo)
+            {
+                if (entity != null)
+                {
+                    QueueDel(entity.Value);
+                }
+            }                    
+        }
+
+        foreach (var item in _delItem)
         {
             QueueDel(item);
         }
@@ -328,6 +376,72 @@ public sealed class NpcTraderSystem : EntitySystem
         return DeleteItem();
     }
 
+    private bool TryGiveEntityFromAmmoProvider(string itemPrice, BallisticAmmoProviderComponent ballisticProviderComponent, EntityUid providerUid)
+    {
+        if (ballisticProviderComponent.Proto == null)
+            return false;
+
+        var tempPer = ballisticProviderComponent.Proto; // На будущее... Напрямую работать с полем Proto нельзя.
+
+        string protoIdString = "";
+        if (tempPer != null)
+        {
+            var notNullTempPer = tempPer.Value;
+            protoIdString = notNullTempPer.ToString();
+        }
+        else
+        {
+            return false;
+        }
+
+        if (!protoIdString.Equals(itemPrice))
+            return false;
+
+        if (ballisticProviderComponent.UnspawnedCount != 0)
+        {
+            if (_delVirtAmmo.ContainsKey(providerUid))
+            {
+                if (ballisticProviderComponent.UnspawnedCount - _delVirtAmmo[providerUid] > 0)
+                {
+                    _delVirtAmmo[providerUid] += 1;
+                    return true;
+                }
+            }
+            else
+            {
+                _delVirtAmmo.Add(providerUid, 1);
+                return true;
+            }
+        }
+
+        if (ballisticProviderComponent.Entities.Count != 0)
+        {
+
+            bool flag = false;
+            foreach (var bullet in ballisticProviderComponent.Entities)
+            {
+                if (!CheckCartridgeComp((EntityUid)bullet, false))
+                {
+                    continue;
+                }
+
+                if (!_delRealAmmo.ContainsKey(bullet))
+                {
+                    _delRealAmmo.Add(bullet, providerUid);
+                    flag = true;
+                    break;
+                }
+            }
+
+            if (flag)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     /// <summary>
     /// Метод, который ищет предметы для оплаты.
     /// </summary>
@@ -346,12 +460,17 @@ public sealed class NpcTraderSystem : EntitySystem
 
                 if (tempHoldItem != null)
                 {
+                    // если в руках обойма/коробка с патронами, то пытаемся найти нужные пули в ней.
+                    if (_entityManager.TryGetComponent(tempHoldItem, out BallisticAmmoProviderComponent? ballisticProviderComponent))
+                        if (TryGiveEntityFromAmmoProvider(itemPrice, ballisticProviderComponent, (EntityUid) tempHoldItem))
+                            return true;
+
                     // если в руках есть контейнер, то проверяем вещи внутри него
                     if (_entityManager.TryGetComponent(tempHoldItem, out StorageComponent? storageCmp))
                         if (TryFindEntityInStorage(storageCmp, itemPrice))
                             return true;
 
-                    if (!TryComp<MetaDataComponent>(tempHoldItem, out var metaData))
+                    if (!TryComp<MetaDataComponent>(tempHoldItem, out var metaData)) //BallisticAmmoProviderComponent
                         continue;
 
                     var prototypeId = metaData.EntityPrototype?.ID;
@@ -378,6 +497,10 @@ public sealed class NpcTraderSystem : EntitySystem
         {
             if (!_entityManager.TryGetComponent(item, out StorageComponent? storageComponent))
             {
+                if (_entityManager.TryGetComponent(item, out BallisticAmmoProviderComponent? ballisticProvComponent))
+                    if (TryGiveEntityFromAmmoProvider(itemPrice, ballisticProvComponent, item))
+                        return true;
+
                 if (!TryComp<MetaDataComponent>(item, out var _metaData))
                     continue;
 
@@ -413,6 +536,10 @@ public sealed class NpcTraderSystem : EntitySystem
 
         foreach (var nearEntity in _entitiesInRange)
         {
+            if (_entityManager.TryGetComponent(nearEntity, out BallisticAmmoProviderComponent? ballisticAmmoProvComponent))
+                if (TryGiveEntityFromAmmoProvider(itemPrice, ballisticAmmoProvComponent, nearEntity))
+                    return true;
+
             if (_entityManager.TryGetComponent(nearEntity, out StorageComponent? storageComp))
                 if (TryFindEntityInStorage(storageComp, itemPrice))
                     return true;
@@ -443,6 +570,10 @@ public sealed class NpcTraderSystem : EntitySystem
     {
         foreach (var storageItem in storageComp.StoredItems) // проверяем рюкзак
         {
+            if (_entityManager.TryGetComponent(storageItem.Key, out BallisticAmmoProviderComponent? ballisticProvComponent))
+                if (TryGiveEntityFromAmmoProvider(itemPrice, ballisticProvComponent, storageItem.Key))
+                    return true;
+
             if (_entityManager.TryGetComponent(storageItem.Key, out StorageComponent? storageComponent))
                 TryFindEntityInStorage(storageComponent, itemPrice);
 
@@ -468,13 +599,15 @@ public sealed class NpcTraderSystem : EntitySystem
         return false;
     }
 
-    private bool CheckCartridgeComp(EntityUid uid)
+    private bool CheckCartridgeComp(EntityUid uid, bool addInDelQueu = true)
     {
         if (TryComp<CartridgeAmmoComponent>(uid, out var cartridge))
         {
             if (!cartridge.Spent)
             {
-                _delItem.Add(uid);
+                if (addInDelQueu)
+                    _delItem.Add(uid);
+
                 return true;
             }
             else

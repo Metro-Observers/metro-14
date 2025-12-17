@@ -1,0 +1,29 @@
+- type: entity
+  id: M14Bannerhanza
+  parent: BannerBase
+  name: Флагшток Ганзы
+  description: Когда вы увидите его,есть два варианта. Или вам крупно повезло или не повезло 
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Decoration/banners.rsi
+    state: hanza
+
+- type: entity
+  id: M14Bannersparta
+  parent: BannerBase
+  name: Флагшток Спарты
+  description: Напоминает о святой клятве
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Decoration/banners.rsi
+    state: spartan
+
+- type: entity
+  id: M14Bannertech
+  parent: BannerBase
+  name: Флагшток Техников
+  description: Напоминает о величии былой науки
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Decoration/banners.rsi
+    state: techies

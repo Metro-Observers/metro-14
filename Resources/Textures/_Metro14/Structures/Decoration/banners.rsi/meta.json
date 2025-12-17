@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "Stalker14 CLA, author: stareichen",
+  "size": {
+    "x": 32,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "hanza"
+    },
+    {
+      "name": "spartan"
+    },
+    {
+      "name": "techies"
+    }
+  ]
+}

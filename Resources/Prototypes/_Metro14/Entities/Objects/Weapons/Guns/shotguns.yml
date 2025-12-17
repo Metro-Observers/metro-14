@@ -1,0 +1,54 @@
+- type: entity
+  name: Дуплет
+  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: M14Duplet2033
+  description: Классический дуплет сваренный из двух труб
+  components:
+  - type: Sprite
+    sprite: _Metro14/Objects/Weapons/Guns/Shotguns/duplet_shotgun.rsi
+  - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
+  - type: Gun
+    fireRate: 3
+  - type: GunSpreadModifier
+    spread: 0.6
+  - type: BallisticAmmoProvider
+    capacity: 3
+  - type: Construction
+    graph: ShotgunSawn
+    node: start
+    deconstructionTarget: null
+
+- type: entity
+  name: Ашот
+  parent: BaseWeaponShotgun 
+  id: M14WeaponShotgunAshot
+  description: Говно и трубы,описывает своим существованием всё метро.
+  components: # needs to be super inaccurate because you don't need to wield it
+  - type: Sprite
+    sprite: _Metro14/Objects/Weapons/Guns/Shotguns/ashot_pistol.rsi
+  - type: Clothing
+    sprite: _Metro14/Objects/Weapons/Guns/Shotguns/ashot_pistol.rsi
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,2,0
+  - type: Gun
+    DamageMultiplierModified: 0.7
+    fireRate: 3
+    soundGunshot: # Corvax-Guns
+      path: /Audio/Corvax/Weapons/Guns/Gunshots/shotgun_sawed.ogg
+  - type: GunSpreadModifier
+    spread: 0.1
+  - type: BallisticAmmoProvider
+    capacity: 1
+    whitelist:
+      tags:
+      - ShellShotgunSlug
+    proto: ShellShotgunSlug
+  - type: Construction
+    graph: ShotgunSawn
+    node: shotgunsawn
+    deconstructionTarget: null
+
+- type: Tag
+  id: ShellShotgunSlug

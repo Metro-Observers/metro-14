@@ -33,7 +33,7 @@
     shape:
     - 0,0,2,0
   - type: Gun
-    DamageMultiplierModified: 0.7
+    damageMultiplierModified: 0.7
     fireRate: 3
     soundGunshot: # Corvax-Guns
       path: /Audio/Corvax/Weapons/Guns/Gunshots/shotgun_sawed.ogg

@@ -6,8 +6,6 @@
   startingGear: M14DefaultZBTGear
   icon: "JobIconKL"
   canBeAntag: true
-  access:
-  - KL
 
 - type: jobIcon
   parent: JobIcon

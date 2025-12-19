@@ -2,7 +2,7 @@
   id: M14Gensek
   name: Генсек
   description: Вы великий вождь вашей станции,людей ну и носитель коммунистической революции во всем метро.
-  playTimeTracker: M14OGensek
+  playTimeTracker: M14Gensek
   startingGear: M14DefaultZBTGear
   icon: "JobIconKL"
   canBeAntag: true

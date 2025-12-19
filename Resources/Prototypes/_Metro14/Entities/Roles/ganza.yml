@@ -20,7 +20,7 @@
 
 - type: department
   id: ganzadepart
-  name: Ганза
+  name: M14Ganza-name
   description: department-Science-description
   color: "#d9e62a"
   roles:

@@ -17,7 +17,7 @@
 
 - type: department
   id: redlinedepart
-  name: Красная Линия
+  name: M14Redline-name
   description: department-Science-description
   color: "#c41818"
   roles:

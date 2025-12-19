@@ -1,2 +1,2 @@
-ent-M14Ganza-name = ганза
-ent-M14Redline-name = красная линия
+M14Ganza-name = ганза
+M14Redline-name = красная линия

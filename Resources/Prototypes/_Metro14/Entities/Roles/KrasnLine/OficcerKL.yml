@@ -60,7 +60,7 @@
   name: SpawnRedlineGensek
   components:
   - type: SpawnPoint
-    job_id: M14OGensek
+    job_id: M14Gensek
   - type: Sprite
     layers:
       - state: green

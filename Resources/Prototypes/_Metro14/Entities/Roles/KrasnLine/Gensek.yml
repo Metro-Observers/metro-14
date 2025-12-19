@@ -6,8 +6,6 @@
   startingGear: M14DefaultZBTGear
   icon: "JobIconKL"
   canBeAntag: true
-  access:
-  - KL
 
 - type: playTimeTracker
   id: M14Gensek

@@ -1,0 +1,14 @@
+- type: entity
+  id: m14PlasmaTankFilled
+  parent: PlasmaTank
+  name: Секретное оружие Гидры
+  suffix: Filled
+  components:
+  - type: GasTank
+    outputPressure: 150
+    air:
+      # 6 minutes of agony
+      volume: 250
+      moles:
+        Plasma: 300
+      temperature: 293.15

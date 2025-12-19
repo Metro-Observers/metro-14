@@ -1,0 +1,92 @@
+- type: entity
+  name: зажигалка Патрон
+  parent: BaseItem
+  id: M14CasingLighter
+  description: "Зажигалка из патрона. Вам кажется, что вы уже где-то видели ее раньше."
+  components:
+  - type: Sprite
+    sprite: _Metro14/Objects/Tools/lighters.rsi
+    layers:
+    - state: casing_icon
+      map: ["base"]
+    - state: casing_open
+      map: ["open"]
+      visible: false
+    - state: lighter_flame
+      map: ["flame"]
+      visible: false
+      shader: unshaded
+  - type: ItemToggle
+    predictable: false
+    soundActivate:
+      path: /Audio/Items/Lighters/zippo_open.ogg
+      params:
+        volume: -5
+    soundDeactivate:
+      path: /Audio/Items/Lighters/zippo_close.ogg
+      params:
+        volume: -5
+  - type: ItemToggleMeleeWeapon
+    activatedDamage:
+        types:
+            Heat: 1
+  - type: ItemToggleSize
+    activatedSize: Small
+  - type: ItemToggleHot
+  - type: Item
+    size: Tiny
+    sprite: _Metro14/Objects/Tools/lighters.rsi
+    heldPrefix: casing
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        flame:
+          True: { visible: true }
+          False: { visible: false }
+        open:
+          True: { visible: true }
+          False: { visible: false }
+        base:
+          True: { visible: false }
+          False: { visible: true }
+  - type: SolutionContainerManager
+    solutions:
+      Welder:
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 20
+        maxVol: 20 #uses less fuel than a welder, so this isnt as bad as it looks
+  - type: Welder
+    fuelConsumption: 0.01
+    fuelLitCost: 0.1
+    tankSafe: true
+  - type: ToggleableVisuals
+    spriteLayer: lighter_flame
+    inhandVisuals:
+      left:
+      - state: casing-inhand-left-flame
+        shader: unshaded
+      right:
+      - state: casing-inhand-right-flame
+        shader: unshaded
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    damage:
+      types:
+        Blunt: 1 # does a little bit of damage on hit when off
+  - type: PointLight
+    enabled: false
+    netsync: false
+    radius: 2 #slightly stronger than the other lighters
+    color: orange
+  - type: ItemTogglePointLight
+  - type: UseDelay
+  - type: IgnitionSource
+    ignited: false
+  - type: Tag
+    tags:
+    - M14Lighter
+
+- type: Tag
+  id: M14Lighter

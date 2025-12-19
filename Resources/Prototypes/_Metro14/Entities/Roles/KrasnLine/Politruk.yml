@@ -1,0 +1,11 @@
+- type: job
+  id: M14Politruk
+  name: Политрук
+  description: Вы обязаны подчиняться генсеку,нести идеологию коммунизма в массы и проводить идеологическую работу с составом станции
+  playTimeTracker: M14Politruk
+  startingGear: M14DefaultZBTGear
+  icon: "JobIconKL"
+  canBeAntag: true
+
+- type: playTimeTracker
+  id: M14Politruk

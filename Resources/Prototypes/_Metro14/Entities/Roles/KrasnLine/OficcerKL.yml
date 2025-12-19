@@ -1,0 +1,69 @@
+- type: job
+  id: M14SoldierRedline
+  name: Солдат Красной Линии
+  description: Вы обязаны подчиняться генсеку и политруку и нести идеологию коммунизма.
+  playTimeTracker: M14SoldierRedline
+  startingGear: M14DefaultZBTGear
+  icon: "JobIconKL"
+  canBeAntag: true
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconKL
+  icon:
+    sprite: _Metro14/Interface/job_icons.rsi
+    state: redline
+  jobName: KLficer
+
+- type: department
+  id: redlinedepart
+  name: M14Redline-name
+  description: department-Science-description
+  color: "#c41818"
+  roles:
+  - M14SoldierRedline
+  - M14Politruk
+  - M14Gensek
+
+- type: playTimeTracker
+  id: M14SoldierRedline
+
+- type: entity
+  id: SpawnPointredlineSold
+  parent: SpawnPointJobBase
+  name: SpawnRedlineSold
+  components:
+  - type: SpawnPoint
+    job_id: M14SoldierRedline
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+- type: entity
+  id: SpawnPointredlinepolitruk
+  parent: SpawnPointJobBase
+  name: SpawnPolitruk
+  components:
+  - type: SpawnPoint
+    job_id: M14Politruk
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+- type: entity
+  id: SpawnPointredlineGensek
+  parent: SpawnPointJobBase
+  name: SpawnRedlineGensek
+  components:
+  - type: SpawnPoint
+    job_id: M14Gensek
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+

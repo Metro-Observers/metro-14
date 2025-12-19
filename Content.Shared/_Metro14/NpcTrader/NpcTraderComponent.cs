@@ -9,7 +9,7 @@ namespace Content.Shared._Metro14.NpcTrader;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class NpcTraderComponent : Component
 {
-    [DataField, AutoNetworkedField]
+    [DataField, AutoNetworkedField, NonSerialized]
     public TimeSpan NextTick;
 
     [DataField, AutoNetworkedField]
@@ -21,7 +21,7 @@ public sealed partial class NpcTraderComponent : Component
     [DataField("catalogs"), AutoNetworkedField]
     public List<string> Catalog = new List<string>(); // в прототипе идет перечесление катологов, привязанных к этому торговцу.
 
-    [DataField("itemsInCatalog"), AutoNetworkedField]
+    [DataField("itemsInCatalog"), AutoNetworkedField, NonSerialized]
     public Dictionary<string, int> ItemsInCatalog = new Dictionary<string, int>(); // нужно для корректного отображения предложений
 
     public Dictionary<string, int> CopyItemsInCatalog; // копия ItemsInCatalog для корректного восстановления продуктов у торговца

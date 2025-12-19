@@ -49,6 +49,9 @@
     proto: PelletShotgunSlug
   - type: SpentAmmoVisuals
     state: "slug"
+  - type: Tag
+    tags:
+    - ShellShotgunSlug #metro-changes
 
 - type: entity
   id: ShellShotgunFlare

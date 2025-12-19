@@ -1,0 +1,59 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: M14BaseTablet
+  name: Планшет
+  description: Планшет с картой и записками.
+  components:
+  - type: Appearance
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _Metro14/Objects/Misc/tablet.rsi
+    state: icon
+  - type: Item
+    size: Small
+  - type: ItemSlots
+    slots:
+      tablet_slot1:
+        name: tablet-slot-component-slot-name-pen
+        whitelist:
+          tags:
+            - Write
+        priority: 2
+      tablet_slot2:
+        name: tablet-slot-component-slot-name-lighter
+        whitelist:
+          tags:
+            - M14Lighter
+        priority: 3
+      tablet_slot3:
+        name: tablet-slot-component-slot-name-cigarette
+        whitelist:
+          tags:
+            - Cigarette
+        priority: 4
+  - type: ContainerContainer
+    containers:
+      tablet_slot1: !type:ContainerSlot {}
+      tablet_slot2: !type:ContainerSlot {}
+      tablet_slot3: !type:ContainerSlot {}
+      tablet_slot4: !type:ContainerSlot {}
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - idcard
+    - Belt
+  - type: Paper
+  - type: PaperLabelType
+  - type: ActivatableUI
+    key: enum.PaperUiKey.Key
+    requiresComplex: false
+  - type: UserInterface
+    interfaces:
+      enum.PaperUiKey.Key:
+        type: PaperBoundUserInterface
+  - type: PaperVisuals
+
+- type: entity
+  parent: M14BaseTablet
+  id: M14Tablet

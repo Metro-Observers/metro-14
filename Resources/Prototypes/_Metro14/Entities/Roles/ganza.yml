@@ -1,0 +1,120 @@
+- type: job
+  id: OfficerGanza
+  name: Офицер Ганзы
+  description: Вы обязаны следить за всеми,кто идет через границу станции 
+  playTimeTracker: OfficerGanza
+  startingGear: SecurityOfficerGear
+  icon: "JobIconGanza"
+  canBeAntag: true
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconGanza
+  icon:
+    sprite: _Metro14/Interface/job_icons.rsi
+    state: ganza
+  jobName: Ganzaoficer
+
+- type: playTimeTracker
+  id: OfficerGanza
+
+- type: department
+  id: ganzadepart
+  name: M14Ganza-name
+  description: department-Science-description
+  color: "#d9e62a"
+  roles:
+  - OfficerGanza
+  - TorgAgentGanza
+  - NachalnikStanciiganza
+  - GrazhdaninGanzi
+
+- type: playTimeTracker
+  id: TorgAgentGanza
+
+- type: job
+  id: TorgAgentGanza
+  name: Торговый агент ганзы
+  description: Вы обязаны следить за всем что идет через границу станции 
+  playTimeTracker: TorgAgentGanza
+  startingGear: SecurityOfficerGear
+  icon: "JobIconGanza"
+  canBeAntag: true
+
+
+- type: job
+  id: NachalnikStanciiganza
+  name: Начальник станции
+  description: Вы главный в ганзе
+  playTimeTracker: NachalnikStanciiganza
+  startingGear: SecurityOfficerGear
+  icon: "JobIconGanza"
+  canBeAntag: true
+
+- type: playTimeTracker
+  id: NachalnikStanciiganza
+
+- type: job
+  id: GrazhdaninGanzi
+  name: Гражданин ганзы
+  description: Следите за баром,проводите сталкеров,смотрите за грядками
+  playTimeTracker: GrazhdaninGanzi
+  startingGear: SecurityOfficerGear
+  icon: "JobIconGanza"
+  canBeAntag: true
+
+
+- type: playTimeTracker
+  id: GrazhdaninGanzi
+
+- type: entity
+  id: SpawnPointGanzaofic
+  parent: SpawnPointJobBase
+  name: SpawnGanzaOficcer
+  components:
+  - type: SpawnPoint
+    job_id: OfficerGanza
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+- type: entity
+  id: M14SpawnPointGanzaTorgAgent
+  parent: SpawnPointJobBase
+  name: SpawnGanzaTorgAgent
+  components:
+  - type: SpawnPoint
+    job_id: TorgAgentGanza
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+- type: entity
+  id: M14SpawnPointGanzaNachalnikStanciiganza
+  parent: SpawnPointJobBase
+  name: SpawnGanzaNachalnikStanciiganza
+  components:
+  - type: SpawnPoint
+    job_id: NachalnikStanciiganza
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+- type: entity
+  id: M14SpawnPointGanzaGrazhdaninGanzi
+  parent: SpawnPointJobBase
+  name: SpawnGanzaNachalnikStanciiganza
+  components:
+  - type: SpawnPoint
+    job_id: GrazhdaninGanzi
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi

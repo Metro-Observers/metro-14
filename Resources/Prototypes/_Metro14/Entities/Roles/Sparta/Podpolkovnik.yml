@@ -1,0 +1,24 @@
+- type: job
+  id: M14PodPolkovnik
+  name: Подполковник Спарты
+  description: Вы заменяете лидера спарты. Храните клятву,защищайте метро
+  playTimeTracker: M14PodPolkovnik
+  startingGear: M14DefaultZBTGear
+  icon: "JobIconSparta"
+  canBeAntag: true
+
+- type: playTimeTracker
+  id: M14PodPolkovnik
+
+- type: entity
+  id: SpawnPointM14PodPolkovnik
+  parent: SpawnPointJobBase
+  name: SpawnPointM14PodPolkovnik
+  components:
+  - type: SpawnPoint
+    job_id: M14PodPolkovnik
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi

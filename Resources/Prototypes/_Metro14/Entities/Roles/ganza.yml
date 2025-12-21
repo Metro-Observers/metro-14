@@ -68,7 +68,7 @@
   id: GrazhdaninGanzi
 
 - type: entity
-  id: SpawnPointGanzaofic
+  id: M14SpawnPointGanzaofic
   parent: SpawnPointJobBase
   name: SpawnGanzaOficcer
   components:

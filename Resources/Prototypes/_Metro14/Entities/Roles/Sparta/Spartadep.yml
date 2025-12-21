@@ -1,0 +1,10 @@
+- type: department
+  id: M14-Sparta
+  name: M14Sparta-name
+  description: department-Science-description
+  color: "#007dfa"
+  roles:
+  - M14Polkovnik
+  - M14PodPolkovnik
+  - M14Medicsparta
+  - M14Soldier

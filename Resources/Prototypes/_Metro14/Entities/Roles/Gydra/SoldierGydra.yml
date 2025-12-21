@@ -9,3 +9,17 @@
 
 - type: playTimeTracker
   id: M14SoldierGydra
+
+
+- type: entity
+  id: M14SpawnPointM14SoldierGydra
+  parent: SpawnPointJobBase
+  name: SpawnPointM14SoldierGydra
+  components:
+  - type: SpawnPoint
+    job_id: M14SoldierGydra
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi

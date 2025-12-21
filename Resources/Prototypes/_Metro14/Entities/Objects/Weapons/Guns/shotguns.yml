@@ -17,6 +17,10 @@
     graph: ShotgunSawn
     node: start
     deconstructionTarget: null
+  - type: Item
+    size: Huge
+    shape:
+    - 5,5,5,5
 
 - type: entity
   name: Ашот

@@ -18,3 +18,15 @@
 - type: playTimeTracker
   id: M14Furer
 
+- type: entity
+  id: M14SpawnPointGydraFurer
+  parent: SpawnPointJobBase
+  name: SpawnPointGydraFurer
+  components:
+  - type: SpawnPoint
+    job_id: M14Furer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi

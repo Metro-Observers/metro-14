@@ -46,7 +46,7 @@
     zeroVisible: true
   - type: Appearance
   - type: Item
-    size: Small
+    size: Huge
     shape:
     - 0,0,2,0
     sprite: _Metro14/Objects/Weapons/Guns/Rifles/ak-inhandsx64.rsi

@@ -9,3 +9,16 @@
 
 - type: playTimeTracker
   id: M14Ministr
+
+- type: entity
+  id: M14SpawnPointM14Ministr
+  parent: SpawnPointJobBase
+  name: SpawnPointM14Ministr
+  components:
+  - type: SpawnPoint
+    job_id: M14Ministr
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi

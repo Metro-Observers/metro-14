@@ -1,0 +1,24 @@
+- type: job
+  id: M14Soldier
+  name: Солдат спарты
+  description: Храните клятву,защищайте метро
+  playTimeTracker: M14Soldier
+  startingGear: M14DefaultZBTGear
+  icon: "JobIconSparta"
+  canBeAntag: true
+
+- type: playTimeTracker
+  id: M14Soldier
+
+- type: entity
+  id: SpawnPointM14Soldier
+  parent: SpawnPointJobBase
+  name: SpawnPointM14Soldier
+  components:
+  - type: SpawnPoint
+    job_id: M14Soldier
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi

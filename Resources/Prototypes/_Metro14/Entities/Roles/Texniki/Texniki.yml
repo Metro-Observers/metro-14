@@ -1,0 +1,25 @@
+- type: job
+  id: Texniki
+  name: Техник
+  description: Закупайте ресурсы у сталкеров,собирайте самое ценное на своих станках
+  playTimeTracker: Texniki
+  startingGear: M14DefaultZBTGear
+  icon: "JobIcontechs"
+  canBeAntag: true
+
+- type: entity
+  id: M14SpawnPointTexniki
+  parent: SpawnPointJobBase
+  name: SpawnTexniki
+  components:
+  - type: SpawnPoint
+    job_id: Texniki
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+
+- type: playTimeTracker
+  id: Texniki

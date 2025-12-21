@@ -1,0 +1,34 @@
+- type: job
+  id: OfficerVdnh
+  name: Охранник ВДНХ
+  description: Вы обладаете всей полнотой власти на этой станции.
+  playTimeTracker: OfficerVdnh
+  startingGear: M14DefaultZBTGear
+  icon: "JobIconvdnh"
+  canBeAntag: true
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconvdnh
+  icon:
+    sprite: _Metro14/Interface/job_icons.rsi
+    state: vdnh
+  jobName: Vdnhashniki
+
+
+- type: entity
+  id: M14SpawnPointOfficerVdnh
+  parent: SpawnPointJobBase
+  name: SpawnOfficerVdnh
+  components:
+  - type: SpawnPoint
+    job_id: OfficerVdnh
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+
+- type: playTimeTracker
+  id: OfficerVdnh

@@ -1,0 +1,9 @@
+- type: department
+  id: M14VDNH
+  name: M14Vdnh-name
+  description: department-Science-description
+  color: "#9b8d10"
+  roles:
+  - OfficerVdnh
+  - Stalker
+  - NachalnikVdnh

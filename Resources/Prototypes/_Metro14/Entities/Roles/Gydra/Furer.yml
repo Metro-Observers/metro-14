@@ -3,6 +3,10 @@
   name: Фюрер
   description: Вы великий вождь.
   playTimeTracker: M14Furer
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobWarden
+      time: 6h
   startingGear: SecurityOfficerGear
   icon: "JobIconGydra"
   canBeAntag: true

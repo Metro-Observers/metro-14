@@ -1,0 +1,5 @@
+- type: entity
+  name: Мосинка
+  parent: [WeaponSniperMosin]
+  id: M14WeaponSniperMosin
+  description: Реликт,что тут скажешь...

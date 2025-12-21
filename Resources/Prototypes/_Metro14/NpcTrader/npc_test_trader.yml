@@ -1,5 +1,5 @@
 - type: entity
-  id: CrystalBlueTestGui
+  id: M14CrystalBlueTestGui
   parent: BaseStructure
   name: Василий
   suffix: blueGui
@@ -51,3 +51,46 @@
       radius: 3
       energy: 3
       color: "#FF8C00" # типо фонарик у него
+
+
+- type: entity
+  id: M14Weapon_torgovec
+  parent: M14CrystalBlueTestGui
+  name: Сережа вояка
+  components:
+    - type: NpcTrader
+      pathToImage: /Textures/_Metro14/Interface/NpcTrader/testTrader.png
+      phrasesNoProduct:
+        - npc-trader-no-product
+        - npc-trader-no-product-2
+      phrasesThankYou:
+        - npc-trader-thank-you
+        - npc-trader-thank-you-2
+        - npc-trader-thank-you-3
+      phrasesLittleMoney:
+        - npc-trader-little-money
+        - npc-trader-little-money-2
+        - npc-trader-little-money-3
+      catalogs:
+        - TestTrader1
+  
+- type: entity
+  id: M14vsyachina_torgovec
+  parent: M14CrystalBlueTestGui
+  name: Хламовщик
+  components:
+    - type: NpcTrader
+      pathToImage: /Textures/_Metro14/Interface/NpcTrader/testTrader.png
+      phrasesNoProduct:
+        - npc-trader-no-product
+        - npc-trader-no-product-2
+      phrasesThankYou:
+        - npc-trader-thank-you
+        - npc-trader-thank-you-2
+        - npc-trader-thank-you-3
+      phrasesLittleMoney:
+        - npc-trader-little-money
+        - npc-trader-little-money-2
+        - npc-trader-little-money-3
+      catalogs:
+        - TestTrader2

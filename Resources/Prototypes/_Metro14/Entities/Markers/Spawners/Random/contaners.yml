@@ -7,7 +7,6 @@
       weight: 25
       children:
       - id: Machete
-      - id: Claymore
     # Rare Group
     - !type:GroupSelector
       weight: 35
@@ -26,11 +25,20 @@
     - !type:GroupSelector
       weight: 5
       children: 
-       - id: ClothingOuterArmorRiot
        - id: BowImprovised
        - id: ArrowRegular
        - id: ArrowRegular
        - id: FoodMeatHuman
+    - !type:GroupSelector
+      weight: 1
+      children: 
+       - id: ClothingOuterArmorRiot
+       - id: M14MaterialCardboard10
+       - id: M14MaterialCloth
+       - id: M14MaterialGunpowder
+       - id: M14MaterialSheetSteel10
+
+
 
 
 - type: entity

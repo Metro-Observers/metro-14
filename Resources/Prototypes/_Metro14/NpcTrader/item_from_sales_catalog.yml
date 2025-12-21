@@ -4,9 +4,9 @@
   iconId: PosterContrabandDDayPromo # еще можно указать путь к кастомной png иконке. Для этого используйте iconPath вместо iconId
   description: Пусть тут и не много вещей, зато они помогут тебя выжить...
   givingItems:
-    CartridgeLightRifle: 15
+    CartridgeLightRifle: 90
   takingItems:
-    WeaponRifleAk: 1
+    M14WeaponRifleAk74: 1
     FoodTinMRE: 2
   productTags:
     - npc-trader-gun-tag
@@ -21,10 +21,10 @@
   timeRespawn: 600 # 600 секунд, то есть 10 минут
   countRespawn: 2 # каждые 10 минут будут восстанавливаться 2 набора (больше изначального количества не будет)
   givingItems:
-    GoldRingDiamond: 2
+    GoldRingDiamond: 1
   takingItems:
     Gauze: 1
-    SyringeBicaridine: 1
+    CombatMedipen: 1
   productTags: # это не обязательно
     - npc-trader-med-tag
 
@@ -53,3 +53,128 @@
     FlashlightLantern: 1
   productTags:
     - npc-trader-other-tag
+
+
+- type: npcTraderItemForCatalog
+  id: NPC_Trader_Offer_Survival_Kit2
+  name: npc-trader-offer-survival-kit
+  iconId: PosterContrabandDDayPromo # еще можно указать путь к кастомной png иконке. Для этого используйте iconPath вместо iconId
+  description: Пусть тут и не много вещей, зато они помогут тебя выжить...
+  givingItems:
+    CartridgeLightRifle: 35
+  takingItems:
+    ClothingOuterArmorScrap: 1
+  productTags:
+    - npc-trader-gun-tag
+    - npc-trader-food-tag
+
+- type: npcTraderItemForCatalog
+  id: NPC_Trader_Offer_Vino
+  name: Винишко
+  description: Бывает винишко можно и в тоннелях взять
+  givingItems:
+    DrinkWineBottleFull: 1
+  takingItems:
+    CartridgeLightRifle: 26
+
+
+- type: npcTraderItemForCatalog
+  id: NPC_Trader_Offer_Ashot
+  name: Ашот
+  description: Ну хоть как-то отстреляться.
+  givingItems:
+    M14WeaponShotgunAshot: 1
+  takingItems:
+    CartridgeLightRifle: 26
+
+- type: npcTraderItemForCatalog
+  id: NPC_Trader_Offer_Ashot_sales
+  name: Ашот
+  description: Ну хоть как-то отстреляться.
+  givingItems:
+    CartridgeLightRifle: 26
+  takingItems:
+    M14WeaponShotgunAshot: 1
+
+- type: npcTraderItemForCatalog
+  id: NPC_Trader_Offer_Ak12
+  name: Ак12 
+  description: Ууу с этой пушечкой не балуй...
+  canRespawn: true
+  timeRespawn: 600 # 600 секунд, то есть 10 минут
+  countRespawn: 2
+  givingItems:
+    CartridgeLightRifle: 190
+  takingItems:
+    M14Weaponak12: 1
+
+- type: npcTraderItemForCatalog
+  id: NPC_Trader_Offer_Duplet
+  name: Ак12 
+  description: Ууу с этой пушечкой не балуй...хотя...можно и побаловаться
+  canRespawn: true
+  timeRespawn: 600 # 600 секунд, то есть 10 минут
+  countRespawn: 2
+  givingItems:
+    CartridgeLightRifle: 40
+  takingItems:
+    M14Duplet2033: 1
+
+
+- type: npcTraderItemForCatalog
+  id: NPC_Trader_Offer_M14ClothingShoesValenki
+  name: Валенки
+  description: Тепленькие
+  givingItems:
+    CartridgeLightRifle: 2
+  takingItems:
+    M14ClothingShoesValenki: 1
+
+
+- type: npcTraderItemForCatalog
+  id: NPC_Trader_Offer_ClothingOuterCoatJensen
+  name: Стильная куртка
+  description: Холодно,но стильно
+  givingItems:
+    CartridgeLightRifle: 8
+  takingItems:
+    ClothingOuterCoatJensen: 1
+
+- type: npcTraderItemForCatalog
+  id: NPC_Trader_Offer_FoodPiePlump
+  name: Покушать
+  description: Специально бабушка готовила. Вкуснотища
+  givingItems:
+    CartridgeLightRifle: 10
+  takingItems:
+    FoodPiePlump: 1
+
+- type: npcTraderItemForCatalog
+  id: NPC_Trader_Offer_ClothingEyesBlindfold
+  name: Наборчик?
+  description: Уж не знаю зачем тебе это понадобится...емае
+  givingItems:
+    CartridgeLightRifle: 25
+  takingItems:
+    ClothingMaskMuzzle: 1
+    ClothingEyesBlindfold: 1
+    Handcuffs: 3
+
+
+- type: npcTraderItemForCatalog
+  id: NPC_Trader_Offer_mosinka
+  name: Мосинка
+  description: Ну и старье...емае
+  givingItems:
+    CartridgeLightRifle: 30
+  takingItems:
+    M14WeaponSniperMosin: 1
+
+- type: npcTraderItemForCatalog
+  id: NPC_Trader_Ashot_to_granade
+  name: Мосинка
+  description: Ну нечестный обмен,понимаю. Но я то в техах жопу не пойду рвать. Оставлю это на учесть тебе
+  givingItems:
+    M14WeaponShotgunAshot: 2
+  takingItems:
+    GrenadeFlashBang: 1

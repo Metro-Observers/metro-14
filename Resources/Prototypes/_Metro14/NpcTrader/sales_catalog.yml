@@ -5,3 +5,23 @@
     NPC_Trader_Offer_Hemostatic_Kit: 5
     NPC_Trader_Offer_30RifleAmmo_Kit: -1
     NPC_Trader_Offer_Flashlight_Kit: 10
+    NPC_Trader_Offer_Vino: -1
+    NPC_Trader_Offer_Survival_Kit2: -1
+
+- type: npcTraderSalesCatalog # один из возможных каталогов для торговца
+  id: TestTrader1
+  catalog: # предложения данного каталога
+    NPC_Trader_Offer_Ashot: 7 
+    NPC_Trader_Offer_Ashot_sales: 5
+    NPC_Trader_Offer_Ak12: 2
+    NPC_Trader_Offer_Duplet: 3
+    NPC_Trader_Offer_mosinka: -1
+    NPC_Trader_Ashot_to_granade: 8
+
+- type: npcTraderSalesCatalog # один из возможных каталогов для торговца
+  id: TestTrader2
+  catalog: # предложения данного каталога
+    NPC_Trader_Offer_ClothingEyesBlindfold: -1
+    NPC_Trader_Offer_FoodPiePlump: -1
+    NPC_Trader_Offer_ClothingOuterCoatJensen: -1
+    NPC_Trader_Offer_M14ClothingShoesValenki: -1

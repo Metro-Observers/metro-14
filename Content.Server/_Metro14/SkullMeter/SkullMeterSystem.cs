@@ -54,6 +54,8 @@ public sealed class SkullMeterSystem : EntitySystem
                                 else if (roleComp.AntagPrototype is not null)
                                     roleId = roleComp.AntagPrototype.Value;
 
+                                Log.Error(roleId);
+
                                 if (comp.AlwaysHumanRoles.Contains(roleId))
                                 {
                                     comp.ResultTesting = OperationResult.Human;

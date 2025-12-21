@@ -1,0 +1,18 @@
+####################
+
+- type: startingGear
+  id: TradeAgentHansaGear
+  equipment:
+    head: ClothingHeadHatBowlerHat
+    jumpsuit: M14ClothingUniformTelogreykaBlack
+    id: M14Tablet
+    gloves: ClothingHandsGlovesFingerless
+    shoes: ClothingShoesBootsLaceup
+    back: ClothingBackpackSatchel
+    pocket1: LuxuryPen
+    pocket2: M14HansaPassport
+  inhand:
+    - BriefcaseBrownFilled
+  storage:
+    back:
+    - RubberStampTrader

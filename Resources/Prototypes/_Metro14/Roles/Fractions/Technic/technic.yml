@@ -1,0 +1,11 @@
+####################
+
+- type: startingGear
+  id: TechnicTechGear
+  equipment:
+    jumpsuit: M14ClothingUniformTelogreykaBrown
+    id: M14Tablet
+    shoes: ClothingShoesBootsWork
+    gloves: ClothingHandsGlovesColorLightBrown
+    back: ClothingBackpack
+    belt: ClothingBeltUtilityEngineering

@@ -1,0 +1,11 @@
+####################
+
+- type: startingGear
+  id: StalkerVDNKHGear
+  equipment:
+    head: M14ClothingHeadHatUshankaBrown
+    jumpsuit: M14ClothingUniformTelogreykaBrown
+    id: M14Tablet
+    shoes: M14ClothingShoesValenki
+    gloves: ClothingHandsGlovesHop
+    back: ClothingBackpack

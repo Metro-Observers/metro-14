@@ -1,0 +1,13 @@
+####################
+
+- type: startingGear
+  id: HeadOfSpartaGear
+  equipment:
+    head: ClothingHeadHatBeretHoS
+    neck: M14ClothingNeckCloakSparta
+    mask: ClothingMaskNeckGaiter
+    jumpsuit: ClothingUniformJumpsuitTacticool
+    id: M14Tablet
+    shoes: ClothingShoesBootsCombatFilled
+    gloves: ClothingHandsMercGlovesCombat
+    back: ClothingMilitaryBackpack

@@ -1,0 +1,12 @@
+####################
+
+- type: startingGear
+  id: HeadOfRedLineGear
+  equipment:
+    neck: M14ClothingNeckMantleRedLine
+    mask: ClothingMaskNeckGaiterRed
+    jumpsuit: M14ClothingUniformTelogreykaBlack
+    id: M14Tablet
+    shoes: ClothingShoesBootsCombatFilled
+    gloves: ClothingHandsGlovesCombat
+    back: ClothingMilitaryBackpack

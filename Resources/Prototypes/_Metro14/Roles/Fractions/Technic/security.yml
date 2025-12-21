@@ -1,0 +1,11 @@
+####################
+
+- type: startingGear
+  id: SecurityTechGear
+  equipment:
+    mask: ClothingMaskNeckGaiter
+    jumpsuit: M14ClothingUniformTelogreykaBlack
+    id: M14Tablet
+    shoes: ClothingShoesBootsCombatFilled
+    gloves: ClothingHandsGlovesFingerless
+    back: ClothingBackpack

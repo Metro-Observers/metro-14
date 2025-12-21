@@ -1,0 +1,11 @@
+####################
+
+- type: startingGear
+  id: SoldierSpartaGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitOperative
+    mask: ClothingMaskNeckGaiter
+    id: M14Tablet
+    shoes: ClothingShoesBootsCombatFilled
+    gloves: ClothingHandsGlovesColorBlack
+    back: ClothingMilitaryBackpack

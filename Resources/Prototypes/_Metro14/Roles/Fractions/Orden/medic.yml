@@ -1,0 +1,13 @@
+####################
+
+- type: startingGear
+  id: MedicSpartaGear
+  equipment:
+    head: ClothingHeadHatBeretSeniorPhysician
+    mask: ClothingMaskBreathMedicalSecurity
+    jumpsuit: ClothingUniformJumpsuitOperative
+    id: M14Tablet
+    shoes: ClothingShoesBootsWork
+    gloves: ClothingHandsGlovesLatex
+    back: ClothingMilitaryBackpack
+    belt: ClothingBeltMilitaryWebbingMedFilled

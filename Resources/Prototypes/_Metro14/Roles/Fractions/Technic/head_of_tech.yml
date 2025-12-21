@@ -1,0 +1,12 @@
+####################
+
+- type: startingGear
+  id: HeadOfTechGear
+  equipment:
+    head: ClothingHeadHatSyndieMAA
+    neck: M14ClothingNeckMantleTech
+    jumpsuit: M14ClothingUniformTelogreykaBlack
+    id: M14Tablet
+    shoes: ClothingShoesBootsWork
+    gloves: ClothingHandsGlovesHop
+    back: ClothingBackpackMerc

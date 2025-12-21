@@ -1,0 +1,13 @@
+####################
+
+- type: startingGear
+  id: HeadOfHydraGear
+  equipment:
+    head: M14ClothingHeadHatBeaverHat
+    neck: M14ClothingNeckCloakHydra
+    mask: ClothingMaskNeckGaiter
+    jumpsuit: M14ClothingUniformTelogreykaBlack
+    id: M14Tablet
+    shoes: ClothingShoesBootsCombatFilled
+    gloves: ClothingHandsGlovesCombat
+    back: ClothingMilitaryBackpack

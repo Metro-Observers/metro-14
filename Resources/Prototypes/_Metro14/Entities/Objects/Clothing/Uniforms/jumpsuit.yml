@@ -5,9 +5,9 @@
   description: Стандартная униформа для унтер состава. На удивление довольно ухоженная.
   components:
   - type: Sprite
-    sprite: _Metro14/Objects/Clothing/Uniforms/Jumpsuit/officer.rsi
+    sprite: _Metro14/Clothing/Uniforms/Jumpsuit/officer.rsi
   - type: Clothing
-    sprite: _Metro14/Objects/Clothing/Uniforms/Jumpsuit/officer.rsi
+    sprite: _Metro14/Clothing/Uniforms/Jumpsuit/officer.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -16,7 +16,7 @@
   description: Тёплый комплект одежды, состоящий из ватника и утеплённых штанов с подтяжками.
   components:
   - type: Clothing
-    sprite: _Metro14/Objects/Clothing/Uniforms/Jumpsuit/telogreyka_brown.rsi
+    sprite: _Metro14/Clothing/Uniforms/Jumpsuit/telogreyka_brown.rsi
   - type: Appearance
   - type: AddAccentClothing
     accent: RussianAccent
@@ -26,7 +26,7 @@
     foldedEquippedPrefix: up
     foldedHeldPrefix: up
   - type: Sprite
-    sprite: _Metro14/Objects/Clothing/Uniforms/Jumpsuit/telogreyka_brown.rsi
+    sprite: _Metro14/Clothing/Uniforms/Jumpsuit/telogreyka_brown.rsi
     layers:
     - state: icon
       map: [ "unfoldedLayer" ]
@@ -41,7 +41,7 @@
   description: Тёплый комплект одежды, состоящий из ватника и утеплённых штанов с подтяжками.
   components:
   - type: Clothing
-    sprite: _Metro14/Objects/Clothing/Uniforms/Jumpsuit/telogreyka_black.rsi
+    sprite: _Metro14/Clothing/Uniforms/Jumpsuit/telogreyka_black.rsi
   - type: Appearance
   - type: AddAccentClothing
     accent: RussianAccent
@@ -51,7 +51,7 @@
     foldedEquippedPrefix: up
     foldedHeldPrefix: up
   - type: Sprite
-    sprite: _Metro14/Objects/Clothing/Uniforms/Jumpsuit/telogreyka_black.rsi
+    sprite: _Metro14/Clothing/Uniforms/Jumpsuit/telogreyka_black.rsi
     layers:
     - state: icon
       map: [ "unfoldedLayer" ]

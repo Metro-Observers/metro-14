@@ -1,0 +1,13 @@
+####################
+
+- type: startingGear
+  id: OfficerHansaGear
+  equipment:
+    head: ClothingHeadHatBeretMerc
+    jumpsuit: ClothingUniformJumpsuitTacticool
+    id: M14Tablet
+    mask: ClothingMaskNeckGaiter
+    gloves: ClothingHandsGlovesFingerless
+    shoes: ClothingShoesBootsCombatFilled
+    back: ClothingBackpackMerc
+    pocket1: M14HansaPassport

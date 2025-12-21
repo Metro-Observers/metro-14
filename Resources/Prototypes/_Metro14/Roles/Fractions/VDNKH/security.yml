@@ -1,0 +1,12 @@
+####################
+
+- type: startingGear
+  id: SecurityVDNKHGear
+  equipment:
+    head: ClothingHeadHelmetScrap
+    jumpsuit: M14ClothingUniformTelogreykaBlack
+    id: M14Tablet
+    gloves: ClothingHandsGlovesFingerless
+    shoes: ClothingShoesBootsWork
+    back: ClothingBackpack
+    pocket1: SurvivalKnife

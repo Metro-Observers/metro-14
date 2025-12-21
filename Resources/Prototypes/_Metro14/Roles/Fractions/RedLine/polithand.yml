@@ -1,0 +1,15 @@
+####################
+
+- type: startingGear
+  id: PolitHandRedLineGear
+  equipment:
+    head: ClothingHeadHatBeretSecurity
+    mask: ClothingMaskNeckGaiterRed
+    jumpsuit: M14ClothingUniformTelogreykaBlack
+    id: M14Tablet
+    shoes: ClothingShoesLeather
+    gloves: ClothingHandsGlovesFingerless
+    back: ClothingBackpackSatchel
+    pocket1: LuxuryPen
+  inhand:
+    - BriefcaseBrownFilled

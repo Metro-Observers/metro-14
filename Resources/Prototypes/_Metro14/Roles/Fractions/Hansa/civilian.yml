@@ -1,0 +1,10 @@
+####################
+
+- type: startingGear
+  id: CivilianHansaGear
+  equipment:
+    jumpsuit: M14ClothingUniformTelogreykaBlack
+    id: M14Tablet
+    shoes: ClothingShoesLeather
+    back: ClothingBackpack
+    pocket1: M14HansaPassport

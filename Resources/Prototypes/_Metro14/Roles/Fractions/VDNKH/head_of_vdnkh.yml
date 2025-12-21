@@ -1,0 +1,13 @@
+####################
+
+- type: startingGear
+  id: HeadOfVDNKHGear
+  equipment:
+    head: M14ClothingHeadHatUshankaBlack
+    neck: M14ClothingNeckMantleVDNKH
+    jumpsuit: M14ClothingUniformTelogreykaBlack
+    id: M14Tablet
+    shoes: M14ClothingShoesValenki
+    gloves: ClothingHandsGlovesHop
+    back: ClothingBackpackMerc
+    pocket1: SurvivalKnife

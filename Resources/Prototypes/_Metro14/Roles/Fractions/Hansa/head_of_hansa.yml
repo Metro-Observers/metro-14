@@ -1,0 +1,15 @@
+####################
+
+- type: startingGear
+  id: HeadOfHansaGear
+  equipment:
+    head: ClothingHeadHatBeretFrench
+    neck: M14ClothingNeckMantleHansa
+    jumpsuit: ClothingUniformJumpsuitTacticool
+    id: M14Tablet
+    mask: ClothingMaskNeckGaiter
+    gloves: ClothingHandsMercGlovesCombat
+    shoes: ClothingShoesBootsCombatFilled
+    back: ClothingMilitaryBackpack
+    pocket1: LuxuryPen
+    pocket2: M14HansaPassport

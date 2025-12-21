@@ -1,0 +1,11 @@
+####################
+
+- type: startingGear
+  id: SoldierHydraGear
+  equipment:
+    mask: ClothingMaskNeckGaiter
+    jumpsuit: M14ClothingUniformTelogreykaBlack
+    id: M14Tablet
+    shoes: ClothingShoesBootsCombatFilled
+    gloves: ClothingHandsGlovesColorBlack
+    back: ClothingBackpack

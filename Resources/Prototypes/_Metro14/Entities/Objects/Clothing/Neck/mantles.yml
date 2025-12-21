@@ -1,43 +1,26 @@
 - type: entity
   parent: ClothingNeckBase
-  id: M14ClothingNeckMantleHansa
-  name: мантия лидера Ганзы
-  description: Эта мантия так и пропитана капитализмом. Всё ради выгоды.
+  id: M14ClothingNeckMantlesGahzaLeader
+  name: накидка главы ганзы
+  description: внушает доверие.
   components:
   - type: Sprite
-    sprite: _Metro14/Clothing/Neck/Mantles/hansa.rsi
-  - type: Clothing
-    sprite: _Metro14/Clothing/Neck/Mantles/hansa.rsi 
+    sprite: _Metro14/Objects/Clothing/Neck/Mantles/Hanza.rsi
 
 - type: entity
   parent: ClothingNeckBase
-  id: M14ClothingNeckMantleTech
-  name: мантия лидера Кузнецкого Моста
-  description: Мантия лидера той станции, где производится почти вся техника, что есть в метро.
+  id: M14ClothingNeckMantlesTehLeader
+  name: накидка главы техников
+  description: внушает доверие.
   components:
   - type: Sprite
-    sprite: _Metro14/Clothing/Neck/Mantles/tech.rsi
-  - type: Clothing
-    sprite: _Metro14/Clothing/Neck/Mantles/tech.rsi 
+    sprite: _Metro14/Objects/Clothing/Neck/Mantles/Ingeners.rsi
 
 - type: entity
   parent: ClothingNeckBase
-  id: M14ClothingNeckMantleRedLine
-  name: мантия лидера Красной Линии
-  description: Надевший её чувствует как тоталитаризм проникает в его тело.
+  id: M14ClothingNeckMantlesUSSRLeader
+  name: накидка главы красной линии
+  description: внушает доверие.
   components:
   - type: Sprite
-    sprite: _Metro14/Clothing/Neck/Mantles/ussr.rsi
-  - type: Clothing
-    sprite: _Metro14/Clothing/Neck/Mantles/ussr.rsi 
-
-- type: entity
-  parent: ClothingNeckBase
-  id: M14ClothingNeckMantleVDNKH
-  name: мантия лидера ВДНХ
-  description: Лидер грибочков и чая.
-  components:
-  - type: Sprite
-    sprite: _Metro14/Clothing/Neck/Mantles/vdnkh.rsi
-  - type: Clothing
-    sprite: _Metro14/Clothing/Neck/Mantles/vdnkh.rsi 
+    sprite: _Metro14/Objects/Clothing/Neck/Mantles/USSR.rsi

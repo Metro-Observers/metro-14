@@ -27,15 +27,6 @@
       ports:
       - Pressed
     - type: BoomBox
-      slots:
-        boombox_slot:
-          whitelist:
-            tags:
-              - BoomBoxTape
-          locked: false
-          swap: false
-          ejectOnDeconstruct: true
-          ejectOnBreak: true
     - type: ActivatableUI
       singleUser: true
       key: enum.BoomBoxUiKey.Key

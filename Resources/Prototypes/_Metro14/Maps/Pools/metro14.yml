@@ -1,0 +1,4 @@
+- type: gameMapPool
+  id: Metro14MapPool
+  maps:
+  - Metro14

@@ -1,0 +1,58 @@
+[net]
+tickrate = 30
+
+[netres]
+limit = 25.0
+
+[infolinks]
+discord = "https://discord.gg/nC9pFqH2"
+patreon = "https://boosty.to/ssglobeshow"
+
+[viewport]
+maximum_width = 26
+
+[ooc]
+enable_during_round = false
+
+[game]
+lobbyenabled = true
+lobbyduration = 240
+map_pool = "Metro14MapPool"
+secret_weight_prototype = "Metro14Default"
+round_restart_time = 240
+fallbackpreset = "extended"
+contraband_examine = false
+
+[server]
+rules_file = "CorvaxRuleset"
+
+[atmos]
+space_wind = false
+
+[biomass]
+easy_mode = false
+
+[ic]
+flavor_text = true
+punctuation = true
+
+[shuttle]
+auto_call_time = 0
+
+[discord]
+rich_main_icon_id = "metro14"
+
+[admin]
+see_own_notes = false
+
+[vote]
+restart_required_ratio = 0.85
+same_type_timeout = 300.0
+timerrestart = 30
+preset_enabled = false
+restart_enabled = true
+map_enabled = false
+
+[hub]
+advertise = false
+tags = "lang:ru,rp:high,region:eu_e"

@@ -8,8 +8,24 @@
       sprite: _Metro14/Objects/Devices/boombox.rsi
       state: boombox
     - type: ItemSlots
+      slots:
+        boombox_slot:
+          locked: false
+          swap: false
+          ejectOnDeconstruct: true
+          ejectOnBreak: true
+          whitelist:
+            tags:
+              - BoomBoxTape
     - type: ContainerContainer
-    - type: DeviceLinkSource
+      containers:
+        boombox_slot: !type:ContainerSlot
+          showEnts: false
+          occludes: true
+          ent: null
+    - type: DeviceLinkSource # порт обязательно "Pressed"!
+      ports:
+      - Pressed
     - type: BoomBox
       slots:
         boombox_slot:
@@ -21,6 +37,7 @@
           ejectOnDeconstruct: true
           ejectOnBreak: true
     - type: ActivatableUI
+      singleUser: true
       key: enum.BoomBoxUiKey.Key
     - type: UserInterface
       interfaces:

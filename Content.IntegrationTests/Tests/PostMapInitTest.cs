@@ -102,6 +102,9 @@ namespace Content.IntegrationTests.Tests
             "CorvaxAwesome",
 			"CorvaxChloris",
             // Corvax-End
+            // Metro14-start
+            "Metro14",
+            // Metro14-end
             "Dev",
             "TestTeg",
             "Fland",

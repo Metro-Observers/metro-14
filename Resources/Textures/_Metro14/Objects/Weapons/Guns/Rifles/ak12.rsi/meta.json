@@ -36,8 +36,7 @@
       "directions": 4
     },
 		{
-			"name": "suppressor",
-			"directions": 4
+			"name": "suppressor"
 		}
     ]
 }

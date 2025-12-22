@@ -11,29 +11,35 @@ namespace Content.Server._Metro14.BoomBox;
 [RegisterComponent, Access(typeof(BoomBoxSystem))]
 public sealed partial class BoomBoxComponent : Component
 {
-    // This field displays whether music is currently playing.
+    /// <summary>
+    /// Поле, отвечающие за показатель воспроизведения музыки в текущий момент.
+    /// </summary>
     public bool Enabled = false;
 
-    // This field is needed to work with the audio stream
+    /// <summary>
+    /// Поле требуемое для работы с звуковым потоком.
+    /// </summary>
     public EntityUid? Stream = null;
 
-    // This field is needed to adjust the volume of the boombox :)
+    /// <summary>
+    /// Поле необходимое для регулировки громкости проигрывател.
+    /// </summary>
     public float Volume = -13f;
 
-    // This field shows the presence of the cassette in the boombox
+    /// <summary>
+    /// Поле, показывающее, есть ли в данный момент в проигрывателе кассета.
+    /// </summary>
     public bool Inserted = false;
 
-    public EntityUid User;
-
-    public SoundSpecifier EmagSound = new SoundCollectionSpecifier("sparks");
-
-    [DataField("port", customTypeSerializer: typeof(PrototypeIdSerializer<SourcePortPrototype>))]
+    /// <summary>
+    /// Поле, необходимое для передачи сигнала на нужный выход.
+    /// Обязательно должно совпадать с полем указанным в прототипе под компонентом DeviceLinkSource.
+    /// </summary>
+    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<SourcePortPrototype>))]
     public string Port = "Pressed";
 
-    public string SoundPath = "/Audio/Stories/Objects/Devices/boombox/FanfareRussian.ogg";
-
-
-    [DataField("slots")]
-    public Dictionary<string, ItemSlot> Slots = new();
-
+    /// <summary>
+    /// Поле, содержащее путь к файлу, который будет воспроизводится по умолчанию, если в кассете будет указан неправильный аудио-файл.
+    /// </summary>
+    public string SoundPath = "Audio/_Metro14/BoomBox/Default/BelyjShum.ogg";
 }

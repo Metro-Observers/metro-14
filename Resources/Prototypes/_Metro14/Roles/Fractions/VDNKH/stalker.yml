@@ -1,7 +1,14 @@
-####################
+- type: job
+  id: M14StalkerVDNKH
+  name: Сталкер
+  description: Ищите следы старой цивилизации по техничкам,нанимайтесь,провозите контрабанду,собирайте оружие у техников.
+  playTimeTracker: M14StalkerVDNKH
+  startingGear: M14StalkerVDNKHGear
+  icon: "JobIconVDNKH"
+  canBeAntag: true
 
 - type: startingGear
-  id: StalkerVDNKHGear
+  id: M14StalkerVDNKHGear
   equipment:
     head: M14ClothingHeadHatUshankaBrown
     jumpsuit: M14ClothingUniformTelogreykaBrown

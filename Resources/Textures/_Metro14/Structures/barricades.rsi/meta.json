@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from /vg/station at commit https://github.com/vgstation-coders/vgstation13/commit/fa615ead9d02b879b2ed0461f36622affb32088f",
+  "copyright": "wood_directional taken from /vg/station at commit https://github.com/vgstation-coders/vgstation13/commit/fa615ead9d02b879b2ed0461f36622affb32088f, Taken from cmss13 at https://github.com/cmss13-devs/cmss13/blob/41109aa6eebf87892e41b61418b7b06b279d04b6/icons/obj/structures/barricades.dmi",
   "size": {
     "x": 32,
     "y": 32
@@ -9,6 +9,73 @@
   "states": [
 	{
 	  "name": "wood_directional",
+	  "directions": 4
+	},
+  	{
+	  "name": "folding",
+	  "directions": 4
+	},
+  	{
+	  "name": "folding_folded"
+	},
+  	{
+	  "name": "folding_metal",
+	  "directions": 4
+	},
+  	{
+	  "name": "folding_metal_closed",
+	  "directions": 4
+	},
+  	{
+	  "name": "folding_metal_closed_wire",
+	  "directions": 4
+	},
+  	{
+	  "name": "folding_metal_wire",
+	  "directions": 4
+	},
+  	{
+	  "name": "folding_plasteel",
+	  "directions": 4
+	},
+  	{
+	  "name": "folding_plasteel_closed",
+	  "directions": 4
+	},
+  	{
+	  "name": "folding_plasteel_closed_wire",
+	  "directions": 4
+	},
+  	{
+	  "name": "folding_plasteel_wire",
+	  "directions": 4
+	},
+  	{
+	  "name": "metal",
+	  "directions": 4
+	},
+  	{
+	  "name": "metal_wire",
+	  "directions": 4
+	},
+  	{
+	  "name": "plasteel",
+	  "directions": 4
+	},
+  	{
+	  "name": "plasteel_wire",
+	  "directions": 4
+	},
+  	{
+	  "name": "sandbag",
+	  "directions": 4
+	},
+  	{
+	  "name": "sandbag_wire",
+	  "directions": 4
+	},
+  	{
+	  "name": "wooden",
 	  "directions": 4
 	}
   ]

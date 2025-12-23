@@ -1,7 +1,14 @@
-####################
+- type: job
+  id: M14TradeAgentHansa
+  name: Торговый агент ганзы
+  description: Вы обязаны следить за всем что идет через границу станции 
+  playTimeTracker: M14TradeAgentHansa
+  startingGear: M14TradeAgentHansaGear
+  icon: "JobIconHansa"
+  canBeAntag: true
 
 - type: startingGear
-  id: TradeAgentHansaGear
+  id: M14TradeAgentHansaGear
   equipment:
     head: ClothingHeadHatBowlerHat
     jumpsuit: M14ClothingUniformTelogreykaBlack

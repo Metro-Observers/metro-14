@@ -1,0 +1,61 @@
+- type: department
+  id: M14Hydra
+  name: department-Hydra
+  description: department-Hydra-description
+  color: "#474e4c"
+  roles:
+  - M14HeadOfHydra
+  - M14Minister
+  - M14SoldierHydra
+
+- type: department
+  id: M14RedLine
+  name: department-RedLine
+  description: department-RedLine-description
+  color: "#ea0000"
+  roles:
+  - M14HeadOfRedLine
+  - M14PolitHandRedLine
+  - M14SoldierRedline
+
+- type: department
+  id: M14Hansa
+  name: department-Hansa
+  description: department-Hansa-description
+  color: "#5e4d35"
+  roles:
+  - M14HeadOfHansa
+  - M14TradeAgentHansa
+  - M14OfficerHansa
+  - M14CivilianHansa
+
+- type: department
+  id: M14Sparta
+  name: department-Sparta
+  description: department-Sparta-description
+  color: "#000000"
+  roles:
+  - M14HeadOfSparta
+  - M14LieutenantOfHeadOfSparta
+  - M14MedicSparta
+  - M14SoldierSparta
+
+- type: department
+  id: M14Tech
+  name: department-Tech
+  description: department-Tech-description
+  color: "#a64a6f"
+  roles:
+  - M14HeadOfTech
+  - M14SecurityTech
+  - M14TechnicTech
+
+- type: department
+  id: M14VDNKH
+  name: department-VDNKH
+  description: department-VDNKH-description
+  color: "#f49628"
+  roles:
+  - M14HeadOfVDNKH
+  - M14SecurityVDNKH
+  - M14StalkerVDNKH

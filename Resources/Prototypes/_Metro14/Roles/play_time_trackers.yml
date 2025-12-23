@@ -1,0 +1,57 @@
+# Hydra
+
+- type: playTimeTracker
+  id: M14HeadOfHydra
+- type: playTimeTracker
+  id: M14MinisterHydra
+- type: playTimeTracker
+  id: M14SoldierHydra
+
+# Redline
+
+- type: playTimeTracker
+  id: M14HeadOfRedLine
+- type: playTimeTracker
+  id: M14PolitHandRedLine
+- type: playTimeTracker
+  id: M14SoldierRedLine
+
+# Hansa
+
+- type: playTimeTracker
+  id: M14HeadOfHansa
+- type: playTimeTracker
+  id: M14TradeAgentHansa
+- type: playTimeTracker
+  id: M14OfficerHansa
+- type: playTimeTracker
+  id: M14CivilianHansa
+
+# Sparta
+
+- type: playTimeTracker
+  id: M14HeadOfSparta
+- type: playTimeTracker
+  id: M14LieutenantOfHeadOfSparta
+- type: playTimeTracker
+  id: M14MedicSparta
+- type: playTimeTracker
+  id: M14SoldierSparta
+
+# Technic
+
+- type: playTimeTracker
+  id: M14HeadOfTech
+- type: playTimeTracker
+  id: M14SecurityTech
+- type: playTimeTracker
+  id: M14TechnicTech
+
+# VDNKH
+
+- type: playTimeTracker
+  id: M14HeadOfVDNKH
+- type: playTimeTracker
+  id: M14SecurityVDNKH
+- type: playTimeTracker
+  id: M14StalkerVDNKH

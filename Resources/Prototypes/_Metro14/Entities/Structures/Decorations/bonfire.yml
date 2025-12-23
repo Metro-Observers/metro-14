@@ -1,0 +1,14 @@
+- type: entity
+  id: M14Bonfire
+  parent: Bonfire
+  name: костёр
+  description: На нём вы можете спокойно пожарить крысятину или туннельный гриб.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _Metro14/Structures/Decoration/bonfire.rsi
+    layers:
+      - state: bonfire
+      - state: burning
+  - type: PointLight
+    color: "#FF5601"

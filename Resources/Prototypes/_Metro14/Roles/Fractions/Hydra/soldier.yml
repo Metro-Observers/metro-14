@@ -1,7 +1,14 @@
-####################
+- type: job
+  id: M14SoldierHydra
+  name: Солдат Гидры
+  description: Вы великий представитель гидры. Цвет метро.
+  playTimeTracker: M14SoldierHydra
+  startingGear: M14SoldierHydraGear
+  icon: "JobIconHydra"
+  canBeAntag: true
 
 - type: startingGear
-  id: SoldierHydraGear
+  id: M14SoldierHydraGear
   equipment:
     mask: ClothingMaskNeckGaiter
     jumpsuit: M14ClothingUniformTelogreykaBlack

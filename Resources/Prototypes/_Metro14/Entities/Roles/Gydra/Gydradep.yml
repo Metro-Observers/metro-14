@@ -1,9 +1,0 @@
-- type: department
-  id: M14Gydra
-  name: M14Gydra-name
-  description: department-Science-description
-  color: "#82868a"
-  roles:
-  - M14Furer
-  - M14Ministr
-  - M14SoldierGydra

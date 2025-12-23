@@ -1,0 +1,271 @@
+# Hydra
+
+- type: entity
+  id: M14SpawnPointGydraFurer
+  parent: SpawnPointJobBase
+  name: M14SpawnPointGydraFurer
+  components:
+  - type: SpawnPoint
+    job_id: M14HeadOfHydra
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+- type: entity
+  id: M14SpawnPointM14Ministr
+  parent: SpawnPointJobBase
+  name: M14SpawnPointM14Ministr
+  components:
+  - type: SpawnPoint
+    job_id: M14Minister
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+- type: entity
+  id: M14SpawnPointM14SoldierGydra
+  parent: SpawnPointJobBase
+  name: M14SpawnPointM14SoldierGydra
+  components:
+  - type: SpawnPoint
+    job_id: M14SoldierHydra
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+# RedLine
+
+- type: entity
+  id: SpawnPointredlineGensek
+  parent: SpawnPointJobBase
+  name: M14SpawnRedlineGensek
+  components:
+  - type: SpawnPoint
+    job_id: M14HeadOfRedLine
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+- type: entity
+  id: SpawnPointredlinepolitruk
+  parent: SpawnPointJobBase
+  name: M14SpawnPolitruk
+  components:
+  - type: SpawnPoint
+    job_id: M14PolitHandRedLine
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+- type: entity
+  id: SpawnPointredlineSold
+  parent: SpawnPointJobBase
+  name: M14SpawnRedlineSold
+  components:
+  - type: SpawnPoint
+    job_id: M14SoldierRedline
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+# Sparta
+
+- type: entity
+  id: SpawnPointM14Polkovnik
+  parent: SpawnPointJobBase
+  name: M14SpawnPointM14Polkovnik
+  components:
+  - type: SpawnPoint
+    job_id: M14HeadOfSparta
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+- type: entity
+  id: SpawnPointM14PodPolkovnik
+  parent: SpawnPointJobBase
+  name: M14SpawnPointM14PodPolkovnik
+  components:
+  - type: SpawnPoint
+    job_id: M14LieutenantOfHeadOfSparta
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+- type: entity
+  id: M14SpawnPointM14Medicsparta
+  parent: SpawnPointJobBase
+  name: M14SpawnPointM14Medicsparta
+  components:
+  - type: SpawnPoint
+    job_id: M14MedicSparta
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+- type: entity
+  id: SpawnPointM14Soldier
+  parent: SpawnPointJobBase
+  name: M14SpawnPointM14Soldier
+  components:
+  - type: SpawnPoint
+    job_id: M14SoldierSparta
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+# Tech
+
+- type: entity
+  id: M14SpawnPointNachalnikTexniki
+  parent: SpawnPointJobBase
+  name: M14SpawnNachalnikTexniki
+  components:
+  - type: SpawnPoint
+    job_id: M14HeadOfTech
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+- type: entity
+  id: M14SpawnPointSecurityTech
+  parent: SpawnPointJobBase
+  name: M14SpawnTexniki
+  components:
+  - type: SpawnPoint
+    job_id: M14SecurityTech
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+- type: entity
+  id: M14SpawnPointTexniki
+  parent: SpawnPointJobBase
+  name: M14SpawnTexniki
+  components:
+  - type: SpawnPoint
+    job_id: M14TechnicTech
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+# VDNKH
+
+- type: entity
+  id: M14SpawnPointNachalnikVdnh
+  parent: SpawnPointJobBase
+  name: M14SpawnNachalnikVdnh
+  components:
+  - type: SpawnPoint
+    job_id: M14HeadOfVDNKH
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+- type: entity
+  id: M14SpawnPointOfficerVdnh
+  parent: SpawnPointJobBase
+  name: M14SpawnOfficerVdnh
+  components:
+  - type: SpawnPoint
+    job_id: M14SecurityVDNKH
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+- type: entity
+  id: M14SpawnPointStalker
+  parent: SpawnPointJobBase
+  name: M14SpawnStalker
+  components:
+  - type: SpawnPoint
+    job_id: M14StalkerVDNKH
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+# Hansa
+
+- type: entity
+  id: M14SpawnPointGanzaNachalnikStanciiganza
+  parent: SpawnPointJobBase
+  name: M14SpawnGanzaNachalnikStanciiganza
+  components:
+  - type: SpawnPoint
+    job_id: M14HeadOfHansa
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+- type: entity
+  id: M14SpawnPointGanzaTorgAgent
+  parent: SpawnPointJobBase
+  name: M14SpawnGanzaTorgAgent
+  components:
+  - type: SpawnPoint
+    job_id: M14TradeAgentHansa
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+- type: entity
+  id: M14SpawnPointGanzaofic
+  parent: SpawnPointJobBase
+  name: M14SpawnGanzaOficcer
+  components:
+  - type: SpawnPoint
+    job_id: M14OfficerHansa
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi
+
+- type: entity
+  id: M14SpawnPointGanzaGrazhdaninGanzi
+  parent: SpawnPointJobBase
+  name: M14SpawnGanzaNachalnikStanciiganza
+  components:
+  - type: SpawnPoint
+    job_id: M14CivilianHansa
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+      - sprite: Markers/jobs.rsi

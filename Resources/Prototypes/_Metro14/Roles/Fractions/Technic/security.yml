@@ -1,7 +1,14 @@
-####################
+- type: job
+  id: M14SecurityTech
+  name: Охрана станции
+  description: Защищайте ваших любимых техников от всяких напастей. Может быть они поделятся с вами их разработками.
+  playTimeTracker: M14SecurityTech
+  startingGear: M14SecurityTechGear
+  icon: "JobIconTech"
+  canBeAntag: true
 
 - type: startingGear
-  id: SecurityTechGear
+  id: M14SecurityTechGear
   equipment:
     mask: ClothingMaskNeckGaiter
     jumpsuit: M14ClothingUniformTelogreykaBlack

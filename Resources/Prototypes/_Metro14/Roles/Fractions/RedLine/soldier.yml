@@ -1,7 +1,14 @@
-####################
+- type: job
+  id: M14SoldierRedline
+  name: Солдат Красной Линии
+  description: Вы обязаны подчиняться генсеку и политруку и нести идеологию коммунизма.
+  playTimeTracker: M14SoldierRedLine
+  startingGear: M14SoldierRedLineGear
+  icon: "JobIconRedline"
+  canBeAntag: true
 
 - type: startingGear
-  id: SoldierRedLineGear
+  id: M14SoldierRedLineGear
   equipment:
     mask: ClothingMaskNeckGaiterRed
     jumpsuit: M14ClothingUniformTelogreykaBlack

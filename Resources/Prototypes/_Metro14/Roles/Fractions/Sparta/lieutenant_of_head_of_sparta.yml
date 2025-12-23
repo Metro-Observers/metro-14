@@ -1,0 +1,19 @@
+- type: job
+  id: M14LieutenantOfHeadOfSparta
+  name: Подполковник Спарты
+  description: Вы заменяете лидера спарты. Храните клятву,защищайте метро
+  playTimeTracker: M14LieutenantOfHeadOfSparta
+  startingGear: M14LieutenantOfHeadOfSpartaGear
+  icon: "JobIconSparta"
+  canBeAntag: true
+
+- type: startingGear
+  id: M14LieutenantOfHeadOfSpartaGear
+  equipment:
+    head: ClothingHeadHatBeretSecurityPilot
+    mask: ClothingMaskNeckGaiter
+    jumpsuit: ClothingUniformJumpsuitTacticool
+    id: M14Tablet
+    shoes: ClothingShoesBootsCombatFilled
+    gloves: ClothingHandsGlovesCombat
+    back: ClothingMilitaryBackpack

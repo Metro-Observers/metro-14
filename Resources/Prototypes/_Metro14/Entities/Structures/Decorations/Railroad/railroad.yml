@@ -30,3 +30,55 @@
       fix1:
         shape:
           !type:PhysShapeAabb {}
+
+- type: entity
+  id: M14RailRoadMetro
+  parent: BaseStructure
+  name: рельсы
+  suffix: Прямой
+  description: Железная дорога по которой раньше ходили вагоны метро. Сейчас она используются для поездок на дрезинах.
+  components:
+  - type: StepTrigger
+    requiredTriggeredSpeed: 0
+    intersectRatio: 0.1
+    blacklist:
+      tags:
+        - Catwalk
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Clickable
+  - type: Sprite
+    sprite: _Metro14/Structures/Railroad/railroad_metro.rsi
+    state: railroadStraight
+  - type: Tag
+    tags:
+      - Structure
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb {}
+
+- type: entity
+  id: M14RailRoadMetroStation
+  parent: M14RailRoadMetro
+  name: рельсы
+  suffix: Станция
+  description: Железная дорога по которой раньше ходили вагоны метро. Сейчас она используются для поездок на дрезинах.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Railroad/railroad_metro.rsi
+    state: railroadStraightStation
+
+- type: entity
+  id: M14RailRoadMetroBumper
+  parent: M14RailRoadMetro
+  name: рельсы
+  suffix: Бампер
+  description: Железная дорога по которой раньше ходили вагоны метро. Сейчас она используются для поездок на дрезинах.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Railroad/railroad_metro.rsi
+    state: railroadBumper

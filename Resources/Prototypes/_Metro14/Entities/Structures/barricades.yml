@@ -1,8 +1,10 @@
+# Wooden
+
 - type: entity
   name: деревянная баррикада 
   description: Почти сгнившие доски, ржавые гвозди, это вся твоя защита от жесткого мира.
   id: M14BarricadeWoodDirectional
-  parent: BaseBarricade
+  parent: BaseStructure
   placement:
     mode: SnapgridCenter
   components:
@@ -10,6 +12,24 @@
     sprite: _Metro14/Structures/barricades.rsi
     state: wood_directional
     noRot: false
+  - type: Icon
+    sprite: _Metro14/Structures/barricades.rsi
+    state: wood_directional
+  - type: Damageable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 80
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 1
+            max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -33,3 +53,516 @@
   - type: FireVisuals
     sprite: Effects/fire.rsi
     normalState: 1
+  - type: Climbable
+    delay: 3
+
+- type: entity
+  name: деревянная баррикада 
+  description: Более укреплённая версия деревянной баррикады. Всё так же очень хорошо горит.
+  id: M14BarricadeWooden
+  parent: M14BarricadeWoodDirectional
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/barricades.rsi
+    state: wooden
+    noRot: false
+  - type: Icon
+    sprite: _Metro14/Structures/barricades.rsi
+    state: wooden
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 3
+            max: 5
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Climbable
+    delay: 4
+
+# Sandbags
+
+- type: entity
+  name: мешки с песком
+  description: Мешки с песком, положенные на друг друга. Служат не очень хорошей защитой, но зато есть где укрыться.
+  id: M14BarricadeSandbags
+  parent: BaseStructure
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/barricades.rsi
+    state: sandbag
+    noRot: false
+  - type: Icon
+    sprite: _Metro14/Structures/barricades.rsi
+    state: sandbag
+  - type: Damageable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialCloth1:
+            min: 3
+            max: 5
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.39,0.49,-0.36"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+  - type: Appearance
+  - type: Climbable
+    delay: 0.5
+
+- type: entity
+  name: мешки с песком с колючей проволокой
+  description: Мешки с песком, положенные на друг друга. Служат не очень хорошей защитой, но зато есть где укрыться. Сверху есть колючая проволока, что усложняет переправу через неё.
+  id: M14BarricadeSandbagsWire
+  parent: M14BarricadeSandbags
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/barricades.rsi
+    state: sandbag_wire
+    noRot: false
+  - type: Icon
+    sprite: _Metro14/Structures/barricades.rsi
+    state: sandbag_wire
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialCloth1:
+            min: 3
+            max: 5
+          PartRodMetal1:
+            min: 1
+            max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Climbable
+    delay: 3
+
+# Metal and plasteel
+
+- type: entity
+  name: металлическая баррикада
+  description: Довольно крепкая баррикада из металлической пластины, которая способна поглотить среднее количество урона.
+  id: M14BarricadeMetal
+  parent: BaseStructure
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/barricades.rsi
+    state: metal
+    noRot: false
+  - type: Icon
+    sprite: _Metro14/Structures/barricades.rsi
+    state: metal
+  - type: Damageable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 3
+            max: 5
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.39,0.49,-0.36"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+  - type: Appearance
+  - type: Climbable
+    delay: 2
+
+- type: entity
+  name: металлическая баррикада с колючей проволокой
+  description: Довольно крепкая баррикада из металлической пластины, которая способна поглотить среднее количество урона. Сверху есть колючая проволока, что усложняет переправу через неё.
+  id: M14BarricadeMetalWire
+  parent: M14BarricadeMetal
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/barricades.rsi
+    state: metal_wire
+    noRot: false
+  - type: Icon
+    sprite: _Metro14/Structures/barricades.rsi
+    state: metal_wire
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 3
+            max: 5
+          PartRodMetal1:
+            min: 1
+            max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Climbable
+    delay: 7
+
+- type: entity
+  name: укреплённая металлическая баррикада
+  description: Очень крепкая баррикада из укреплённой металлической пластины, которая способна поглотить среднее количество урона.
+  id: M14BarricadePlasteel
+  parent: BaseStructure
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/barricades.rsi
+    state: plasteel
+    noRot: false
+  - type: Icon
+    sprite: _Metro14/Structures/barricades.rsi
+    state: plasteel
+  - type: Damageable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetPlasteel1:
+            min: 3
+            max: 5
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.39,0.49,-0.36"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+  - type: Appearance
+  - type: Climbable
+    delay: 2
+
+- type: entity
+  name: укреплённая металлическая баррикада с колючей проволокой
+  description: Очень крепкая баррикада из укреплённой металлической пластины, которая способна поглотить среднее количество урона. Сверху есть колючая проволока, что усложняет переправу через неё.
+  id: M14BarricadePlasteelWire
+  parent: M14BarricadePlasteel
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/barricades.rsi
+    state: plasteel_wire
+    noRot: false
+  - type: Icon
+    sprite: _Metro14/Structures/barricades.rsi
+    state: plasteel_wire
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetPlasteel1:
+            min: 3
+            max: 5
+          PartRodMetal1:
+            min: 1
+            max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Climbable
+    delay: 7
+
+# Folding metal
+
+- type: entity
+  name: складная металлическая баррикада
+  id: M14FoldingBarricadeMetal
+  description: Довольно крепкая баррикада из металлической пластины, которая способна поглотить среднее количество урона. Можно сложить.
+  parent: BaseStructure
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    sprite: _Metro14/Structures/barricades.rsi
+    layers:
+    - state: folding_metal_closed
+    - state: folding_metal
+      map: ["enum.LockVisualLayers.Lock"]
+  - type: Appearance
+  - type: LockVisuals
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Dynamic
+    canCollide: false
+  - type: Fixtures
+    fixtures:
+      base:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 75
+        mask:
+        - MachineMask
+      barrier:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        layer:
+        - WallLayer
+  - type: DeployableBarrier
+    fixture: barrier
+  - type: Lock
+    locked: false
+    lockOnClick: true
+    lockTime: 3
+    unlockTime: 3
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel:
+            min: 5
+            max: 5
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Climbable
+    delay: 2
+
+- type: entity
+  name: складная металлическая баррикада с колючей проволокой
+  id: M14FoldingBarricadeMetalWire
+  description: Довольно крепкая баррикада из металлической пластины, которая способна поглотить среднее количество урона. Можно сложить. Сверху есть колючая проволока, что усложняет переправу через неё.
+  parent: M14FoldingBarricadeMetal
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/barricades.rsi
+    layers:
+    - state: folding_metal_closed_wire
+    - state: folding_metal_wire
+      map: ["enum.LockVisualLayers.Lock"]
+  - type: Climbable
+    delay: 5
+
+# Folding plasteel
+
+- type: entity
+  name: укреплённая складная металлическая баррикада
+  id: M14FoldingBarricadePlasteel
+  description: Очень крепкая баррикада из укреплённой металлической пластины, которая способна поглотить среднее количество урона. Можно сложить.
+  parent: BaseStructure
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    sprite: _Metro14/Structures/barricades.rsi
+    layers:
+    - state: folding_plasteel_closed
+    - state: folding_plasteel
+      map: ["enum.LockVisualLayers.Lock"]
+  - type: Appearance
+  - type: LockVisuals
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Dynamic
+    canCollide: false
+  - type: Fixtures
+    fixtures:
+      base:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 75
+        mask:
+        - MachineMask
+      barrier:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        layer:
+        - WallLayer
+  - type: DeployableBarrier
+    fixture: barrier
+  - type: Lock
+    locked: false
+    lockOnClick: true
+    lockTime: 3
+    unlockTime: 3
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetPlasteel1:
+            min: 5
+            max: 5
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Climbable
+    delay: 3
+
+- type: entity
+  name: укреплённая складная металлическая баррикада с колючей проволокой
+  id: M14FoldingBarricadePlasteelWire
+  description: Очень крепкая баррикада из укреплённой металлической пластины, которая способна поглотить среднее количество урона. Можно сложить. Сверху есть колючая проволока, что усложняет переправу через неё.
+  parent: M14FoldingBarricadePlasteel
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/barricades.rsi
+    layers:
+    - state: folding_plasteel_closed_wire
+    - state: folding_plasteel_wire
+      map: ["enum.LockVisualLayers.Lock"]
+  - type: Climbable
+    delay: 5
+
+# Portable folding На доработке
+
+#- type: entity
+#  name: переносная металлическая баррикада
+#  id: M14FoldingBarricadePortable
+#  description: Переносная металлическая баррикада из 5 металлических пластин. Удобна в бою, если надо срочно поставить баррикаду, а потом перенести в другое место. Толщина металла была уменьшена, дабы можно было её переносить, следовательно, потеряла немного прочности и защиты.
+#  parent: BaseStructure
+#  placement:
+#    mode: SnapgridCenter
+#  components:
+#  - type: Transform
+#    anchored: false
+#  - type: Sprite
+#    sprite: _Metro14/Structures/barricades.rsi
+#    layers:
+#    - state: folding_metal_closed
+#    - state: folding_metal
+#      map: ["enum.LockVisualLayers.Lock"]
+#  - type: Appearance
+#  - type: LockVisuals
+#  - type: InteractionOutline
+#  - type: Physics
+#    bodyType: Dynamic
+#    canCollide: false
+#  - type: Fixtures
+#    fixtures:
+#      fix1:
+#        shape:
+#          !type:PhysShapeAabb
+#          bounds: "-0.49,-0.39,0.49,-0.36"
+#        mask:
+#        - FullTileMask
+#        layer:
+#        - WallLayer
+#  - type: DeployableBarrier
+#    fixture: barrier
+#  - type: Lock
+#    locked: false
+#    lockOnClick: true
+#    lockTime: 3
+#    unlockTime: 3
+#  - type: Damageable
+#    damageContainer: StructuralInorganic
+#    damageModifierSet: Metallic
+#  - type: Destructible
+#    thresholds:
+#    - trigger:
+#        !type:DamageTrigger
+#        damage: 600
+#      behaviors:
+#        - !type:DoActsBehavior
+#          acts: [ "Destruction" ]
+#    - trigger:
+#        !type:DamageTrigger
+#        damage: 300
+#      behaviors:
+#      - !type:SpawnEntitiesBehavior
+#        spawn:
+#          SheetSteel:
+#            min: 5
+#            max: 5
+#      - !type:PlaySoundBehavior
+#        sound:
+#          collection: MetalBreak
+#      - !type:DoActsBehavior
+#        acts: [ "Destruction" ]
+#  - type: Climbable
+#    delay: 2

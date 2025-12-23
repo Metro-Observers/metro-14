@@ -1,0 +1,18 @@
+- type: job
+  id: M14SoldierSparta
+  name: Солдат спарты
+  description: Храните клятву,защищайте метро
+  playTimeTracker: M14SoldierSparta
+  startingGear: M14SoldierSpartaGear
+  icon: "JobIconSparta"
+  canBeAntag: true
+
+- type: startingGear
+  id: M14SoldierSpartaGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitOperative
+    mask: ClothingMaskNeckGaiter
+    id: M14Tablet
+    shoes: ClothingShoesBootsCombatFilled
+    gloves: ClothingHandsGlovesColorBlack
+    back: ClothingMilitaryBackpack

@@ -1,7 +1,14 @@
-####################
+- type: job
+  id: M14HeadOfTech
+  name: Начальник Техников
+  description: Вы обладаете всей полнотой власти на этой станции.
+  playTimeTracker: M14HeadOfTech
+  startingGear: M14HeadOfTechGear
+  icon: "JobIconTech"
+  canBeAntag: true
 
 - type: startingGear
-  id: HeadOfTechGear
+  id: M14HeadOfTechGear
   equipment:
     head: ClothingHeadHatSyndieMAA
     neck: M14ClothingNeckMantleTech

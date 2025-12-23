@@ -1,0 +1,31 @@
+# На доработке
+
+#- type: entity
+#  parent: BaseSMES
+#  id: M14SMESBasic
+#  name: СМЭС
+#  description: Сверхпроводящая Магнитная Энергонакопительная Станция. Копит энергию в больших масштабах. В простонародье её называют большой батарейкой.
+#  suffix: Базовый, 8MJ
+#  components:
+#  - type: Icon
+#    sprite: _Metro14/Structures/Power/smes.rsi
+#  - type: Sprite
+#    sprite: _Metro14/Structures/Power/smes.rsi
+#    snapCardinals: true
+#    layers:
+#      - state: smes
+#      - map: ["enum.SmesVisualLayers.Charge"]
+#        state: "smes-og1" # -og0 does not exist
+#        shader: unshaded
+#        visible: false
+#      - map: ["enum.SmesVisualLayers.Input"]
+#        state: "smes-oc0"
+#        shader: unshaded
+#      - map: ["enum.SmesVisualLayers.Output"]
+#        state: "smes-op1"
+#        shader: unshaded
+#      - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+#        state: smes-open
+#  - type: Battery
+#    maxCharge: 8000000
+#    startingCharge: 8000000

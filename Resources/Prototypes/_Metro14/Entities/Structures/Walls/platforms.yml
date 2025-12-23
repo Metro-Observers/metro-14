@@ -1,0 +1,125 @@
+# Station
+
+- type: entity
+  parent: BaseStructure
+  id: M14BasePlatform
+  abstract: true
+  name: платформа
+  description: Платформа. На неё можно забраться, с неё можно упасть.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Walls/Platforms/station.rsi
+  - type: Icon
+    sprite: _Metro14/Structures/Walls/Platforms/station.rsi
+  - type: Physics
+    bodyType: Static
+  - type: InteractionOutline
+  - type: Climbable
+    delay: 2
+
+- type: entity
+  parent: M14BasePlatform
+  id: M14Platform
+  components:
+  - type: Sprite
+    state: side
+  - type: Icon
+    state: side
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,-0.25"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+
+- type: entity
+  parent: M14BasePlatform
+  id: M14PlatformCorner
+  components:
+  - type: Sprite
+    state: corner
+  - type: Icon
+    state: corner
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,-0.25"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0.25,-0.49,0.49,0.49"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+
+- type: entity
+  parent: M14BasePlatform
+  id: M14PlatformCornerSmall
+  components:
+  - type: Sprite
+    state: corner_small
+  - type: Icon
+    state: corner_small
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,0.25,-0.25,0.49"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+
+- type: entity
+  parent: M14BasePlatform
+  id: M14PlatformRound
+  components:
+  - type: Sprite
+    state: round
+  - type: Icon
+    state: round
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,-0.25"
+        density: 1000
+        mask:
+          - TableMask
+        layer:
+          - TableLayer
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,-0.25,0.49"
+        density: 1000
+        mask:
+          - TableMask
+        layer:
+          - TableLayer
+      fix3:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0.25,-0.49,0.49,0.49"
+        density: 1000
+        mask:
+          - TableMask
+        layer:
+          - TableLayer

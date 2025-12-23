@@ -1,7 +1,14 @@
-####################
+- type: job
+  id: M14HeadOfVDNKH
+  name: Начальник ВДНХ
+  description: Вы обладаете всей полнотой власти на этой станции.
+  playTimeTracker: M14HeadOfVDNKH
+  startingGear: M14HeadOfVDNKHGear
+  icon: "JobIconVDNKH"
+  canBeAntag: true
 
 - type: startingGear
-  id: HeadOfVDNKHGear
+  id: M14HeadOfVDNKHGear
   equipment:
     head: M14ClothingHeadHatUshankaBlack
     neck: M14ClothingNeckMantleVDNKH

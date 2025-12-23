@@ -15,28 +15,32 @@
           prefixCreator: '14-SB'
       - type: StationJobs
         availableJobs:
-          # Tehniki
-          NachalnikTexniki: [ 1, 1 ]
-          Texniki: [ 3, 3 ]
-          # Sparta
-          M14Polkovnik: [ 1, 1 ]
-          M14PodPolkovnik: [ 1, 1 ]
-          M14Medicsparta: [ 1, 1 ]
-          M14Soldier: [ 4, 4 ]
-          # RedLine
-          M14SoldierRedline: [ 10, 10 ]
-          M14Politruk: [ 1, 1 ]
-          M14Gensek: [ 1, 1 ]
-          # VDNH
-          OfficerVdnh: [ 6, 6 ]
-          Stalker: [ -1, -1 ]
-          NachalnikVdnh: [ 1, 1 ]
           # Hydra
-          M14Furer: [ 1, 1 ]
-          M14Ministr: [ 1, 1 ]
-          M14SoldierGydra: [ 10, 10 ]
+          M14HeadOfHydra: [ 1, 1 ]
+          M14Minister: [ 1, 1 ]
+          M14SoldierHydra: [ 10, 10 ]
+          # RedLine
+          M14HeadOfRedLine: [ 1, 1 ]
+          M14PolitHandRedLine: [ 1, 1 ]
+          M14SoldierRedline: [ 10, 10 ]
           # Hansa
-          OfficerGanza: [ 9, 9 ]
-          TorgAgentGanza: [ 1, 1 ]
-          NachalnikStanciiganza: [ 1, 1 ]
-          GrazhdaninGanzi: [ 10, 10 ]
+          M14HeadOfHansa: [ 1, 1 ]
+          M14TradeAgentHansa: [ 1, 1 ]
+          M14OfficerHansa: [ 9, 9 ]
+          M14CivilianHansa: [ 10, 10 ]
+          # Sparta
+          M14HeadOfSparta: [ 1, 1 ]
+          M14LieutenantOfHeadOfSparta: [ 1, 1 ]
+          M14MedicSparta: [ 1, 1 ]
+          M14SoldierSparta: [ 4, 4 ]
+          # Tehniki
+          M14HeadOfTech: [ 1, 1 ]
+          M14SecurityTech: [ 3, 3]
+          M14TechnicTech: [ 3, 3 ]
+          # VDNH
+          M14HeadOfVDNKH: [ 1, 1 ]
+          M14SecurityVDNKH: [ 6, 6 ]
+          M14StalkerVDNKH: [ -1, -1 ]
+          
+          
+          

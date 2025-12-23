@@ -1,7 +1,14 @@
-####################
+- type: job
+  id: M14HeadOfHydra
+  name: Фюрер
+  description: Вы великий вождь.
+  playTimeTracker: M14HeadOfHydra
+  startingGear: M14HeadOfHydraGear
+  icon: "JobIconHydra"
+  canBeAntag: true
 
 - type: startingGear
-  id: HeadOfHydraGear
+  id: M14HeadOfHydraGear
   equipment:
     head: M14ClothingHeadHatBeaverHat
     neck: M14ClothingNeckCloakHydra

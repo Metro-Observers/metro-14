@@ -1,7 +1,14 @@
-####################
+- type: job
+  id: M14OfficerHansa
+  name: Офицер Ганзы
+  description: Вы обязаны следить за всеми,кто идет через границу станции 
+  playTimeTracker: M14OfficerHansa
+  startingGear: M14OfficerHansaGear
+  icon: "JobIconHansa"
+  canBeAntag: true
 
 - type: startingGear
-  id: OfficerHansaGear
+  id: M14OfficerHansaGear
   equipment:
     head: ClothingHeadHatBeretMerc
     jumpsuit: ClothingUniformJumpsuitTacticool

@@ -1,7 +1,14 @@
-####################
+- type: job
+  id: M14TechnicTech
+  name: Техник
+  description: Закупайте ресурсы у сталкеров,собирайте самое ценное на своих станках
+  playTimeTracker: M14TechnicTech
+  startingGear: M14TechnicTechGear
+  icon: "JobIconTech"
+  canBeAntag: true
 
 - type: startingGear
-  id: TechnicTechGear
+  id: M14TechnicTechGear
   equipment:
     jumpsuit: M14ClothingUniformTelogreykaBrown
     id: M14Tablet

@@ -1,0 +1,20 @@
+- type: job
+  id: M14HeadOfSparta
+  name: Полковник Спарты
+  description: Вы лидер спарты. Храните клятву,защищайте метро
+  playTimeTracker: M14HeadOfSparta
+  startingGear: M14HeadOfSpartaGear
+  icon: "JobIconSparta"
+  canBeAntag: true
+
+- type: startingGear
+  id: M14HeadOfSpartaGear
+  equipment:
+    head: ClothingHeadHatBeretHoS
+    neck: M14ClothingNeckCloakSparta
+    mask: ClothingMaskNeckGaiter
+    jumpsuit: ClothingUniformJumpsuitTacticool
+    id: M14Tablet
+    shoes: ClothingShoesBootsCombatFilled
+    gloves: ClothingHandsMercGlovesCombat
+    back: ClothingMilitaryBackpack

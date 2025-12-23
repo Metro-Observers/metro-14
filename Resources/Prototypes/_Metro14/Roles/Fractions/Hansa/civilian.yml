@@ -1,7 +1,14 @@
-####################
+- type: job
+  id: M14CivilianHansa
+  name: Гражданин ганзы
+  description: Следите за баром,проводите сталкеров,смотрите за грядками
+  playTimeTracker: M14CivilianHansa
+  startingGear: M14CivilianHansaGear
+  icon: "JobIconHansa"
+  canBeAntag: true
 
 - type: startingGear
-  id: CivilianHansaGear
+  id: M14CivilianHansaGear
   equipment:
     jumpsuit: M14ClothingUniformTelogreykaBlack
     id: M14Tablet

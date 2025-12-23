@@ -1,7 +1,14 @@
-####################
+- type: job
+  id: M14HeadOfHansa
+  name: Начальник станции
+  description: Вы главный в ганзе
+  playTimeTracker: M14HeadOfHansa
+  startingGear: M14HeadOfHansaGear
+  icon: "JobIconHansa"
+  canBeAntag: true
 
 - type: startingGear
-  id: HeadOfHansaGear
+  id: M14HeadOfHansaGear
   equipment:
     head: ClothingHeadHatBeretFrench
     neck: M14ClothingNeckMantleHansa

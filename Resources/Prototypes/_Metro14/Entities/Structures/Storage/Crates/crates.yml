@@ -1,0 +1,10 @@
+- type: entity
+  parent: CrateGenericSteel
+  id: M14CrateWeapon
+  name: оружейный ящик
+  description: В нём может лежать абсолютно любое оружие, а может и не оружие... В любом случае, смотрите на этикетку.
+  components:
+  - type: Icon
+    sprite: _Metro14/Structures/Storage/Crates/weapon_crate.rsi
+  - type: Sprite
+    sprite: _Metro14/Structures/Storage/Crates/weapon_crate.rsi

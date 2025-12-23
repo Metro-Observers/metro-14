@@ -1,0 +1,47 @@
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconHydra
+  icon:
+    sprite: _Metro14/Interface/job_icons.rsi
+    state: hydra
+  jobName: gydravci
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconRedline
+  icon:
+    sprite: _Metro14/Interface/job_icons.rsi
+    state: redline
+  jobName: gydravci
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconHansa
+  icon:
+    sprite: _Metro14/Interface/job_icons.rsi
+    state: hansa
+  jobName: gydravci
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSparta
+  icon:
+    sprite: _Metro14/Interface/job_icons.rsi
+    state: sparta
+  jobName: gydravci
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconTech
+  icon:
+    sprite: _Metro14/Interface/job_icons.rsi
+    state: tech
+  jobName: gydravci
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconVDNKH
+  icon:
+    sprite: _Metro14/Interface/job_icons.rsi
+    state: vdnkh
+  jobName: gydravci

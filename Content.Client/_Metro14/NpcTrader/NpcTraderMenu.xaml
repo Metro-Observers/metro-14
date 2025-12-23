@@ -4,25 +4,24 @@
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:ui="clr-namespace:Content.Client.Materials.UI"
     Title="{Loc 'npc-trader-title'}"
-    MinSize="600 350"
-    SetSize="600 570">
+    MinSize="600 570">
 
     <!-- 1й контейнер, включающий все остальные - серый цвет -->
     <PanelContainer>
         <PanelContainer.PanelOverride>
             <gfx:StyleBoxFlat BackgroundColor="#2f2f2f" />
         </PanelContainer.PanelOverride>
-        <BoxContainer Orientation="Vertical" HorizontalExpand="True" SetWidth="600" VerticalExpand="True" Margin="5">
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True" MinWidth="600" VerticalExpand="True" Margin="5">
 
             <!-- 2й контейнер, включающий все кроме изображения торговца и текста - темный серый с прозрачностью -->
-                <BoxContainer Orientation="Vertical" HorizontalExpand="True" SetSize="600 370" VerticalExpand="True">
+                <BoxContainer Orientation="Vertical" HorizontalExpand="True" MinSize="600 370" VerticalExpand="True">
 
                     <!-- 6й контейнер, включающий кнопки "обмен" "квест" - темный серый с прозрачностью -->
-                    <PanelContainer SetSize="580 50" Margin="5" HorizontalExpand="True">
+                    <PanelContainer MinSize="580 50" Margin="5" HorizontalExpand="True">
                         <PanelContainer.PanelOverride>
                             <gfx:StyleBoxFlat BackgroundColor="#2a2a2a" />
                         </PanelContainer.PanelOverride>
-                        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" SetWidth="580" VerticalExpand="True" Margin="10">
+                        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" MinWidth="580" VerticalExpand="True" Margin="10">
                             <Button Name="SellButton" Text="Обмен" Margin="10 0 5 0" Access="Public"/>
                             <Button Name="QuestButton" Text="Квест" Margin="5 0 0 0" Access="Public" Disabled="True"/>
                         </BoxContainer>
@@ -30,18 +29,18 @@
 
                     
                     <!-- 7й контейнер, включающий все информационные контейнеры с кнопками-предложениями - темный серый с прозрачностью -->
-                    <PanelContainer SetWidth="580" Margin="0 5 0 0" HorizontalExpand="True">
+                    <PanelContainer MinWidth="580" Margin="0 5 0 0" HorizontalExpand="True">
                         <PanelContainer.PanelOverride>
                             <gfx:StyleBoxFlat BackgroundColor="#2a2a2a" />
                         </PanelContainer.PanelOverride>
-                        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" SetWidth="580" VerticalExpand="True" Margin="0">
+                        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" MinWidth="580" VerticalExpand="True" Margin="0">
 
                             <!-- 9й контейнер, включающий теги - темный серый с прозрачностью -->
                             <PanelContainer Margin="0 0 10 0">
                                 <PanelContainer.PanelOverride>
                                     <gfx:StyleBoxFlat BackgroundColor="#262626" />
                                 </PanelContainer.PanelOverride>
-                                <BoxContainer Orientation="Vertical" HorizontalExpand="True" SetWidth="100" VerticalExpand="True" Margin="5">
+                                <BoxContainer Orientation="Vertical" HorizontalExpand="True" MinWidth="100" VerticalExpand="True" Margin="5">
                                     <ScrollContainer HorizontalExpand="True" VerticalExpand="False" MinSize="100 200">
                                         <BoxContainer Orientation="Vertical" Name="DownTagsButtonList"/>
                                     </ScrollContainer>
@@ -49,11 +48,11 @@
                             </PanelContainer>
 
                             <!-- 10й контейнер, предложения - темный серый с прозрачностью -->
-                            <PanelContainer SetWidth="230" Margin="10 0 10 0">
+                            <PanelContainer MinWidth="230" Margin="10 0 10 0">
                                 <PanelContainer.PanelOverride>
                                     <gfx:StyleBoxFlat BackgroundColor="#262626" />
                                 </PanelContainer.PanelOverride>
-                                <BoxContainer Orientation="Vertical" HorizontalExpand="True" SetWidth="200" VerticalExpand="True" Margin="5">
+                                <BoxContainer Orientation="Vertical" HorizontalExpand="True" MinWidth="200" VerticalExpand="True" Margin="5">
                                     <ScrollContainer HorizontalExpand="True" VerticalExpand="False" MinSize="200 230">
                                         <BoxContainer Orientation="Vertical" Name="DynamicButtonList"/>
                                     </ScrollContainer>
@@ -65,10 +64,10 @@
                                 <PanelContainer.PanelOverride>
                                     <gfx:StyleBoxFlat BackgroundColor="#2a2a2a" />
                                 </PanelContainer.PanelOverride>
-                                <BoxContainer Orientation="Vertical" HorizontalExpand="True" SetWidth="200" VerticalExpand="True" Margin="5">
+                                <BoxContainer Orientation="Vertical" HorizontalExpand="True" MinWidth="200" VerticalExpand="True" Margin="5">
 
                                     <!-- 12й контейнер, включающий все кнопки-пустышки "отдаете"-->
-                                    <BoxContainer Orientation="Vertical" HorizontalExpand="True" SetWidth="200" VerticalExpand="True" Margin="5">
+                                    <BoxContainer Orientation="Vertical" HorizontalExpand="True" MinWidth="200" VerticalExpand="True" Margin="5">
                                         <Label Text="Отдаёте" Align="Left" Margin="5 0 0 5"/>
                                         <PanelContainer Margin="5 0 5 0">
                                             <PanelContainer.PanelOverride>
@@ -81,7 +80,7 @@
                                     </BoxContainer>
 
                                     <!-- 13й контейнер, включающий все кнопки-пустышки "получаете"-->
-                                    <BoxContainer Orientation="Vertical" HorizontalExpand="True" SetWidth="200" VerticalExpand="True" Margin="5">
+                                    <BoxContainer Orientation="Vertical" HorizontalExpand="True" MinWidth="200" VerticalExpand="True" Margin="5">
                                         <Label Text="Получаете" Align="Left" Margin="5 0 0 5"/>
                                         <PanelContainer Margin="5 0 5 0">
                                             <PanelContainer.PanelOverride>
@@ -100,11 +99,11 @@
                     </PanelContainer>
 
                     <!-- 8й контейнер, включающий кнопку купить - темный серый с прозрачностью -->
-                    <PanelContainer SetWidth="580">
+                    <PanelContainer MinWidth="580">
                         <PanelContainer.PanelOverride>
                             <gfx:StyleBoxFlat BackgroundColor="#2a2a2a" />
                         </PanelContainer.PanelOverride>
-                        <BoxContainer Orientation="Vertical" HorizontalExpand="True" SetWidth="580" VerticalExpand="True">
+                        <BoxContainer Orientation="Vertical" HorizontalExpand="True" MinWidth="580" VerticalExpand="True">
                             <Button Name="ImageActionButton" Text="Купить" Margin="5" Access="Public"/>
                         </BoxContainer>
                     </PanelContainer>
@@ -112,14 +111,14 @@
                 </BoxContainer>
 
             <!-- 3й контейнер, включающий изображение торговца и текст - темный серый с прозрачностью -->
-            <PanelContainer SetWidth="580" Margin="0 5 0 0">
+            <PanelContainer MinWidth="580" Margin="0 5 0 0">
                 <PanelContainer.PanelOverride>
                     <gfx:StyleBoxFlat BackgroundColor="#2a2a2a" />
                 </PanelContainer.PanelOverride>
-                <BoxContainer Orientation="Horizontal" HorizontalExpand="True" SetSize="580 160" VerticalExpand="True" Margin="0 0 0 0">
+                <BoxContainer Orientation="Horizontal" HorizontalExpand="True" MinSize="580 160" VerticalExpand="True" Margin="0 0 0 0">
 
                     <!-- 4й контейнер, включающий изображение торговца и его имя-->
-                    <BoxContainer Orientation="Vertical" HorizontalExpand="True" SetWidth="128" VerticalExpand="True" Margin="15 0 5 0">
+                    <BoxContainer Orientation="Vertical" HorizontalExpand="True" MinWidth="128" VerticalExpand="True" Margin="15 0 5 0">
                         <TextureRect Name="DisplayImage"
                                      HorizontalExpand="True"
                                      VerticalExpand="True"
@@ -129,7 +128,7 @@
                     </BoxContainer>
 
                     <!-- 5й контейнер, включающий текст к наборам торговца -->
-                    <BoxContainer Orientation="Horizontal" HorizontalExpand="True" SetWidth="472" VerticalExpand="True">
+                    <BoxContainer Orientation="Horizontal" HorizontalExpand="True" MinWidth="472" VerticalExpand="True">
                         <RichTextLabel Name="InfoTextField"
                                        MaxWidth = "400"
                                        VerticalExpand="True"

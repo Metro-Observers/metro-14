@@ -25,6 +25,9 @@ using Content.Shared.Weapons.Ranged;
 
 namespace Content.Server._Metro14.NpcTrader;
 
+/// <summary>
+/// Класс, содержащий логику обработки процесса обмена между игроков и торговцем.
+/// </summary>
 public sealed class NpcTraderSystem : EntitySystem
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
@@ -37,10 +40,6 @@ public sealed class NpcTraderSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlockerSystem = default!;
 
-    private HashSet<EntityUid> _entitiesInRange = new();
-    private List<EntityUid> _delItem = new List<EntityUid>();
-    private Dictionary<EntityUid, EntityUid> _delRealAmmo = new Dictionary<EntityUid, EntityUid>();
-    private Dictionary<EntityUid, int> _delVirtAmmo = new Dictionary<EntityUid, int>();
     private static readonly Random _random = new Random();
 
     public override void Initialize()
@@ -54,6 +53,10 @@ public sealed class NpcTraderSystem : EntitySystem
         });
     }
 
+    /// <summary>
+    /// Здесь содержится логика восполнения вещей в каталоге торговца.
+    /// </summary>
+    /// <param name="frameTime"></param>
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -167,9 +170,9 @@ public sealed class NpcTraderSystem : EntitySystem
     /// <param name="args"> параметры сообщения | args.Buyer - NetEntity покупателя | args.ProductId - ID продукта </param>
     public void OnNpcTraderBuy(EntityUid uid, NpcTraderComponent component, NpcTraderBuyMessage args)
     {
-        _delItem.Clear();
-        _delRealAmmo.Clear();
-        _delVirtAmmo.Clear();
+        component.DelItem.Clear();
+        component.DelRealAmmo.Clear();
+        component.DelVirtAmmo.Clear();
 
         // проверяем, что получили корректный ID предложения
         if (!component.ItemsInCatalog.ContainsKey(args.ProductId))
@@ -198,7 +201,7 @@ public sealed class NpcTraderSystem : EntitySystem
             {
                 for (int i = 0; i < givingItem.Value; i++)
                 {
-                    if (!TryFindItem(uid, givingItem.Key, _entityManager.GetEntity(args.Buyer)))
+                    if (!TryFindItem(uid, component, givingItem.Key, _entityManager.GetEntity(args.Buyer)))
                     {
                         tempFlag = true;
                         break;
@@ -209,7 +212,7 @@ public sealed class NpcTraderSystem : EntitySystem
 
         if (!tempFlag)
         {
-            TryDeleteItems(_entityManager.GetEntity(args.Buyer));
+            TryDeleteItems(_entityManager.GetEntity(args.Buyer), component);
             TryGiveItems(uid, args.ProductId, _entityManager.GetEntity(args.Buyer));
             tempFlag = false;
         }
@@ -240,9 +243,9 @@ public sealed class NpcTraderSystem : EntitySystem
     /// <summary>
     /// Метод, который "изымает" предметы в счет оплаты товара.
     /// </summary>
-    private void TryDeleteItems(EntityUid player)
+    private void TryDeleteItems(EntityUid player, NpcTraderComponent component)
     {
-        foreach (var virtBullet in _delVirtAmmo)
+        foreach (var virtBullet in component.DelVirtAmmo)
         {
             if (!_entityManager.TryGetComponent(virtBullet.Key, out BallisticAmmoProviderComponent? ballisticProviderComponent))
                 continue;
@@ -267,7 +270,7 @@ public sealed class NpcTraderSystem : EntitySystem
             }
         }
 
-        foreach (var realBullet in _delRealAmmo)
+        foreach (var realBullet in component.DelRealAmmo)
         {
             var ammo = new List<(EntityUid? Entity, IShootable Shootable)>();
 
@@ -283,7 +286,7 @@ public sealed class NpcTraderSystem : EntitySystem
             }                    
         }
 
-        foreach (var item in _delItem)
+        foreach (var item in component.DelItem)
         {
             QueueDel(item);
         }
@@ -376,7 +379,19 @@ public sealed class NpcTraderSystem : EntitySystem
         return DeleteItem();
     }
 
-    private bool TryGiveEntityFromAmmoProvider(string itemPrice, BallisticAmmoProviderComponent ballisticProviderComponent, EntityUid providerUid)
+    /// <summary>
+    /// Метод, который проверяет, можно ли из обоймы/коробки патрон вытащить пулю для покупки товара.
+    /// </summary>
+    /// <param name="itemPrice"> UID предложения торговца </param>
+    /// <param name="npcTraderComponent"> компонент торговца </param>
+    /// <param name="ballisticProviderComponent"> компонент хранилища патронов </param>
+    /// <param name="providerUid"> UID хранилища патронов, который мы проверяем на наличии возможной оплаты </param>
+    /// <returns></returns>
+    private bool TryGiveEntityFromAmmoProvider(
+        string itemPrice,
+        NpcTraderComponent npcTraderComponent,
+        BallisticAmmoProviderComponent ballisticProviderComponent,
+        EntityUid providerUid)
     {
         if (ballisticProviderComponent.Proto == null)
             return false;
@@ -399,17 +414,17 @@ public sealed class NpcTraderSystem : EntitySystem
 
         if (ballisticProviderComponent.UnspawnedCount != 0)
         {
-            if (_delVirtAmmo.ContainsKey(providerUid))
+            if (npcTraderComponent.DelVirtAmmo.ContainsKey(providerUid))
             {
-                if (ballisticProviderComponent.UnspawnedCount - _delVirtAmmo[providerUid] > 0)
+                if (ballisticProviderComponent.UnspawnedCount - npcTraderComponent.DelVirtAmmo[providerUid] > 0)
                 {
-                    _delVirtAmmo[providerUid] += 1;
+                    npcTraderComponent.DelVirtAmmo[providerUid] += 1;
                     return true;
                 }
             }
             else
             {
-                _delVirtAmmo.Add(providerUid, 1);
+                npcTraderComponent.DelVirtAmmo.Add(providerUid, 1);
                 return true;
             }
         }
@@ -420,14 +435,14 @@ public sealed class NpcTraderSystem : EntitySystem
             bool flag = false;
             foreach (var bullet in ballisticProviderComponent.Entities)
             {
-                if (!CheckCartridgeComp((EntityUid)bullet, false))
+                if (!CheckCartridgeComp((EntityUid)bullet, npcTraderComponent, false))
                 {
                     continue;
                 }
 
-                if (!_delRealAmmo.ContainsKey(bullet))
+                if (!npcTraderComponent.DelRealAmmo.ContainsKey(bullet))
                 {
-                    _delRealAmmo.Add(bullet, providerUid);
+                    npcTraderComponent.DelRealAmmo.Add(bullet, providerUid);
                     flag = true;
                     break;
                 }
@@ -449,7 +464,7 @@ public sealed class NpcTraderSystem : EntitySystem
     /// <param name="itemPrice"> UID предложения торговца </param>
     /// <param name="buyer"> игрок </param>
     /// <returns></returns>
-    public bool TryFindItem(EntityUid npcUid, string itemPrice, EntityUid buyer)
+    public bool TryFindItem(EntityUid npcUid, NpcTraderComponent npcTraderComponent, string itemPrice, EntityUid buyer)
     {
         // Проверяем руки на наличие предмета-оплаты
         if (_entityManager.TryGetComponent(buyer, out HandsComponent? handsComponent))
@@ -462,12 +477,12 @@ public sealed class NpcTraderSystem : EntitySystem
                 {
                     // если в руках обойма/коробка с патронами, то пытаемся найти нужные пули в ней.
                     if (_entityManager.TryGetComponent(tempHoldItem, out BallisticAmmoProviderComponent? ballisticProviderComponent))
-                        if (TryGiveEntityFromAmmoProvider(itemPrice, ballisticProviderComponent, (EntityUid) tempHoldItem))
+                        if (TryGiveEntityFromAmmoProvider(itemPrice, npcTraderComponent, ballisticProviderComponent, (EntityUid) tempHoldItem))
                             return true;
 
                     // если в руках есть контейнер, то проверяем вещи внутри него
                     if (_entityManager.TryGetComponent(tempHoldItem, out StorageComponent? storageCmp))
-                        if (TryFindEntityInStorage(storageCmp, itemPrice))
+                        if (TryFindEntityInStorage(storageCmp, npcTraderComponent, itemPrice))
                             return true;
 
                     if (!TryComp<MetaDataComponent>(tempHoldItem, out var metaData)) //BallisticAmmoProviderComponent
@@ -482,10 +497,10 @@ public sealed class NpcTraderSystem : EntitySystem
 
                     if (tempProto.ID.Equals(itemPrice))
                     {
-                        if (_delItem.Contains((EntityUid)tempHoldItem))
+                        if (npcTraderComponent.DelItem.Contains((EntityUid)tempHoldItem))
                             continue;
 
-                        return CheckCartridgeComp((EntityUid)tempHoldItem);    
+                        return CheckCartridgeComp((EntityUid)tempHoldItem, npcTraderComponent);    
                     }
                 }
             }
@@ -498,7 +513,7 @@ public sealed class NpcTraderSystem : EntitySystem
             if (!_entityManager.TryGetComponent(item, out StorageComponent? storageComponent))
             {
                 if (_entityManager.TryGetComponent(item, out BallisticAmmoProviderComponent? ballisticProvComponent))
-                    if (TryGiveEntityFromAmmoProvider(itemPrice, ballisticProvComponent, item))
+                    if (TryGiveEntityFromAmmoProvider(itemPrice, npcTraderComponent, ballisticProvComponent, item))
                         return true;
 
                 if (!TryComp<MetaDataComponent>(item, out var _metaData))
@@ -513,10 +528,10 @@ public sealed class NpcTraderSystem : EntitySystem
 
                 if (tmpProto.ID.Equals(itemPrice))
                 {
-                    if (_delItem.Contains((EntityUid)item))
+                    if (npcTraderComponent.DelItem.Contains((EntityUid)item))
                         continue;
 
-                    return CheckCartridgeComp((EntityUid)item);
+                    return CheckCartridgeComp((EntityUid)item, npcTraderComponent);
                 }
             }
             else
@@ -524,24 +539,24 @@ public sealed class NpcTraderSystem : EntitySystem
                 if (storageComponent == null)
                     continue;
 
-                if (TryFindEntityInStorage(storageComponent, itemPrice))
+                if (TryFindEntityInStorage(storageComponent, npcTraderComponent, itemPrice))
                     return true;
             }
         }
 
         // if we didn't find anything on ourselves, we look for something nearby
-        _entitiesInRange.Clear();
+        npcTraderComponent.EntitiesInRange.Clear();
         var Coordinates = _entityManager.GetComponent<TransformComponent>(npcUid).Coordinates;
-        _entityLookup.GetEntitiesInRange(Coordinates, 1, _entitiesInRange, flags: LookupFlags.Uncontained);
+        _entityLookup.GetEntitiesInRange(Coordinates, 1, npcTraderComponent.EntitiesInRange, flags: LookupFlags.Uncontained);
 
-        foreach (var nearEntity in _entitiesInRange)
+        foreach (var nearEntity in npcTraderComponent.EntitiesInRange)
         {
             if (_entityManager.TryGetComponent(nearEntity, out BallisticAmmoProviderComponent? ballisticAmmoProvComponent))
-                if (TryGiveEntityFromAmmoProvider(itemPrice, ballisticAmmoProvComponent, nearEntity))
+                if (TryGiveEntityFromAmmoProvider(itemPrice, npcTraderComponent, ballisticAmmoProvComponent, nearEntity))
                     return true;
 
             if (_entityManager.TryGetComponent(nearEntity, out StorageComponent? storageComp))
-                if (TryFindEntityInStorage(storageComp, itemPrice))
+                if (TryFindEntityInStorage(storageComp, npcTraderComponent, itemPrice))
                     return true;
 
             if (!TryComp<MetaDataComponent>(nearEntity, out var _meta))
@@ -556,26 +571,33 @@ public sealed class NpcTraderSystem : EntitySystem
 
             if (tmpProt.ID.Equals(itemPrice))
             {
-                if (_delItem.Contains((EntityUid)nearEntity))
+                if (npcTraderComponent.DelItem.Contains((EntityUid)nearEntity))
                     continue;
 
-                return CheckCartridgeComp((EntityUid)nearEntity);
+                return CheckCartridgeComp((EntityUid)nearEntity, npcTraderComponent);
             }
         }
 
         return false;
     }
 
-    private bool TryFindEntityInStorage(StorageComponent storageComp, string itemPrice)
+    /// <summary>
+    /// Метод, который рекурсивно ищет оплату в хранилище (рюкзак, коробка и т.п.)
+    /// </summary>
+    /// <param name="storageComp"> Компонент хранилища </param>
+    /// <param name="npcTraderComponent"> Компонент торговца </param>
+    /// <param name="itemPrice"> Идентификатор предложения торговца </param>
+    /// <returns></returns>
+    private bool TryFindEntityInStorage(StorageComponent storageComp, NpcTraderComponent npcTraderComponent, string itemPrice)
     {
         foreach (var storageItem in storageComp.StoredItems) // проверяем рюкзак
         {
             if (_entityManager.TryGetComponent(storageItem.Key, out BallisticAmmoProviderComponent? ballisticProvComponent))
-                if (TryGiveEntityFromAmmoProvider(itemPrice, ballisticProvComponent, storageItem.Key))
+                if (TryGiveEntityFromAmmoProvider(itemPrice, npcTraderComponent, ballisticProvComponent, storageItem.Key))
                     return true;
 
             if (_entityManager.TryGetComponent(storageItem.Key, out StorageComponent? storageComponent))
-                TryFindEntityInStorage(storageComponent, itemPrice);
+                TryFindEntityInStorage(storageComponent, npcTraderComponent, itemPrice);
 
             if (!TryComp<MetaDataComponent>(storageItem.Key, out var meta))
                 continue;
@@ -589,24 +611,32 @@ public sealed class NpcTraderSystem : EntitySystem
 
             if (tempProt.ID.Equals(itemPrice))
             {
-                if (_delItem.Contains((EntityUid)storageItem.Key))
+                if (npcTraderComponent.DelItem.Contains((EntityUid)storageItem.Key))
                     continue;
 
-                return CheckCartridgeComp((EntityUid)storageItem.Key);
+                return CheckCartridgeComp((EntityUid)storageItem.Key, npcTraderComponent);
             }
         }
 
         return false;
     }
 
-    private bool CheckCartridgeComp(EntityUid uid, bool addInDelQueu = true)
+    /// <summary>
+    /// Метод, проверяющий, что патрон не израсходован. 
+    /// </summary>
+    /// <param name="uid"> UID патрона </param>
+    /// <param name="npcTraderComponent"> Компонент торговца </param>
+    /// <param name="addInDelQueu"> Нужно ли добавлять патрон в очередь на удаление... Необходимо для корректной обработки
+    /// обойм и коробок с патронами </param>
+    /// <returns></returns>
+    private bool CheckCartridgeComp(EntityUid uid, NpcTraderComponent npcTraderComponent, bool addInDelQueu = true)
     {
         if (TryComp<CartridgeAmmoComponent>(uid, out var cartridge))
         {
             if (!cartridge.Spent)
             {
                 if (addInDelQueu)
-                    _delItem.Add(uid);
+                    npcTraderComponent.DelItem.Add(uid);
 
                 return true;
             }
@@ -617,7 +647,7 @@ public sealed class NpcTraderSystem : EntitySystem
         }
         else
         {
-            _delItem.Add(uid);
+            npcTraderComponent.DelItem.Add(uid);
             return true;
         }
     }

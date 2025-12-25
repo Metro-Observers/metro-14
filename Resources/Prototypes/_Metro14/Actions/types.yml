@@ -1,0 +1,13 @@
+- type: entity
+  parent: BaseAction
+  id: ActionToggleNightVisionDevice
+  name: NVD
+  description: On/off
+  components:
+  - type: Action
+    useDelay: 10
+    itemIconStyle: BigAction
+    icon: _Metro14/Interface/Actions/NightVisionDevice/PNV-ON.png
+    checkCanInteract: false
+  - type: InstantAction
+    event: !type:ToggleNightVisionDeviceActionEvent

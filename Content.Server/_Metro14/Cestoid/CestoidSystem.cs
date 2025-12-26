@@ -7,6 +7,7 @@ using Content.Shared.Administration.Systems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Stunnable;
 using Content.Shared._Metro14.Cestoid;
 
@@ -74,9 +75,12 @@ public sealed class CestoidSystem : EntitySystem
     /// <param name="uid"> Ленточник </param>
     private void TrySetEnlargedTresholds(EntityUid uid)
     {
+        if (!TryComp<MobThresholdsComponent>(uid, out var thresholds))
+            return;
+
         _mobThresholdSystem.SetMobStateThreshold(uid, FixedPoint2.New(200), MobState.Critical);
         _mobThresholdSystem.SetMobStateThreshold(uid, FixedPoint2.New(210), MobState.Dead);
-        _mobThresholdSystem.VerifyThresholds(uid);
+        _mobThresholdSystem.VerifyThresholds(uid, thresholds);
     }
 
     /// <summary>
@@ -85,9 +89,12 @@ public sealed class CestoidSystem : EntitySystem
     /// <param name="uid"> Ленточник </param>
     private void TrySetStandartTresholds(EntityUid uid)
     {
+        if (!TryComp<MobThresholdsComponent>(uid, out var thresholds))
+            return;
+
         _mobThresholdSystem.SetMobStateThreshold(uid, FixedPoint2.New(100), MobState.Critical);
         _mobThresholdSystem.SetMobStateThreshold(uid, FixedPoint2.New(200), MobState.Dead);
-        _mobThresholdSystem.VerifyThresholds(uid);
+        _mobThresholdSystem.VerifyThresholds(uid, thresholds);
     }
 
     /// <summary>

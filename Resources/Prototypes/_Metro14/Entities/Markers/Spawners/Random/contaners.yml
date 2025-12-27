@@ -1,0 +1,49 @@
+- type: entityTable
+  id: M14MaintWeaponTable
+  table: !type:GroupSelector
+    children:
+    # Common Group
+    - !type:AllSelector
+      weight: 25
+      children:
+      - id: Machete
+    # Rare Group
+    - !type:AllSelector
+      weight: 10
+      children:
+      - id: ClothingUniformJumpsuitCasualBlue
+      - id: CombatKnife
+      - id: ClothingMaskGas
+      - id: ExGrenade
+      - id: DrinkWineBottleFull
+        weight: 0.5
+      - id: M14WeaponShotgunAshot
+        weight: 30
+      - id: ClothingOuterRobesCult
+      - id: M14FoodTinPorknbean
+    - !type:AllSelector
+      weight: 25
+      children: 
+       - id: BowImprovised
+       - id: ArrowRegular
+       - id: ArrowRegular
+       - id: FoodMeatHuman
+    - !type:AllSelector
+      weight: 1
+      children: 
+       - id: ClothingOuterArmorRiot
+       - id: BoxShotgunFlare
+       - id: WeaponFlareGunSecurity
+
+
+
+
+- type: entity
+  id: M14ClosetMaintenanceFilledRandom
+  suffix: Filled, Random
+  parent: ClosetMaintenance
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: M14MaintWeaponTable

@@ -45,3 +45,14 @@
     sprite: _Metro14/Interface/job_icons.rsi
     state: vdnh
   jobName: gydravci
+
+# ленточники
+- type: factionIcon
+  id: CestoidFaction
+  priority: 11
+  showTo:
+    components:
+    - Cestoid
+  icon:
+    sprite: /Textures/_Metro14/Interface/job_icons.rsi
+    state: lentocnik

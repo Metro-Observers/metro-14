@@ -1,0 +1,38 @@
+uniform sampler2D SCREEN_TEXTURE;
+
+// Параметры эффектов
+uniform highp float u_noise_amount = 0.1;
+uniform highp float u_green_strength = 0.7;
+uniform highp float u_noise_speed = 1.0;
+uniform highp float u_green_noise = 0.2; // Шум в зелёном канале (0-1)
+
+void fragment() {
+    highp vec4 color = texture(SCREEN_TEXTURE, UV);
+
+    // Шум (разные частоты для разнообразия)
+    highp float noise1 = fract(sin(dot(UV + TIME * u_noise_speed,
+                                      vec2(12.9898, 78.233))) * 43758.5453);
+    highp float noise2 = fract(sin(dot(UV * 2.0 + TIME * u_noise_speed * 0.7,
+                                      vec2(41.978, 93.121))) * 69543.215);
+    highp float noise = (noise1 + noise2) * 0.5;
+
+    // Способ 1: Сначала шум, потом зелёный
+    // Применяем шум к яркости
+    highp float brightness = (color.r + color.g + color.b) / 3.0;
+    highp float noisyBrightness = mix(brightness, noise, u_noise_amount);
+
+    // Корректируем цвет по новой яркости
+    highp vec3 adjustedColor = color.rgb * (noisyBrightness / max(brightness, 0.001));
+
+    // Применяем зелёный фильтр
+    highp float greenLum = dot(adjustedColor, vec3(0.299, 0.587, 0.114));
+    highp vec3 greenFilter = vec3(0.0, greenLum, 0.0);
+
+    // Смешиваем
+    highp vec3 finalColor = mix(adjustedColor, greenFilter, u_green_strength);
+
+    // Добавляем дополнительный шум в зелёный канал
+    finalColor.g = mix(finalColor.g, noise, u_green_noise * u_noise_amount);
+
+    COLOR = vec4(finalColor, color.a);
+}

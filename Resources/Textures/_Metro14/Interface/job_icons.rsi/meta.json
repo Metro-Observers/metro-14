@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "license": "CC-BY-NC-SA-4.0",
+    "license": "Metro-14 CLA",
     "copyright": "Made by timxx",
     "size": {
         "x": 8,
@@ -24,6 +24,9 @@
         },
         {
             "name": "sparta"
-        }  
+        },
+        {
+            "name": "lentocnik"
+        }
     ]
 }

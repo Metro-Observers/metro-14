@@ -1,0 +1,13 @@
+- type: accessLevel
+  id: HeadOfHansa
+  name: id-card-access-level-headofhansa
+
+- type: accessLevel
+  id: Hansa
+  name: id-card-access-level-hansa
+
+- type: accessGroup
+  id: Hansa
+  tags:
+  - HeadOfHansa
+  - Hansa

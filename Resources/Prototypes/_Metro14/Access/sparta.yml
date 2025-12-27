@@ -1,0 +1,13 @@
+- type: accessLevel
+  id: HeadOfSparta
+  name: id-card-access-level-headofsparta
+
+- type: accessLevel
+  id: Sparta
+  name: id-card-access-level-sparta
+
+- type: accessGroup
+  id: Sparta
+  tags:
+  - HeadOfSparta
+  - Sparta

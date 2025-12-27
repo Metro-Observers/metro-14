@@ -1,0 +1,13 @@
+- type: accessLevel
+  id: HeadOfVDNH
+  name: id-card-access-level-headofvdnh
+
+- type: accessLevel
+  id: VDNH
+  name: id-card-access-level-vdnh
+
+- type: accessGroup
+  id: VDNH
+  tags:
+  - HeadOfVDNH
+  - VDNH

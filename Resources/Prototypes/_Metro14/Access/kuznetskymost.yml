@@ -1,0 +1,13 @@
+- type: accessLevel
+  id: HeadOfKuznetskyMost
+  name: id-card-access-level-headofkuznetskymost
+
+- type: accessLevel
+  id: KuznetskyMost
+  name: id-card-access-level-kuznetskymost
+
+- type: accessGroup
+  id: KuznetskyMost
+  tags:
+  - HeadOfKuznetskyMost
+  - KuznetskyMost

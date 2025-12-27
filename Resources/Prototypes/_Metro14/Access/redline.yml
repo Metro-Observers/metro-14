@@ -1,0 +1,13 @@
+- type: accessLevel
+  id: HeadOfRedLine
+  name: id-card-access-level-headofredline
+
+- type: accessLevel
+  id: RedLine
+  name: id-card-access-level-redline
+
+- type: accessGroup
+  id: RedLine
+  tags:
+  - HeadOfRedLine
+  - RedLine

@@ -1,0 +1,13 @@
+- type: accessLevel
+  id: HeadOfHydra
+  name: id-card-access-level-headofhydra
+
+- type: accessLevel
+  id: Hydra
+  name: id-card-access-level-hydra
+
+- type: accessGroup
+  id: Hydra
+  tags:
+  - HeadOfHydra
+  - Hydra

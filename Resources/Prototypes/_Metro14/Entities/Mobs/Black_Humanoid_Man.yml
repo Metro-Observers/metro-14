@@ -1,0 +1,56 @@
+- type: entity
+  name: Чёрный
+  parent: BaseSimpleMob
+  id: BlackManMutantsdummy
+  description: ....
+  suffix: Спонсор
+  components:
+  - type: Sprite
+    sprite: _Metro14/Mobs/black_humanoid_picture.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: base
+  - type: Physics
+  - type: MobState
+  - type: Hands
+  - type: ComplexInteraction
+  - type: ContainerContainer
+  - type: Appearance
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Critical
+      300: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.5
+    baseSprintSpeed : 5
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: base
+      Critical:
+        Base: Black_Humonoid_sleeps
+      Dead:
+        Base: Black_Humonoid_Dead
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: false
+    allowMovement: false
+    name: Мутант чёрный
+    description: Чёрные - это разумные, человекоподобные мутанты с чёрной блестящей кожей и крупными глазами, обладающие телепатическими способностями, которых люди считают врагами
+    rules: Только для спонсоров
+  - type: CombatMode
+  - type: MeleeWeapon
+    soundHit:
+      collection: Punch
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Blunt: 17
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepThud
+  - type: Body
+    prototype: Human

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "porno",
+  "size": {
+    "x": 64,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "Black_Humonoid_sleeps"
+    },
+    {
+      "name": "Black_Humonoid_Dead"
+    },
+    {
+      "name": "base",
+      "directions": 4
+
+    }
+  ]
+}

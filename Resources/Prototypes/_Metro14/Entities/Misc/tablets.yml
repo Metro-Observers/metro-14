@@ -32,6 +32,13 @@
           tags:
             - Cigarette
         priority: 4
+      tablet_slot4:
+        name: tablet-slot-component-slot-name-key
+        whitelist:
+          tags:
+            - M14SetOfKeys
+            - M14Key
+        priority: 5
   - type: ContainerContainer
     containers:
       tablet_slot1: !type:ContainerSlot {}

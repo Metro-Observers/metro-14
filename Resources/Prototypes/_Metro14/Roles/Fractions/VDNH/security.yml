@@ -7,7 +7,7 @@
   icon: "JobIconVDNH"
   canBeAntag: true
   access:
-  - VDNH
+  - M14VDNH
 
 - type: startingGear
   id: M14SecurityVDNHGear

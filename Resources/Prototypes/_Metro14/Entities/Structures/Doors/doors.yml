@@ -59,7 +59,6 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: Occluder
   - type: BlockWeather
   - type: IconSmooth
     key: xd
@@ -197,6 +196,7 @@
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Occluder
 
 - type: entity
   parent: M14DoorMetal
@@ -223,7 +223,7 @@
       map: ["enum.DoorVisualLayers.Base"]
 
 - type: entity
-  parent: M14DoorMetal
+  parent: M14BaseDoor
   id: M14DoorMetalGrate
   name: решётчатая дверь
   description: Обычная решетчатая дверь.
@@ -236,11 +236,20 @@
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: FlimsyMetallic
-  - type: Occluder
-    enabled: false
+  - type: Door
+    bumpOpen: false
+    clickOpen: true
+    closeTimeOne: 0
+    closeTimeTwo: 0
+    openTimeOne: 0
+    openTimeTwo: 0
+    openSound:
+      path: /Audio/Effects/door_open.ogg
+    closeSound:
+      path: /Audio/Effects/door_close.ogg
 
 - type: entity
-  parent: M14DoorMetal
+  parent: M14DoorMetalGrate
   id: M14DoorMetalGreatFortified
   name: укреплённая решётчатая дверь
   description: Обычная решётчатая дверь, укреплена.
@@ -253,11 +262,9 @@
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: FlimsyMetallic
-  - type: Occluder
-    enabled: false
 
 - type: entity
-  parent: M14DoorMetal
+  parent: M14DoorMetalGrate
   id: M14DoorMetalWindow
   name: оконная стальная дверь
   description: Обычная стальная дверь, с окном.
@@ -270,5 +277,3 @@
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: FlimsyMetallic
-  - type: Occluder
-    enabled: false

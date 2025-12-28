@@ -6,6 +6,8 @@
   startingGear: M14TradeAgentHansaGear
   icon: "JobIconHansa"
   canBeAntag: true
+  access:
+    - M14Hansa
 
 - type: startingGear
   id: M14TradeAgentHansaGear

@@ -6,6 +6,8 @@
   startingGear: M14PolitHandRedLineGear
   icon: "JobIconRedline"
   canBeAntag: true
+  accessGroups:
+    - M14RedLine
 
 - type: startingGear
   id: M14PolitHandRedLineGear

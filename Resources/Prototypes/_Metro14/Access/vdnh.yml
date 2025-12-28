@@ -1,13 +1,13 @@
 - type: accessLevel
-  id: HeadOfVDNH
-  name: id-card-access-level-headofvdnh
+  id: M14HeadOfVDNH
+  name: Начальник ВДНХ
 
 - type: accessLevel
-  id: VDNH
-  name: id-card-access-level-vdnh
+  id: M14VDNH
+  name: ВДНХ
 
 - type: accessGroup
-  id: VDNH
+  id: M14VDNH
   tags:
-  - HeadOfVDNH
-  - VDNH
+  - M14HeadOfVDNH
+  - M14VDNH

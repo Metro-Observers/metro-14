@@ -7,6 +7,8 @@
   icon: "JobIconSparta"
   canBeAntag: false
   whitelisted: true
+  accessGroups:
+    - M14Sparta
 
 - type: startingGear
   id: M14HeadOfSpartaGear

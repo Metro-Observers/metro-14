@@ -1,13 +1,13 @@
 - type: accessLevel
-  id: HeadOfHydra
-  name: id-card-access-level-headofhydra
+  id: M14HeadOfHydra
+  name: Фюрер
 
 - type: accessLevel
-  id: Hydra
-  name: id-card-access-level-hydra
+  id: M14Hydra
+  name: Гидра
 
 - type: accessGroup
-  id: Hydra
+  id: M14Hydra
   tags:
-  - HeadOfHydra
-  - Hydra
+  - M14HeadOfHydra
+  - M14Hydra

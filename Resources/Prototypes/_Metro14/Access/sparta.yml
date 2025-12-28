@@ -1,13 +1,13 @@
 - type: accessLevel
-  id: HeadOfSparta
-  name: id-card-access-level-headofsparta
+  id: M14HeadOfSparta
+  name: Полковник Спарты
 
 - type: accessLevel
-  id: Sparta
-  name: id-card-access-level-sparta
+  id: M14Sparta
+  name: Спарта
 
 - type: accessGroup
-  id: Sparta
+  id: M14Sparta
   tags:
-  - HeadOfSparta
-  - Sparta
+  - M14HeadOfSparta
+  - M14Sparta

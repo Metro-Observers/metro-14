@@ -35,7 +35,7 @@
   suffix: Спарта
   components:
   - type: PresetIdCard
-    job: SpartaDev
+    job: M14SoldierSparta
 
 - type: entity
   parent: M14BaseKey
@@ -43,7 +43,7 @@
   suffix: Глава Спарта
   components:
   - type: PresetIdCard
-    job: HeadOfSpartaDev
+    job: M14HeadOfSparta
 
 - type: entity
   parent: M14BaseKey
@@ -51,7 +51,7 @@
   suffix: Ганза
   components:
   - type: PresetIdCard
-    job: OfficerGanza
+    job: M14OfficerHansa
 
 - type: entity
   parent: M14BaseKey
@@ -59,7 +59,7 @@
   suffix: Глава Ганза
   components:
   - type: PresetIdCard
-    job: HeadOfHansaDev
+    job: M14HeadOfHansa
 
 - type: entity
   parent: M14BaseKey
@@ -67,7 +67,7 @@
   suffix: Гидра
   components:
   - type: PresetIdCard
-    job: HydraDev
+    job: M14SoldierHydra
 
 - type: entity
   parent: M14BaseKey
@@ -75,7 +75,7 @@
   suffix: Глава Гидра
   components:
   - type: PresetIdCard
-    job: HeadOfHydraDev
+    job: M14HeadOfHydra
 
 - type: entity
   parent: M14BaseKey
@@ -83,7 +83,7 @@
   suffix: Красная Линия
   components:
   - type: PresetIdCard
-    job: RedLineDev
+    job: M14SoldierRedline
 
 - type: entity
   parent: M14BaseKey
@@ -91,7 +91,7 @@
   suffix: Глава Красная Линия
   components:
   - type: PresetIdCard
-    job: HeadOfRedLineDev
+    job: M14HeadOfRedLine
 
 - type: entity
   parent: M14BaseKey
@@ -99,7 +99,7 @@
   suffix: ВДНХ
   components:
   - type: PresetIdCard
-    job: VDNKHDev
+    job: M14SecurityVDNH
 
 - type: entity
   parent: M14BaseKey
@@ -107,23 +107,23 @@
   suffix: Глава ВДНХ
   components:
   - type: PresetIdCard
-    job: HeadOfVDNKHDev
+    job: M14HeadOfVDNH
 
 - type: entity
   parent: M14BaseKey
-  id: M14KuznetskyBridgeKey
-  suffix: Кузнецкий Мост
+  id: M14KTechKey
+  suffix: Техники
   components:
   - type: PresetIdCard
-    job: KuznetskyBridgeDev
+    job: M14TechnicTech
 
 - type: entity
   parent: M14BaseKey
-  id: M14HeadOfKuznetskyBridgeKey
-  suffix: Глава Кузнецкий Мост
+  id: M14HeadOfTechKey
+  suffix: Глава Техники
   components:
   - type: PresetIdCard
-    job: HeadOfKuznetskyBridgeDev
+    job: M14HeadOfTech
 
 - type: entity
   parent: Clothing

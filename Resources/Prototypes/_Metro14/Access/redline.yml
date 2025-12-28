@@ -1,13 +1,13 @@
 - type: accessLevel
-  id: HeadOfRedLine
-  name: id-card-access-level-headofredline
+  id: M14HeadOfRedLine
+  name: Генсек
 
 - type: accessLevel
-  id: RedLine
-  name: id-card-access-level-redline
+  id: M14RedLine
+  name: Красная Линия
 
 - type: accessGroup
-  id: RedLine
+  id: M14RedLine
   tags:
-  - HeadOfRedLine
-  - RedLine
+  - M14HeadOfRedLine
+  - M14RedLine

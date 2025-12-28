@@ -1,0 +1,13 @@
+- type: accessLevel
+  id: M14HeadOfTech
+  name: Главный Техник
+
+- type: accessLevel
+  id: M14Tech
+  name: Техник
+
+- type: accessGroup
+  id: M14Tech
+  tags:
+  - M14HeadOfTech
+  - M14Tech

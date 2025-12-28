@@ -1,13 +1,13 @@
 - type: accessLevel
-  id: HeadOfHansa
-  name: id-card-access-level-headofhansa
+  id: M14HeadOfHansa
+  name: Начальник Ганзы
 
 - type: accessLevel
-  id: Hansa
-  name: id-card-access-level-hansa
+  id: M14Hansa
+  name: Ганза
 
 - type: accessGroup
-  id: Hansa
+  id: M14Hansa
   tags:
-  - HeadOfHansa
-  - Hansa
+  - M14HeadOfHansa
+  - M14Hansa

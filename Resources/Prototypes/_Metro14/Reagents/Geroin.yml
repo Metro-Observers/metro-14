@@ -1,0 +1,28 @@
+- type: reagent
+  id: GeroinDrugs
+  name: Героин
+  group: Narcotic
+  desc: Традиционно считается одним из самых опасных из-за мгновенного привыкания и высокого риска мгновенной смерти при употреблении чистого вещества. Россия остается одним из мировых лидеров по уровню потребления героина.
+  physicalDesc: Так себе на вкус
+  flavor: bitter
+  color: "#97898a"
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
+        type: Add
+        time: 3
+      - !type:Emote
+        emote: Laugh
+        showInChat: true
+        probability: 0.04
+        conditions:
+      - !type:PopupMessage
+        type: Local
+        visualType: MediumCaution
+        messages: [ "Вы чувствуете что кто то рядом с вами..." ]
+        probability: 0.22
+  plantMetabolism:
+  - !type:PlantAdjustToxins
+    amount: 10

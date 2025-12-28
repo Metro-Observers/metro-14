@@ -1,0 +1,15 @@
+- type: entity
+  suffix: Героин
+  name: шприц
+  parent: PrefilledSyringe
+  id: SyringeGeroin
+  components:
+  - type: Label
+    currentLabel: Героин 15
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+          - ReagentId: GeroinDrugs
+            Quantity: 15

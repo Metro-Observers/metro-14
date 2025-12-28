@@ -1,0 +1,12 @@
+- type: entity
+  name: Таблетки Спайса
+  parent: Pillredbox
+  id: PillCanisterSpice
+  suffix: Спайс 15u, 6
+  components:
+  - type: Label
+    currentLabel: Спайс 15u
+  - type: StorageFill
+    contents:
+    - id: SpicePill
+      amount: 6

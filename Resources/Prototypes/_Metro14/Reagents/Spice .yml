@@ -1,0 +1,28 @@
+- type: reagent
+  id: SpiceDrugs
+  name: Спайс
+  group: Narcotic
+  desc: Сложно устоять перед ним
+  physicalDesc: Так себе на вкус
+  flavor: bitter
+  color: "#16b1cc"
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
+        type: Add
+        time: 3
+      - !type:Emote
+        emote: Laugh
+        showInChat: true
+        probability: 0.07
+        conditions:
+      - !type:PopupMessage
+        type: Local
+        visualType: MediumCaution
+        messages: [ "Вы слышите чьи то голоса" ]
+        probability: 0.04
+  plantMetabolism:
+  - !type:PlantAdjustToxins
+    amount: 15

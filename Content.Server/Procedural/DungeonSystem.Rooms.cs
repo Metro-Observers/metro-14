@@ -96,6 +96,24 @@ public sealed partial class DungeonSystem
         SpawnRoom(gridUid, grid, finalTransform, room, reservedTiles, clearExisting);
     }
 
+    //Metro14-start
+    public void SpawnRoom(
+    EntityUid gridUid,
+    MapGridComponent grid,
+    Vector2i origin,
+    DungeonRoomPrototype room,
+    Angle localAngle,
+    HashSet<Vector2i>? reservedTiles,
+    bool clearExisting = false)
+    {
+        var originTransform = Matrix3Helpers.CreateTranslation(origin.X, origin.Y);
+        var roomTransform = Matrix3Helpers.CreateTransform((Vector2)room.Size / 2f, localAngle);
+        var finalTransform = Matrix3x2.Multiply(roomTransform, originTransform);
+
+        SpawnRoom(gridUid, grid, finalTransform, room, reservedTiles, clearExisting);
+    }
+    //Metro14-end
+
     public Angle GetRoomRotation(DungeonRoomPrototype room, Random random)
     {
         var roomRotation = Angle.Zero;
@@ -181,7 +199,7 @@ public sealed partial class DungeonSystem
             if (!clearExisting && reservedTiles?.Contains(childPos.Floored()) == true)
                 continue;
 
-            var childRot = templateXform.LocalRotation + finalRoomRotation;
+            //Metro14-start
             var protoId = _metaQuery.GetComponent(templateEnt).EntityPrototype?.ID;
 
             // TODO: Copy the templated entity as is with serv
@@ -189,6 +207,13 @@ public sealed partial class DungeonSystem
 
             var childXform = _xformQuery.GetComponent(ent);
             var anchored = templateXform.Anchored;
+
+            // Если сущность на шаблоне не закреплена, то мы оставляем ее поворот.
+            var childRot = templateXform.LocalRotation;
+            if (anchored)
+                childRot = templateXform.LocalRotation + finalRoomRotation;
+            //Metro14-end
+
             _transform.SetLocalRotation(ent, childRot, childXform);
 
             // If the templated entity was anchored then anchor us too.

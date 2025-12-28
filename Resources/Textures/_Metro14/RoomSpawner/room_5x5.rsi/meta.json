@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "license": "Metro-14 CLA",
+  "copyright": "Created by BeatusCrow",
+  "size": {
+    "x": 160,
+    "y": 160
+  },
+  "states": [
+    {
+      "name": "room_5x5"
+    }
+  ]
+}

@@ -1,49 +1,48 @@
-[net]
-tickrate = 30
-
-[netres]
-limit = 25.0
+[game]
+hostname = "🚇 Metro14 - ЗБТ ☣️"
+desc = "Первый русскоязычный сервер по вселенной Metro 2033 с повышенным уровнем РП и доступом по вайтлисту.\nДля получения доступа обратитесь в наш Discord!"
+maxplayers = 130
+soft_max_players = 120
+map_rotation = false
+role_timers = false
+map_pool = "Metro14MapPool"
+lobbyenabled = true
+lobbyduration = 240
+round_restart_time = 240
+secret_weight_prototype = "Metro14Default"
+contraband_examine = false
 
 [infolinks]
 discord = "https://discord.gg/nC9pFqH2"
 patreon = "https://boosty.to/ssglobeshow"
 
-[viewport]
-maximum_width = 26
+[rules]
+time = 1.0
 
-[ooc]
-enable_during_round = false
+[shuttle]
+emergency = false
+arrivals = false
+auto_call_time = 0
 
-[game]
-lobbyenabled = true
-lobbyduration = 240
-map_pool = "Metro14MapPool"
-secret_weight_prototype = "Metro14Default"
-round_restart_time = 240
-fallbackpreset = "extended"
-contraband_examine = false
-
-[server]
-rules_file = "CorvaxRuleset"
+[ic]
+flavor_text = true
+punctuation = false
 
 [atmos]
 space_wind = false
 
-[biomass]
-easy_mode = false
+[ooc]
+enable_during_round = false
 
-[ic]
-flavor_text = true
-punctuation = true
+[netres]
+limit = 25.0
 
-[shuttle]
-auto_call_time = 0
+[npc]
+max_updates = 300
 
-[discord]
-rich_main_icon_id = "metro14"
-
-[admin]
-see_own_notes = false
+[whitelist]
+enabled = false
+prototype_list = "basicWhitelist"
 
 [vote]
 restart_required_ratio = 0.85
@@ -53,6 +52,11 @@ preset_enabled = false
 restart_enabled = true
 map_enabled = false
 
+[viewport]
+maximum_width = 26
+
+[admin]
+see_own_notes = false
+
 [hub]
 advertise = false
-tags = "lang:ru,rp:high,region:eu_e"

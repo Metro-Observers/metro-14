@@ -3,6 +3,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Content.Shared.Actions;
 using Content.Shared.StatusIcon;
+using Content.Shared.DoAfter;
 
 namespace Content.Shared._Metro14.Cestoid;
 
@@ -17,6 +18,12 @@ public sealed partial class CestoidComponent : Component
     /// </summary>
     [DataField]
     public EntProtoId CestoidInfectionAction = "ActionCestoidInfection";
+
+    /// <summary>
+    /// Время выполнения действия заражения.
+    /// </summary>
+    [DataField]
+    public int DoAfterActionTime = 3;
 
     /// <summary>
     /// Сущность, хранящая действие заражения игрока ленточником.
@@ -35,12 +42,21 @@ public sealed partial class CestoidComponent : Component
     /// </summary>
     [DataField]
     public EntityUid? CestoidShootingDownActionEntity;
+
+    /// <summary>
+    /// Id прототипа цели для данного антагониста.
+    /// </summary>
+    [DataField]
+    public string? IdAimProto = "M14CestoidTextObjective";
 }
 
 /// <summary>
 /// Событие, поднимаемое при нажатии кнопки-действия "ActionCestoidInfection".
 /// </summary>
 public sealed partial class CestoidInfectionActionEvent : EntityTargetActionEvent { }
+
+[Serializable, NetSerializable]
+public sealed partial class CestoidInfectionDoAfterEvent : SimpleDoAfterEvent { }
 
 /// <summary>
 /// Событие, поднимаемое при нажатии кнопки-действия "ActionCestoidShootingDown".

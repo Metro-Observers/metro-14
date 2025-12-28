@@ -1,0 +1,65 @@
+- type: entity
+  parent: MarkerBase
+  id: M14BaseRoomSpawner
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _Metro14/RoomSpawner/room_icon.rsi
+    icon: icon
+    snapCardinals: true
+
+- type: entity
+  parent: M14BaseRoomSpawner
+  id: M14RoomSpawner_4x4_LAB_31
+  suffix: LAB_31
+  components:
+  - type: RoomSpawner
+    roomsTag:
+    - Lab_31_4x4
+  - type: Sprite
+    sprite: _Metro14/RoomSpawner/room_4x4.rsi
+    state: room_4x4
+
+- type: entity
+  parent: M14BaseRoomSpawner
+  id: M14RoomSpawner_5x5_LAB_31
+  suffix: LAB_31
+  components:
+  - type: RoomSpawner
+    roomsTag:
+    - Lab_31_5x5
+  - type: Sprite
+    sprite: _Metro14/RoomSpawner/room_5x5.rsi
+    state: room_5x5
+
+- type: entity
+  parent: M14BaseRoomSpawner
+  id: M14RoomSpawner_5x5_Plug
+  components:
+  - type: RoomSpawner
+    canRepetitions: false
+    roomId: Lab_31_5x5_Plug
+    roomsTag:
+    - Lab_31_5x5
+  - type: Sprite
+    sprite: _Metro14/RoomSpawner/room_5x5.rsi
+    state: room_5x5
+
+- type: entity
+  parent: M14BaseRoomSpawner
+  id: M14RoomSpawner_4x4_Plug
+  components:
+  - type: RoomSpawner
+    canRepetitions: false
+    roomId: Lab_31_4x4_Plug
+    roomsTag:
+    - Lab_31_4x4
+  - type: Sprite
+    sprite: _Metro14/RoomSpawner/room_4x4.rsi
+    state: room_4x4

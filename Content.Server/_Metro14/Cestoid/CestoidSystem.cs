@@ -1,7 +1,4 @@
 using System.Numerics;
-using Robust.Shared.Player;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
 using Content.Server.Chat.Managers;
 using Content.Shared.Actions;
 using Content.Shared.Actions.Components;
@@ -9,7 +6,10 @@ using Content.Shared.Administration.Systems;
 using Content.Shared.Camera;
 using Content.Shared.FixedPoint;
 using Content.Shared.Hands;
+using Content.Shared.Humanoid;
 using Content.Shared.Item;
+using Content.Shared.Mind;
+using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
@@ -17,6 +17,10 @@ using Content.Shared.Popups;
 using Content.Shared.Stunnable;
 using Content.Shared.Wieldable;
 using Content.Shared.Wieldable.Components;
+using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
+using Content.Shared.DoAfter;
 using Content.Shared._Metro14.Cestoid;
 
 namespace Content.Server._Metro14.Cestoid;
@@ -33,6 +37,8 @@ public sealed class CestoidSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedCameraRecoilSystem _recoil = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly SharedMindSystem _mindSystem = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
 
     public override void Initialize()
     {
@@ -42,6 +48,7 @@ public sealed class CestoidSystem : EntitySystem
         SubscribeLocalEvent<CestoidComponent, ComponentRemove>(OnComponentRemove);
         SubscribeLocalEvent<CestoidComponent, WieldAttemptEvent>(OnWieldAttempt);
         SubscribeLocalEvent<CestoidComponent, CestoidInfectionActionEvent>(OnCestoidInfectionActionPressed);
+        SubscribeLocalEvent<HumanoidAppearanceComponent, CestoidInfectionDoAfterEvent>(OnCestoidInfectionDoAfter);
         SubscribeLocalEvent<CestoidComponent, CestoidShootingDownActionEvent>(OnCestoidShootingDownActionPressed);
     }
 
@@ -56,6 +63,11 @@ public sealed class CestoidSystem : EntitySystem
         TrySetAction(uid, component.CestoidInfectionAction, component.CestoidInfectionActionEntity);
         TrySetAction(uid, component.CestoidShootingDownAction, component.CestoidShootingDownActionEntity);
         TrySetEnlargedTresholds(uid);
+
+        if (component.IdAimProto != null && _mindSystem.TryGetMind(uid, out var mindId, out var mind))
+        {
+            _mindSystem.TryAddObjective(mindId, mind, component.IdAimProto);
+        }
 
         if (!TryComp<ActorComponent>(uid, out var actor))
             return;
@@ -150,26 +162,54 @@ public sealed class CestoidSystem : EntitySystem
     }
 
     /// <summary>
-    /// Заражаем выбранную сущность и увеличиваем ее порог вхождения в критическое состояние.
+    /// Поднимаем DoAfter действие для попытки заразить игрока.
     /// </summary>
     /// <param name="uid"> Ленточник </param>
     /// <param name="component"> Компонент ленточника </param>
     /// <param name="args"> Аргументы таргетного действия заражения </param>
     private void OnCestoidInfectionActionPressed(EntityUid uid, CestoidComponent component, CestoidInfectionActionEvent args)
     {
+        if (!TryComp<HumanoidAppearanceComponent>(args.Target, out var _compHuman))
+            return;
+
         if (TryComp<CestoidComponent>(args.Target, out var _comp))
             return;
 
         if (_mobStateSystem.IsCritical(args.Target) && !_mobStateSystem.IsDead(args.Target))
         {
-            AddComp<CestoidComponent>(args.Target);
+            var doAfterArgs = new DoAfterArgs(EntityManager, args.Performer,
+                TimeSpan.FromSeconds(component.DoAfterActionTime),
+                new CestoidInfectionDoAfterEvent(),
+                args.Target)
+            {
+                BreakOnMove = true,      // Прервать при движении  
+                BreakOnDamage = true,     // Прервать при уроне  
+                NeedHand = true,          // Требуется свободная рука  
+            };
 
-            var rejuvenateSystem = EntityManager.System<RejuvenateSystem>();
-            rejuvenateSystem.PerformRejuvenate(args.Target);
-
-            TrySetEnlargedTresholds(uid);
+            _doAfterSystem.TryStartDoAfter(doAfterArgs);
             args.Handled = true;
         }
+    }
+
+    /// <summary>
+    /// Заражаем выбранную сущность и увеличиваем ее порог вхождения в критическое состояние.
+    /// </summary>
+    /// <param name="uid"> Ленточник </param>
+    /// <param name="component"> Компонент гуманоида </param>
+    /// <param name="args"> Аргументы таргетного действия заражения </param>
+    private void OnCestoidInfectionDoAfter(EntityUid uid, HumanoidAppearanceComponent component, CestoidInfectionDoAfterEvent args)
+    {
+        if (args.Cancelled || args.Handled)
+            return;
+
+        AddComp<CestoidComponent>(uid);
+
+        var rejuvenateSystem = EntityManager.System<RejuvenateSystem>();
+        rejuvenateSystem.PerformRejuvenate(uid);
+
+        TrySetEnlargedTresholds(uid);
+        args.Handled = true;
     }
 
     /// <summary>

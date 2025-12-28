@@ -5,7 +5,7 @@
   description: Ужасающее творение предков что согнали нас всех в тоннели.
   components:
   - type: Sprite
-    sprite: _Metro14/Objects/Weapons/Guns/Rifles/ak74.rsi
+    sprite: _Metro14/Objects/Weapons/Guns/Rifles/ak74-1.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
@@ -48,7 +48,7 @@
   - type: Item
     size: Huge
     shape:
-    - 0,0,2,0
-    sprite: _Metro14/Objects/Weapons/Guns/Rifles/ak-inhandsx64.rsi
+    - 9,9,9,9
+    sprite: _Metro14/Objects/Weapons/Guns/Rifles/ak-inhandsx64-1.rsi
 
 

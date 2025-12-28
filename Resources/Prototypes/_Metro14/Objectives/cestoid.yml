@@ -1,0 +1,12 @@
+- type: entity
+  parent: BaseFreeObjective
+  id: M14CestoidTextObjective
+  name: Распространение
+  description: Ваша цель заразить как можно больше потенциальных носителей.
+  components:
+  - type: Objective
+    difficulty: 0
+    issuer: objective-issuer-cestoid
+    icon:
+      sprite: _Metro14/Objects/Misc/cestoid.rsi
+      state: worms

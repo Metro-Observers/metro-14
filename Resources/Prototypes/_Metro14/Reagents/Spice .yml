@@ -1,9 +1,9 @@
 - type: reagent
   id: SpiceDrugs
-  name: Спайс
+  name: m14-Spice-medicine-drug-name
   group: Narcotic
-  desc: Сложно устоять перед ним
-  physicalDesc: Так себе на вкус
+  desc: m14-Spice-medicine-drug-description
+  physicalDesc: m14-Spice-medicine-drug-physicalDesc
   flavor: bitter
   color: "#16b1cc"
   metabolisms:
@@ -21,7 +21,7 @@
       - !type:PopupMessage
         type: Local
         visualType: MediumCaution
-        messages: [ "Вы слышите чьи то голоса" ]
+        messages: [ "m14-Spice-medicine-drug-messages" ]
         probability: 0.04
   plantMetabolism:
   - !type:PlantAdjustToxins

@@ -2,7 +2,7 @@
   name: Красная баночка таблеток
   id: Pillredbox
   parent: BaseStorageItem
-  description: Банка таблеток которая может помочь
+  description: Банка таблеток которая может помочь а может и нет
   components:
   - type: Item
     size: Tiny
@@ -28,7 +28,7 @@
   name: Зелёная баночка таблеток
   id: Pillgreenbox
   parent: BaseStorageItem
-  description: Банка таблеток которая может помочь а может и нет
+  description: Банка таблеток которая может помочь
   components:
   - type: Item
     size: Tiny

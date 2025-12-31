@@ -1,0 +1,9 @@
+m14-Geroin-medicine-drug-physicalDesc = Так себе на вкус
+m14-Geroin-medicine-drug-description = Традиционно считается одним из самых опасных из-за мгновенного привыкания и высокого риска мгновенной смерти при употреблении чистого вещества. Россия остается одним из мировых лидеров по уровню потребления героина.
+m14-Geroin-medicine-drug-name = Героин
+m14-Geroine-medicine-drug-messages = Вы чувствуете что кто то рядом с вами...
+m14-Spice-medicine-drug-physicalDesc = очень вкусный
+m14-Spice-medicine-drug-description = Сложно устоять перед ним
+m14-Spice-medicine-drug-name = Спайс
+m14-Spice-medicine-drug-messages = Вы слышите чьи то голоса
+m14-syringe-medicine-geroin-currentLabel = Героин 15

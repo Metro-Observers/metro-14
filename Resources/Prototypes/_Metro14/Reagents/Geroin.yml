@@ -1,9 +1,9 @@
 - type: reagent
   id: GeroinDrugs
-  name: Героин
+  name: m14-Geroin-medicine-drug-name
   group: Narcotic
-  desc: Традиционно считается одним из самых опасных из-за мгновенного привыкания и высокого риска мгновенной смерти при употреблении чистого вещества. Россия остается одним из мировых лидеров по уровню потребления героина.
-  physicalDesc: Так себе на вкус
+  desc: m14-Geroin-medicine-drug-description
+  physicalDesc: m14-Geroin-medicine-drug-physicalDesc
   flavor: bitter
   color: "#97898a"
   metabolisms:
@@ -21,7 +21,7 @@
       - !type:PopupMessage
         type: Local
         visualType: MediumCaution
-        messages: [ "Вы чувствуете что кто то рядом с вами..." ]
+        messages: [ "m14-Geroine-medicine-drug-messages" ]
         probability: 0.22
   plantMetabolism:
   - !type:PlantAdjustToxins

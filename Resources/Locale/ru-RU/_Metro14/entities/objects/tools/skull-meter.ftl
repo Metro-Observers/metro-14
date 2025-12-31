@@ -1,3 +1,3 @@
 skull-meter-mutant-phrase = Заметно наличие мутаций
 skull-meter-human-phrase = Генетически чист
-skull-meter-measurements-failed-phrase = Непонятные показатели...
+skull-meter-measurements-failed-phrase = Непонятные показатели..

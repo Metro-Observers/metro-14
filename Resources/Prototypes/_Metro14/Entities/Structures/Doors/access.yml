@@ -1,0 +1,107 @@
+# Sparta | Спарта
+
+- type: entity
+  parent: M14DoorMetal
+  id: M14DoorMetalSpartaLocked
+  suffix: Спарта, Закрыт
+  components:
+  - type: AccessReader
+    access: [["M14Sparta"]]
+
+- type: entity
+  parent: M14DoorMetal
+  id: M14DoorMetalHeadOfSpartaLocked
+  suffix: Глава Спарта, Закрыт
+  components:
+  - type: AccessReader
+    access: [["M14HeadOfSparta"]]
+
+# Hansa | Ганза
+
+- type: entity
+  parent: M14DoorMetal
+  id: M14DoorMetalHansaLocked
+  suffix: Ганза, Закрыт
+  components:
+  - type: AccessReader
+    access: [["M14Hansa"]]
+
+- type: entity
+  parent: M14DoorMetal
+  id: M14DoorMetalHeadOfHansaLocked
+  suffix: Глава Ганза, Закрыт
+  components:
+  - type: AccessReader
+    access: [["M14HeadOfHansa"]]
+
+# Hydra | Гидра
+
+- type: entity
+  parent: M14DoorMetal
+  id: M14DoorMetalHydraLocked
+  suffix: Гидра, Закрыт
+  components:
+  - type: AccessReader
+    access: [["M14Hydra"]]
+
+- type: entity
+  parent: M14DoorMetal
+  id: M14DoorMetalHeadOfHydraLocked
+  suffix: Глава Гидра, Закрыт
+  components:
+  - type: AccessReader
+    access: [["M14HeadOfHydra"]]
+
+# RedLine | Красная Линия
+
+- type: entity
+  parent: M14DoorMetal
+  id: M14DoorMetalRedLineLocked
+  suffix: Красная Линия, Закрыт
+  components:
+  - type: AccessReader
+    access: [["M14RedLine"]]
+
+- type: entity
+  parent: M14DoorMetal
+  id: M14DoorMetalHeadOfRedLineLocked
+  suffix: Глава Красная Линия, Закрыт
+  components:
+  - type: AccessReader
+    access: [["M14HeadOfRedLine"]]
+
+# VDNH | ВДНХ
+
+- type: entity
+  parent: M14DoorMetal
+  id: M14DoorMetalVDNHLocked
+  suffix: ВДНХ, Закрыт
+  components:
+  - type: AccessReader
+    access: [["M14VDNH"]]
+
+- type: entity
+  parent: M14DoorMetal
+  id: M14DoorMetalHeadOfVDNHLocked
+  suffix: Глава ВДНХ, Закрыт
+  components:
+  - type: AccessReader
+    access: [["M14HeadOfVDNH"]]
+
+# Kuznetsky Most | Кузнецкий Мост
+
+- type: entity
+  parent: M14DoorMetal
+  id: M14DoorMetalKuznetskyMostLocked
+  suffix: Техники, Закрыт
+  components:
+  - type: AccessReader
+    access: [["M14Tech"]]
+
+- type: entity
+  parent: M14DoorMetal
+  id: M14DoorMetalHeadOfKuznetskyMostLocked
+  suffix: Глава Техники, Закрыт
+  components:
+  - type: AccessReader
+    access: [["M14HeadOfTech"]]

@@ -1,0 +1,279 @@
+﻿- type: entity
+  abstract: true
+  parent: BaseStructure
+  id: M14BaseDoor
+  name: дверь
+  description: Дверь, куда она ведёт?
+  components:
+  - type: Anchorable
+    flags:
+    - Anchorable
+  - type: Rotatable
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _Metro14/Structures/Doors/door.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: AnimationPlayer
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,0.49"
+        density: 100
+        mask:
+        - FullTileMask
+        layer:
+        - AirlockLayer
+  - type: Door
+    bumpOpen: false
+    clickOpen: true
+    canCrush: false
+    closeTimeOne: 0.2
+    closeTimeTwo: 0.6
+    openTimeOne: 0.6
+    openTimeTwo: 0.2
+    openingAnimationTime: 1.2
+    closingAnimationTime: 1.2
+    openSound:
+      path: /Audio/Effects/stonedoor_openclose.ogg
+    closeSound:
+      path: /Audio/Effects/stonedoor_openclose.ogg
+  - type: Appearance
+  - type: Airtight
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Metallic
+  - type: RCDDeconstructable
+    cost: 6
+    delay: 6
+    fx: EffectRCDDeconstruct6
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: BlockWeather
+  - type: IconSmooth
+    key: xd
+    mode: NoSprite
+    enabled: false
+
+- type: entity
+  parent: M14BaseDoor
+  id: M14DoorMetro
+  components:
+  - type: Construction
+    graph: DoorGraph
+    node: metalDoor
+  - type: Destructible
+    thresholds:
+    - trigger: &DamageTrigger200 # Overkill threshold
+        !type:DamageTrigger
+        damage: 200
+      behaviors: &OverkillBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger: &DamageTrigger150
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 3
+            max: 5
+
+
+- type: entity
+  parent: M14BaseDoor
+  id: M14DoorWood
+  name: деревянная дверь
+  description: Обычная деревянная дверь.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Doors/Wood/wood.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Door
+    bumpOpen: false
+    clickOpen: true
+    closeTimeOne: 0
+    closeTimeTwo: 0
+    openTimeOne: 0
+    openTimeTwo: 0
+    openSound:
+      path: /Audio/Effects/door_open.ogg
+    closeSound:
+      path: /Audio/Effects/door_close.ogg
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+
+- type: entity
+  parent: M14DoorWood
+  id: M14DoorWoodWhite
+  name: белая деревянная дверь
+  description: Обычная деревянная дверь, окрашена в белый цвет.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Doors/Wood/white.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+
+- type: entity
+  parent: M14DoorWood
+  id: M14DoorWoodBlue
+  name: синяя деревянная дверь
+  description: Обычная деревянная дверь, окрашена в синий цвет.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Doors/Wood/blue.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+
+- type: entity
+  parent: M14DoorWood
+  id: M14DoorWoodGreen
+  name: зелёная деревянная дверь
+  description: Обычная деревянная дверь, окрашена в зелёный цвет.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Doors/Wood/green.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+
+- type: entity
+  parent: M14DoorWood
+  id: M14DoorWoodRed
+  name: красная деревянная дверь
+  description: Обычная деревянная дверь, окрашена в красный цвет.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Doors/Wood/red.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+
+
+- type: entity
+  parent: M14BaseDoor
+  id: M14DoorMetal
+  name: стальная дверь
+  description: Обычная стальная дверь.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Doors/Metal/metal.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Door
+    bumpOpen: false
+    clickOpen: true
+    closeTimeOne: 0
+    closeTimeTwo: 0
+    openTimeOne: 0
+    openTimeTwo: 0
+    openSound:
+      path: /Audio/Effects/door_open.ogg
+    closeSound:
+      path: /Audio/Effects/door_close.ogg
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Occluder
+
+- type: entity
+  parent: M14DoorMetal
+  id: M14DoorMetalRed
+  name: красная стальная дверь
+  description: Обычная стальная дверь, окрашена в красный цвет.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Doors/Metal/metalred.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+
+- type: entity
+  parent: M14DoorMetal
+  id: M14DoorMetalAlt
+  name: стальная дверь
+  description: Обычная стальная дверь.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Doors/Metal/metalalt.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+
+- type: entity
+  parent: M14BaseDoor
+  id: M14DoorMetalGrate
+  name: решётчатая дверь
+  description: Обычная решетчатая дверь.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Doors/Metal/metalgrate.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: FlimsyMetallic
+  - type: Door
+    bumpOpen: false
+    clickOpen: true
+    closeTimeOne: 0
+    closeTimeTwo: 0
+    openTimeOne: 0
+    openTimeTwo: 0
+    openSound:
+      path: /Audio/Effects/door_open.ogg
+    closeSound:
+      path: /Audio/Effects/door_close.ogg
+
+- type: entity
+  parent: M14DoorMetalGrate
+  id: M14DoorMetalGreatFortified
+  name: укреплённая решётчатая дверь
+  description: Обычная решётчатая дверь, укреплена.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Doors/Metal/metalgratefortified.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: FlimsyMetallic
+
+- type: entity
+  parent: M14DoorMetalGrate
+  id: M14DoorMetalWindow
+  name: оконная стальная дверь
+  description: Обычная стальная дверь, с окном.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Structures/Doors/Metal/metalwindow.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: FlimsyMetallic

@@ -1,0 +1,13 @@
+- type: accessLevel
+  id: M14HeadOfSparta
+  name: Полковник Спарты
+
+- type: accessLevel
+  id: M14Sparta
+  name: Спарта
+
+- type: accessGroup
+  id: M14Sparta
+  tags:
+  - M14HeadOfSparta
+  - M14Sparta

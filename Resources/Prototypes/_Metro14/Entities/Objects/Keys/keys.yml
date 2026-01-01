@@ -1,0 +1,166 @@
+- type: entity
+  parent: Clothing
+  id: M14BaseKey
+  name: ключ
+  description: Этот ключ может открыть дверь, а может и нет. Вы не знаете.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Metro14/Objects/Misc/key.rsi
+    state: icon
+  - type: Clothing
+    slots:
+    - idcard
+  - type: Item
+    size: Small
+    heldPrefix: default
+  - type: Access
+  - type: IdCard
+  - type: StationRecordKeyStorage
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - M14Key
+
+#IDs with layers
+
+- type: entity
+  parent: M14BaseKey
+  id: M14MetroKey
+  suffix: Без доступа
+
+- type: entity
+  parent: M14BaseKey
+  id: M14SpartaKey
+  suffix: Спарта
+  components:
+  - type: PresetIdCard
+    job: M14SoldierSparta
+
+- type: entity
+  parent: M14BaseKey
+  id: M14HeadOfSpartaKey
+  suffix: Глава Спарта
+  components:
+  - type: PresetIdCard
+    job: M14HeadOfSparta
+
+- type: entity
+  parent: M14BaseKey
+  id: M14HansaKey
+  suffix: Ганза
+  components:
+  - type: PresetIdCard
+    job: M14OfficerHansa
+
+- type: entity
+  parent: M14BaseKey
+  id: M14HeadOfHansaKey
+  suffix: Глава Ганза
+  components:
+  - type: PresetIdCard
+    job: M14HeadOfHansa
+
+- type: entity
+  parent: M14BaseKey
+  id: M14HydraKey
+  suffix: Гидра
+  components:
+  - type: PresetIdCard
+    job: M14SoldierHydra
+
+- type: entity
+  parent: M14BaseKey
+  id: M14HeadOfHydraKey
+  suffix: Глава Гидра
+  components:
+  - type: PresetIdCard
+    job: M14HeadOfHydra
+
+- type: entity
+  parent: M14BaseKey
+  id: M14RedLineKey
+  suffix: Красная Линия
+  components:
+  - type: PresetIdCard
+    job: M14SoldierRedline
+
+- type: entity
+  parent: M14BaseKey
+  id: M14HeadOfRedLineKey
+  suffix: Глава Красная Линия
+  components:
+  - type: PresetIdCard
+    job: M14HeadOfRedLine
+
+- type: entity
+  parent: M14BaseKey
+  id: M14VDNKHKey
+  suffix: ВДНХ
+  components:
+  - type: PresetIdCard
+    job: M14SecurityVDNH
+
+- type: entity
+  parent: M14BaseKey
+  id: M14HeadOfVDNKHKey
+  suffix: Глава ВДНХ
+  components:
+  - type: PresetIdCard
+    job: M14HeadOfVDNH
+
+- type: entity
+  parent: M14BaseKey
+  id: M14KTechKey
+  suffix: Техники
+  components:
+  - type: PresetIdCard
+    job: M14TechnicTech
+
+- type: entity
+  parent: M14BaseKey
+  id: M14HeadOfTechKey
+  suffix: Глава Техники
+  components:
+  - type: PresetIdCard
+    job: M14HeadOfTech
+
+- type: entity
+  parent: Clothing
+  id: M14SetOfKeys
+  name: связка ключей
+  description: Связка ключей. Вы хранить свои ключи... да...
+  components:
+  - type: Sprite
+    sprite: _Metro14/Objects/Misc/setofkeys.rsi
+    state: icon
+  - type: Clothing
+    slots:
+    - idcard
+  - type: Storage
+    grid:
+    - 0,0,6,3
+    maxItemSize: Small
+    whitelist:
+      tags:
+        - M14Key
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: UseDelay
+    delay: 0.5
+  - type: Item
+    size: Small
+    heldPrefix: default
+  - type: Access
+  - type: IdCard
+  - type: StationRecordKeyStorage
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - M14SetOfKeys

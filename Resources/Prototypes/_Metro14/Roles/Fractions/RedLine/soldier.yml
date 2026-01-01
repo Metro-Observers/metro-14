@@ -6,6 +6,8 @@
   startingGear: M14SoldierRedLineGear
   icon: "JobIconRedline"
   canBeAntag: true
+  access:
+    - M14RedLine
 
 - type: startingGear
   id: M14SoldierRedLineGear

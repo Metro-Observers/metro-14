@@ -1,0 +1,13 @@
+- type: accessLevel
+  id: M14HeadOfHydra
+  name: Фюрер
+
+- type: accessLevel
+  id: M14Hydra
+  name: Гидра
+
+- type: accessGroup
+  id: M14Hydra
+  tags:
+  - M14HeadOfHydra
+  - M14Hydra

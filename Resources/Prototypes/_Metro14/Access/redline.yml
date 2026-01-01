@@ -1,0 +1,13 @@
+- type: accessLevel
+  id: M14HeadOfRedLine
+  name: Генсек
+
+- type: accessLevel
+  id: M14RedLine
+  name: Красная Линия
+
+- type: accessGroup
+  id: M14RedLine
+  tags:
+  - M14HeadOfRedLine
+  - M14RedLine

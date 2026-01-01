@@ -1,0 +1,13 @@
+- type: accessLevel
+  id: M14HeadOfHansa
+  name: Начальник Ганзы
+
+- type: accessLevel
+  id: M14Hansa
+  name: Ганза
+
+- type: accessGroup
+  id: M14Hansa
+  tags:
+  - M14HeadOfHansa
+  - M14Hansa

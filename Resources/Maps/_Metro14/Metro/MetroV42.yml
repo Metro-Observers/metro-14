@@ -57183,8 +57183,6 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - invalid
-          - invalid
           - 5174
           - 5173
           - 5172
@@ -273480,16 +273478,6 @@ entities:
       parent: 2
     - type: Paper
       content: '                     В память об обороне станции'
-  - uid: 35559
-    components:
-    - type: Transform
-      pos: -8.513519,-291.48547
-      parent: 2
-    - type: UserInterface
-      actors:
-        enum.PaperUiKey.Key:
-        - invalid
-    - type: ActiveUserInterface
   - uid: 41445
     components:
     - type: MetaData

@@ -436,7 +436,7 @@
   - type: InteractionOutline
   - type: Physics
     bodyType: Dynamic
-    canCollide: false
+    canCollide: true
   - type: Fixtures
     fixtures:
       base:

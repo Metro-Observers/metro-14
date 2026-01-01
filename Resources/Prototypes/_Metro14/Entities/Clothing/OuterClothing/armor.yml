@@ -40,9 +40,9 @@
   description: Лёгкий бронежилет II класса, разработанный для ВС СССР, но теперь используемый вами для выживания в метро. Рассчитан на защиту от выстрелов и взрывов.
   components:
   - type: Sprite
-    sprite: _Metro14\Clothing\OuterClothing\Armor\6b2.rsi
+    sprite: _Metro14/Clothing/OuterClothing/Armor/6b2.rsi
   - type: Clothing
-    sprite: _Metro14\Clothing\OuterClothing\Armor\6b2.rsi
+    sprite: _Metro14/Clothing/OuterClothing/Armor/6b2.rsi
   - type: Armor
     modifiers:
       coefficients:
@@ -59,9 +59,9 @@
   description: Тяжёлый бронежилет III класса, разработанный для ВС РФ, но теперь используемый вами для выживания в метро. Рассчитан на защиту от выстрелов и взрывов.
   components:
   - type: Sprite
-    sprite: _Metro14\Clothing\OuterClothing\Armor\6b13.rsi
+    sprite: _Metro14/Clothing/OuterClothing/Armor/6b13.rsi
   - type: Clothing
-    sprite: _Metro14\Clothing\OuterClothing\Armor\6b13.rsi
+    sprite: _Metro14/Clothing/OuterClothing/Armor/6b13.rsi
   - type: Armor
     modifiers:
       coefficients:
@@ -78,9 +78,9 @@
   description: Тяжёлый бронежилет III класса, разработанный для ВС США, но теперь используемый вами для выживания в метро. Рассчитан на защиту от выстрелов и взрывов.
   components:
   - type: Sprite
-    sprite: _Metro14\Clothing\OuterClothing\Armor\iOTVGreen.rsi
+    sprite: _Metro14/Clothing/OuterClothing/Armor/iOTVGreen.rsi
   - type: Clothing
-    sprite: _Metro14\Clothing\OuterClothing\Armor\iOTVGreen.rsi
+    sprite: _Metro14/Clothing/OuterClothing/Armor/iOTVGreen.rsi
   - type: Armor
     modifiers:
       coefficients:
@@ -97,9 +97,9 @@
   description: Тяжёлый бронежилет III класса, разработанный для ВС США, но теперь используемый вами для выживания в метро. Рассчитан на защиту от выстрелов и взрывов.
   components:
   - type: Sprite
-    sprite: _Metro14\Clothing\OuterClothing\Armor\iOTVBlack.rsi
+    sprite: _Metro14/Clothing/OuterClothing/Armor/iOTVBlack.rsi
   - type: Clothing
-    sprite: _Metro14\Clothing\OuterClothing\Armor\iOTVBlack.rsi
+    sprite: _Metro14/Clothing/OuterClothing/Armor/iOTVBlack.rsi
 
 - type: entity
   parent: M14ClothingOuterArmorBase
@@ -108,9 +108,9 @@
   description: Средний бронежилет II класса с разгрузкой и прикреплёнными к ней подсумками. Разработана для спецподразделений силовых структур РФ, но теперь используемая вами для выживания в метро. Имеет достаточную защиту от множества видов повреждений.
   components:
   - type: Sprite
-    sprite: _Metro14\Clothing\OuterClothing\Armor\plateCarrierGreen.rsi
+    sprite: _Metro14/Clothing/OuterClothing/Armor/plateCarrierGreen.rsi
   - type: Clothing
-    sprite: _Metro14\Clothing\OuterClothing\Armor\plateCarrierGreen.rsi
+    sprite: _Metro14/Clothing/OuterClothing/Armor/plateCarrierGreen.rsi
   - type: Armor
     modifiers:
       coefficients:
@@ -144,18 +144,18 @@
   id: M14ClothingOuterArmorPlateCarrierBlue
   components:
   - type: Sprite
-    sprite: _Metro14\Clothing\OuterClothing\Armor\plateCarrierBlue.rsi
+    sprite: _Metro14/Clothing/OuterClothing/Armor/plateCarrierBlue.rsi
   - type: Clothing
-    sprite: _Metro14\Clothing\OuterClothing\Armor\plateCarrierBlue.rsi
+    sprite: _Metro14/Clothing/OuterClothing/Armor/plateCarrierBlue.rsi
 
 - type: entity
   parent: M14ClothingOuterArmorPlateCarrierGreen
   id: M14ClothingOuterArmorPlateCarrierGray
   components:
   - type: Sprite
-    sprite: _Metro14\Clothing\OuterClothing\Armor\plateCarrierGray.rsi
+    sprite: _Metro14/Clothing/OuterClothing/Armor/plateCarrierGray.rsi
   - type: Clothing
-    sprite: _Metro14\Clothing\OuterClothing\Armor\plateCarrierGray.rsi
+    sprite: _Metro14/Clothing/OuterClothing/Armor/plateCarrierGray.rsi
 
 - type: entity
   parent: M14ClothingOuterArmorBase
@@ -163,9 +163,9 @@
   description: Тяжёлый бронежилет IV класса, разработанный для ВС РФ, но теперь используемый вами для выживания в метро. Рассчитан на защиту от выстрелов и взрывов.
   components:
   - type: Sprite
-    sprite: _Metro14\Clothing\OuterClothing\Armor\plateHeavy.rsi
+    sprite: _Metro14/Clothing/OuterClothing/Armor/plateHeavy.rsi
   - type: Clothing
-    sprite: _Metro14\Clothing\OuterClothing\Armor\plateHeavy.rsi
+    sprite: _Metro14/Clothing/OuterClothing/Armor/plateHeavy.rsi
   - type: Armor
     modifiers:
       coefficients:

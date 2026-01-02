@@ -1,0 +1,21 @@
+- type: construction
+  id: StrTorch
+  graph: StrTorch
+  startNode: start
+  targetNode: torch
+  category: construction-category-tools
+  objectType: Item
+
+- type: constructionGraph
+  id: StrTorch
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: torch
+          steps:
+            - material: M14WoodPlank
+              amount: 2
+              doAfter: 2
+    - node: torch
+      entity: M14StructureTorch

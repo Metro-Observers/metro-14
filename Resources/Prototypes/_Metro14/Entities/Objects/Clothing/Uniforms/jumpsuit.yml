@@ -58,3 +58,4 @@
     - state: icon-up
       map: ["foldedLayer"]
       visible: false
+

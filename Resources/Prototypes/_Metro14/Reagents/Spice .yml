@@ -1,0 +1,28 @@
+- type: reagent
+  id: SpiceDrugs
+  name: m14-Spice-medicine-drug-name
+  group: Narcotic
+  desc: m14-Spice-medicine-drug-description
+  physicalDesc: m14-Spice-medicine-drug-physicalDesc
+  flavor: bitter
+  color: "#16b1cc"
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
+        type: Add
+        time: 3
+      - !type:Emote
+        emote: Laugh
+        showInChat: true
+        probability: 0.07
+        conditions:
+      - !type:PopupMessage
+        type: Local
+        visualType: MediumCaution
+        messages: [ "m14-Spice-medicine-drug-messages" ]
+        probability: 0.04
+  plantMetabolism:
+  - !type:PlantAdjustToxins
+    amount: 15

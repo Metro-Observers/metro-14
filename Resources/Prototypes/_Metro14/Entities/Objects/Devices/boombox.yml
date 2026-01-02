@@ -152,3 +152,21 @@
   components:
     - type: BoomBoxTape
       soundPath: /Audio/_Metro14/BoomBox/Vosmiklassnica.ogg
+
+- type: entity
+  parent: BaseBoomBoxTape
+  id: BaseBoomBoxTapeDoroga
+  name: Дорога
+  description: В долгую дорогу,мой путник.Рфаб
+  components:
+    - type: BoomBoxTape
+      soundPath: /Audio/_Metro14/BoomBox/aykciondoroga.ogg
+
+- type: entity
+  parent: BaseBoomBoxTape
+  id: BaseBoomBoxTapeDungeonOfHorror
+  name: Личная кассета Рамзеса
+  description: На кассете надпись - если нашли кассету,немедленно верните её Рамзесу
+  components:
+    - type: BoomBoxTape
+      soundPath: /Audio/_Metro14/BoomBox/mxz-—-DUNGEONS-OF-HORRORS.ogg

@@ -1,0 +1,73 @@
+- type: reagent
+  id: M_14voenstim
+  name: Кустарный военный стимулятор
+  group: Narcotics
+  desc: Боевой стимулятор
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: bitter
+  color: "#FAFAFA"
+  boilingPoint: 212.0  # Dexosyephedrine vape when?
+  meltingPoint: 170.0
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Burn: -5
+            Brute: -5
+            Toxin: -2
+          types:
+            Bloodloss: -5
+    Narcotic:
+      effects:
+      - !type:MovementSpeedModifier
+        walkSpeedModifier: 1.4
+        sprintSpeedModifier: 1.4
+      - !type:GenericStatusEffect
+        key: Stutter
+        component: StutteringAccent
+      - !type:Jitter
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectStunned
+        time: 3
+        type: Remove
+      - !type:ModifyKnockdown
+        time: 3
+        type: Remove
+      - !type:ModifyStatusEffect
+        conditions:
+        - !type:ReagentCondition
+          reagent: Haloperidol
+          max: 0.01
+        effectProto: StatusEffectDrowsiness
+        time: 90
+        type: Remove
+      
+- type: entity
+  name: военный стимулятор
+  parent: ChemicalMedipen
+  id: voenstimulator
+  description: Автоинъектор военного симулятора
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: medipen
+      map: [ "enum.SolutionContainerLayers.Fill" ]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: medipen_empty
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 25
+        reagents:
+        - ReagentId: M_14voenstim
+          Quantity: 25
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 5
+    onlyAffectsMobs: false
+    injectOnly: true

@@ -21,9 +21,9 @@
       NavSmash: !type:Bool
         true
   - type: Prying
-    pryPowered: true
-    force: true
-    speedModifier: 1.5
+    pryPowered: false
+    force: false
+    speedModifier: 5
     useSound:
       path: /Audio/Items/crowbar.ogg
   - type: Reactive
@@ -46,7 +46,7 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 0.25
+          radius: 0.9
         density: 1000
         mask:
         - MobMask

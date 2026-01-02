@@ -6,6 +6,8 @@
   startingGear: M14TechnicTechGear
   icon: "JobIconTech"
   canBeAntag: true
+  access:
+    - M14Tech
 
 - type: startingGear
   id: M14TechnicTechGear

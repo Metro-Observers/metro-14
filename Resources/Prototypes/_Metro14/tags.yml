@@ -3,3 +3,9 @@
 
 - type: Tag
   id: ShellShotgunSlug
+
+- type: Tag
+  id: M14Key
+
+- type: Tag
+  id: M14SetOfKeys

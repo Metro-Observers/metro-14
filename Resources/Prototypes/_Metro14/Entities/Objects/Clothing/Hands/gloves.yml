@@ -1,0 +1,13 @@
+- type: entity
+  parent: ClothingHandsGlovesColorBlack
+  id: M14ClothingHandsGlovesCombat
+  name: тактические перчатки
+  description: Тактические перчатки предназначенных для боёв в суровых условиях. Огнеупорны и электрозащищённы.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Clothing/Hands/Gloves/combat.rsi
+  - type: Clothing
+    sprite: _Metro14/Clothing/Hands/Gloves/combat.rsi
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative

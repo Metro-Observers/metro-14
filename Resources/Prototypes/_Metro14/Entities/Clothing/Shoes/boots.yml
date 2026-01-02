@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingShoesMilitaryBase
+  id: M14ClothingShoesBootsCombat
+  name: Тактические ботинки
+  description: Мне кажется вам срочно надо проверить эти ботинки на прочность.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Clothing/Shoes/Boots/combat.rsi
+  - type: Clothing
+    sprite: _Metro14/Clothing/Shoes/Boots/combat.rsi

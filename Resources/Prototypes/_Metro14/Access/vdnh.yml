@@ -1,0 +1,13 @@
+- type: accessLevel
+  id: M14HeadOfVDNH
+  name: Начальник ВДНХ
+
+- type: accessLevel
+  id: M14VDNH
+  name: ВДНХ
+
+- type: accessGroup
+  id: M14VDNH
+  tags:
+  - M14HeadOfVDNH
+  - M14VDNH

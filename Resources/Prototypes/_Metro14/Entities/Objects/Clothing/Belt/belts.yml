@@ -1,0 +1,34 @@
+## Belts without visualizers
+
+- type: entity
+  parent: [ClothingBeltAmmoProviderBase, BaseSecurityBartenderContraband]
+  id: M14ClothingBeltFabricBandolier
+  name: тканевый патронтаж
+  description: Патронтаж, сделанный из ткани. Позволяет хранить патроны типа "дробь". Сюда вмещается 14 патрон.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Clothing/Belt/fabric_bandolier.rsi
+  - type: Clothing
+    sprite: _Metro14/Clothing/Belt/fabric_bandolier.rsi
+  - type: Item
+    size: Huge
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - ShellShotgun
+    capacity: 14
+
+## Webbing
+
+- type: entity
+  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseSyndicateContraband]
+  id: M14ClothingBeltFabricWebbing
+  name: тканевая РПС
+  description: РПС, сделанная из ткани. Позволяет хранить магазины, ножи, гранаты.. и... что там нужно ещё для убийства?
+  components:
+  - type: Sprite
+    sprite: _Metro14/Clothing/Belt/redlinewebbing.rsi
+  - type: Clothing
+    sprite: _Metro14/Clothing/Belt/redlinewebbing.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1

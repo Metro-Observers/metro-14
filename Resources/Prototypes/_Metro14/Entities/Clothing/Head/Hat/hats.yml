@@ -58,3 +58,14 @@
     sprite: _Metro14/Clothing/Head/Hats/officer_cap.rsi
   - type: Clothing
     sprite: _Metro14/Clothing/Head/Hats/officer_cap.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: M14ClothingHeadHatRedLineCap
+  name: пилотка
+  description: Пилотка с красной звездой.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Clothing/Head/Hats/redline_cap.rsi
+  - type: Clothing
+    sprite: _Metro14/Clothing/Head/Hats/redline_cap.rsi

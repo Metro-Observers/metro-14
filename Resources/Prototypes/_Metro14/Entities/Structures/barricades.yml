@@ -339,7 +339,6 @@
     mode: SnapgridCenter
   components:
   - type: Transform
-    anchored: false
   - type: Sprite
     sprite: _Metro14/Structures/barricades.rsi
     layers:
@@ -424,7 +423,6 @@
     mode: SnapgridCenter
   components:
   - type: Transform
-    anchored: false
   - type: Sprite
     sprite: _Metro14/Structures/barricades.rsi
     layers:

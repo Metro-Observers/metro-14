@@ -1,0 +1,60 @@
+- type: entity
+  name: Штамп начальника Ганзы
+  parent: RubberStampBase
+  id: M14RubberStampLeaderHanza
+  components:
+  - type: Stamp
+    stampedName: Ганза
+    stampedColor: "#cfa92b"
+    stampState: "paper_stamp-detective"
+  - type: Sprite
+    state: stamp-qm
+
+- type: entity
+  name: Штамп торгового агента Ганзы
+  parent: RubberStampBase
+  id: M14RubberStampTorgAgent
+  components:
+  - type: Stamp
+    stampedName: Торговый Агент
+    stampedColor: "#cfa92b"
+    stampState: "paper_stamp-detective"
+  - type: Sprite
+    state: stamp-qm
+
+
+- type: entity
+  name: Штамп Гидры
+  parent: RubberStampBase
+  id: M14RubberStampLeaderGydra
+  components:
+  - type: Stamp
+    stampedName: Фюрер
+    stampedColor: "#5f1802"
+    stampState: "paper_stamp-detective"
+  - type: Sprite
+    state: stamp-syndicate
+
+- type: entity
+  name: Штамп Красной линии
+  parent: RubberStampBase
+  id: M14RubberStampRedline
+  components:
+  - type: Stamp
+    stampedName: Генеральный Секретарь
+    stampedColor: "#f10a0a"
+    stampState: "paper_stamp-detective"
+  - type: Sprite
+    state: stamp-hos
+
+- type: entity
+  name: Штамп Ордена Спарты
+  parent: RubberStampBase
+  id: M14RubberStampSparta
+  components:
+  - type: Stamp
+    stampedName: Спарта
+    stampedColor: "#2c03e4"
+    stampState: "paper_stamp-detective"
+  - type: Sprite
+    state: stamp-cmo

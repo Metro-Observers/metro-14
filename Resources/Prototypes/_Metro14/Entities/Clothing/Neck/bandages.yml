@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: M14ClothingNeckBandagesRedLine
+  name: повязка Красной Линии
+  description: Повязка красноармейца метро.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Clothing/Neck/Bandages/redline.rsi
+  - type: Clothing
+    sprite: _Metro14/Clothing/Neck/Bandages/redline.rsi

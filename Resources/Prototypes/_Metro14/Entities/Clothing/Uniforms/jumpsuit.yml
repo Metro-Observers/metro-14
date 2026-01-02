@@ -58,3 +58,88 @@
     - state: icon-up
       map: ["foldedLayer"]
       visible: false
+
+# RedLine
+
+- type: entity
+  parent: ClothingUniformBase
+  id: M14ClothingUniformJumpsuitRedLine
+  name: комбинезон красноармейца
+  description: Комбинезон, который используется в армии Красной Линии.
+  components:
+    - type: Sprite
+      sprite: _Metro14/Clothing/Uniforms/Jumpsuit/redline.rsi
+    - type: Clothing
+      sprite: _Metro14/Clothing/Uniforms/Jumpsuit/redline.rsi
+
+# Hansa
+
+- type: entity
+  parent: ClothingUniformBase
+  id: M14ClothingUniformJumpsuitCivilianHansa
+  name: одежда гражданина Ганзы
+  description: Одежда, используемая в основном жителями Ганзы.
+  components:
+    - type: Sprite
+      sprite: _Metro14/Clothing/Uniforms/Jumpsuit/Hansa/civilian.rsi
+    - type: Clothing
+      sprite: _Metro14/Clothing/Uniforms/Jumpsuit/Hansa/civilian.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: M14ClothingUniformJumpsuitCivilian2Hansa
+  name: одежда гражданина Ганзы
+  description: Одежда, используемая в основном жителями Ганзы.
+  components:
+    - type: Sprite
+      sprite: _Metro14/Clothing/Uniforms/Jumpsuit/Hansa/civilian2.rsi
+    - type: Clothing
+      sprite: _Metro14/Clothing/Uniforms/Jumpsuit/Hansa/civilian2.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: M14ClothingUniformJumpsuitSecurityHansa
+  name: одежда охранника Ганзы
+  description: Одежда, используемая в основном охранниками Ганзы.
+  components:
+    - type: Sprite
+      sprite: _Metro14/Clothing/Uniforms/Jumpsuit/Hansa/security.rsi
+    - type: Clothing
+      sprite: _Metro14/Clothing/Uniforms/Jumpsuit/Hansa/security.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: M14ClothingUniformJumpsuitHeadofHansa
+  name: одежда начальника Кольцевой станции Ганзы
+  description: Одежда, используемая в основном начальниками станций Ганзы.
+  components:
+    - type: Sprite
+      sprite: _Metro14/Clothing/Uniforms/Jumpsuit/Hansa/head_of_hansa.rsi
+    - type: Clothing
+      sprite: _Metro14/Clothing/Uniforms/Jumpsuit/Hansa/head_of_hansa.rsi
+
+# Sparta
+
+- type: entity
+  parent: ClothingUniformBase
+  id: M14ClothingUniformJumpsuitSparta
+  name: комбинезон спартанца
+  description: Одежда, используемая защитниками человечества.
+  components:
+    - type: Sprite
+      sprite: _Metro14/Clothing/Uniforms/Jumpsuit/sparta.rsi
+    - type: Clothing
+      sprite: _Metro14/Clothing/Uniforms/Jumpsuit/sparta.rsi
+
+# Hydra
+
+- type: entity
+  parent: ClothingUniformBase
+  id: M14ClothingUniformJumpsuitHydra
+  name: комбинезон бойца Четвёртой Гидры
+  description: Одежда, используемая уничтожителями мутантов.
+  components:
+    - type: Sprite
+      sprite: _Metro14/Clothing/Uniforms/Jumpsuit/hydra.rsi
+    - type: Clothing
+      sprite: _Metro14/Clothing/Uniforms/Jumpsuit/hydra.rsi

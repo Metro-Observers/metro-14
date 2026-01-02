@@ -1,0 +1,28 @@
+#Helmets
+- type: entity
+  parent: ClothingHeadHelmetArmoredBase
+  id: M14ClothingHeadHelmetSparta
+  name: шлем Спарты
+  description: Стандартный шлем защитника метро.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Clothing/Head/Helmets/sparta.rsi
+  - type: Clothing
+    sprite: _Metro14/Clothing/Head/Helmets/sparta.rsi
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+
+- type: entity
+  parent: ClothingHeadHelmetArmoredBase
+  id: M14ClothingHeadHelmetHydra
+  name: шлем Гидры
+  description: Стандартный шлем уничтожителя мутантов.
+  components:
+  - type: Sprite
+    sprite: _Metro14/Clothing/Head/Helmets/hydra.rsi
+  - type: Clothing
+    sprite: _Metro14/Clothing/Head/Helmets/hydra.rsi
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD

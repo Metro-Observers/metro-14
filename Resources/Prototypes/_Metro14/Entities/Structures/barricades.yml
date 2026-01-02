@@ -105,11 +105,8 @@
         shape:
           !type:PhysShapeAabb
           bounds: "-0.49,-0.39,0.49,-0.36"
-        mask:
-        - FullTileMask
         layer:
         - WallLayer
-
 # Sandbags
 
 - type: entity
@@ -329,15 +326,16 @@
           !type:PhysShapeAabb
           bounds: "-0.49,-0.39,0.49,-0.36"
         mask:
-        - FullTileMask
+        - MachineMask
         layer:
-        - WallLayer
+        - None
       barrier:
         shape:
           !type:PhysShapeAabb
           bounds: "-0.49,-0.39,0.49,-0.36"
         layer:
         - WallLayer
+        hard: true
   - type: DeployableBarrier
     fixture: barrier
   - type: Lock
@@ -407,15 +405,16 @@
           !type:PhysShapeAabb
           bounds: "-0.49,-0.39,0.49,-0.36"
         mask:
-        - FullTileMask
+        - MachineMask
         layer:
-        - WallLayer
+        - None
       barrier:
         shape:
           !type:PhysShapeAabb
           bounds: "-0.49,-0.39,0.49,-0.36"
         layer:
         - WallLayer
+        hard: true
   - type: DeployableBarrier
     fixture: barrier
   - type: Lock

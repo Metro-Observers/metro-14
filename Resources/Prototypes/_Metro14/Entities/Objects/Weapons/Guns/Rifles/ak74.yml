@@ -13,7 +13,7 @@
         map: ["enum.GunVisualLayers.Mag"]
   - type: Gun
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+      path: /Audio/_Metro14/guns/gunshot/ak47shot.ogg
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg

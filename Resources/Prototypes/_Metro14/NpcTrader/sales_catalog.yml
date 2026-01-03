@@ -7,6 +7,7 @@
     NPC_Trader_Offer_Flashlight_Kit: 10
     NPC_Trader_Offer_Vino: -1
     NPC_Trader_Offer_Survival_Kit2: -1
+    NPC_Trader_Machete_to_bullets: -1 
 
 - type: npcTraderSalesCatalog # один из возможных каталогов для торговца
   id: TestTrader1
@@ -25,3 +26,4 @@
     NPC_Trader_Offer_FoodPiePlump: -1
     NPC_Trader_Offer_ClothingOuterCoatJensen: -1
     NPC_Trader_Offer_M14ClothingShoesValenki: -1
+    NPC_Trader_Voenstim: -1

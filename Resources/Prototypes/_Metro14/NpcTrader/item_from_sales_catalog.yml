@@ -23,8 +23,7 @@
   givingItems:
     GoldRingDiamond: 1
   takingItems:
-    Gauze: 1
-    CombatMedipen: 1
+    MedkitFilled: 2
   productTags: # это не обязательно
     - npc-trader-med-tag
 
@@ -48,7 +47,6 @@
   givingItems:
     M14FoodTinSaury: 2
     M14FoodTinPorknbean: 1
-    M14FoodTinPea: 3
   takingItems:
     FlashlightLantern: 1
   productTags:
@@ -71,11 +69,11 @@
 - type: npcTraderItemForCatalog
   id: NPC_Trader_Offer_Vino
   name: Винишко
-  description: Бывает винишко можно и в тоннелях взять
+  description: Бывает винишко можно и в тоннелях взять. Держи 3 пачки,по 10 штук в каждом
   givingItems:
     DrinkWineBottleFull: 1
   takingItems:
-    CartridgeLightRifle: 26
+    M14MagazineBoxLightRifleBig10: 3
 
 
 - type: npcTraderItemForCatalog
@@ -166,15 +164,33 @@
   name: Мосинка
   description: Ну и старье...емае
   givingItems:
-    CartridgeLightRifle: 30
+    CartridgeLightRifle: 22
   takingItems:
     M14WeaponSniperMosin: 1
 
 - type: npcTraderItemForCatalog
   id: NPC_Trader_Ashot_to_granade
-  name: Мосинка
+  name: Светошумовые гранаты
   description: Ну нечестный обмен,понимаю. Но я то в техах жопу не пойду рвать. Оставлю это на учесть тебе
   givingItems:
     M14WeaponShotgunAshot: 2
   takingItems:
-    GrenadeFlashBang: 1
+    GrenadeFlashBang: 3
+
+- type: npcTraderItemForCatalog
+  id: NPC_Trader_Voenstim
+  name: Военный стимулятор
+  description: ООО,это мощная штука,но и цена соответствующая 
+  givingItems:
+    CartridgeLightRifle: 30
+  takingItems:
+    voenstimulator: 1
+
+- type: npcTraderItemForCatalog
+  id: NPC_Trader_Machete_to_bullets
+  name: Скупка мачете
+  description: Хороший источник металла,которых по техам дохрена. Спроса много,предложения много. Как до войны...
+  givingItems:
+    Machete: 1
+  takingItems:
+    M14MagazineBoxLightRifleBig10: 2

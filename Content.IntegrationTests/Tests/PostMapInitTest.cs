@@ -474,6 +474,13 @@ namespace Content.IntegrationTests.Tests
 
                     jobs.ExceptWith(spawnPoints);
 
+                    // Metro-changes start
+                    var lateJoinSpawnPoints = entManager.EntityQuery<SpawnPointComponent>()
+                        .Where(x => x.SpawnType == SpawnPointType.LateJoin && x.Job != null)
+                        .Select(x => x.Job.Value);
+                        
+                    jobs.ExceptWith(lateJoinSpawnPoints);
+                    // Metro-changes end
                     spawnPoints = entManager.EntityQuery<ContainerSpawnPointComponent>()
                         .Where(x => x.SpawnType is SpawnPointType.Job or SpawnPointType.Unset && x.Job != null)
                         .Select(x => x.Job.Value);

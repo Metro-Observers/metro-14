@@ -59,4 +59,4 @@ maximum_width = 26
 see_own_notes = false
 
 [hub]
-advertise = true
+advertise = false

@@ -15,7 +15,7 @@
     fireRate: 6
     damageMultiplierModified: 1.7
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+      path: /Audio/_Metro14/Guns/Gunshot/ak12shot.ogg
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg

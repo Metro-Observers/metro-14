@@ -1,0 +1,17 @@
+- type: entity
+  name: Странная Таблетка
+  suffix: Спайс
+  parent: Pill
+  id: SpicePill
+  components:
+  - type: Pill
+    pillType: 8
+  - type: Sprite
+    state: pill4
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: SpiceDrugs
+          Quantity: 15

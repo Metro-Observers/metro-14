@@ -1,0 +1,52 @@
+- type: entity
+  name: Красная баночка таблеток
+  id: Pillredbox
+  parent: BaseStorageItem
+  description: Банка таблеток которая может помочь
+  components:
+  - type: Item
+    size: Tiny
+    sprite: _Metro14/Objects/Medicament/red_pills.rsi
+  - type: Sprite
+    sprite: _Metro14/Objects/Medicament/red_pills.rsi
+    state: icon
+  - type: Tag
+    tags:
+      - PillCanister
+  - type: Storage
+    grid:
+    - 0,0,4,1
+    quickInsert: true
+    areaInsert: true
+    areaInsertRadius: 1
+    whitelist:
+      tags:
+      - Pill
+  - type: Dumpable
+
+- type: entity
+  name: Зелёная баночка таблеток
+  id: Pillgreenbox
+  parent: BaseStorageItem
+  description: Банка таблеток которая может помочь а может и нет
+  components:
+  - type: Item
+    size: Tiny
+    sprite: _Metro14/Objects/Medicament/green_pills.rsi
+  - type: Sprite
+    sprite: _Metro14/Objects/Medicament/green_pills.rsi
+    state: icon
+  - type: Tag
+    tags:
+      - PillCanister
+  - type: Storage
+    grid:
+    - 0,0,3,2
+    quickInsert: true
+    areaInsert: true
+    areaInsertRadius: 1
+
+    whitelist:
+      tags:
+      - Pill
+  - type: Dumpable

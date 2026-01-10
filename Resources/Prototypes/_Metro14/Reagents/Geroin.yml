@@ -1,0 +1,28 @@
+- type: reagent
+  id: GeroinDrugs
+  name: m14-Geroin-medicine-drug-name
+  group: Narcotic
+  desc: m14-Geroin-medicine-drug-description
+  physicalDesc: m14-Geroin-medicine-drug-physicalDesc
+  flavor: bitter
+  color: "#97898a"
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
+        type: Add
+        time: 3
+      - !type:Emote
+        emote: Laugh
+        showInChat: true
+        probability: 0.04
+        conditions:
+      - !type:PopupMessage
+        type: Local
+        visualType: MediumCaution
+        messages: [ "m14-Geroine-medicine-drug-messages" ]
+        probability: 0.22
+  plantMetabolism:
+  - !type:PlantAdjustToxins
+    amount: 10

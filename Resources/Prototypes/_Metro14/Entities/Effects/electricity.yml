@@ -1,0 +1,17 @@
+- type: entity
+  id: EffectElectricity
+  components: 
+  - type: PointLight
+    radius: 1
+    energy: 15
+    color: "#00bfff"
+  - type: TimedDespawn
+    lifetime: 3
+  - type: Anomaly
+    severity: 1
+    stability: 0.45
+    nextPulseTime: 0
+    minPulseLength: 0
+    maxPulseLength: 0
+  - type: ElectricityAnomaly
+  - type: Electrified
